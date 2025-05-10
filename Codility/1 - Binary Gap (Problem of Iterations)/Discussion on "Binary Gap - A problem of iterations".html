@@ -1,0 +1,464 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    
+        .customLink:hover {
+            text-decoration: none;
+        }
+    
+        div.code-block-decoration.footer {
+            display: none;
+        }
+    
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+    
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+    
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+    
+        .custom_link_h2 a:active {
+            color: black;
+        }
+    
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+    
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+    
+        [aria-hidden='true'] {
+            display: none;
+        }
+    
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+    
+        i.ir { color: red; }
+        i.ig { color: green; }
+        i.ib { color: blue; }
+        i.im { color: magenta; }
+        i.ip { color: purple; }
+    
+        .customTable td {
+            padding: 2px;
+        }
+    
+        i.green {
+            color: green;
+        }
+    
+        i.red {
+            color: red;
+        }
+    
+        i.blue {
+            color: blue;
+        }
+    
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+    
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+    
+        .flex.items-center {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All Articles About Technology: <a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html" target="_blank">Index of Lessons in Technology</a>
+
+<br>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s1500/algorithm.jpg" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="1000" data-original-width="1500" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNNKbiwgmBGDaawSNJoF7KXRLucLauEmD_dUDzTx7ea1vvgOz6hY57s6a8d4Umxyagpb2SQmONyMkuCjJ1q8VhQdnYTi1UVm-pD4rYnGzwV153HLaK2jeS64aE0TiwOPHgzLaEMy0sKdFQ-gvpsv1h10dJlvSwufCZFK0YHUyew_2rnGT4Tq74lPVQ4fCa/s600/algorithm.jpg"/></a></div>
+  
+<style>
+    .red {
+        color: red;
+    }
+
+    .green {
+        color: green;
+    }
+    .blue {
+        color: blue;
+    }
+
+</style>
+<pre>
+Legend:
+<span class="red">Red is me.</span>
+<span>Rest is ChatGPT.</span>
+</pre>
+
+<b><pre class="red">
+A binary gap within a positive integer N is any maximal sequence of consecutive zeros that is surrounded by ones at both ends in the binary representation of N.
+
+For example, number 9 has binary representation 1001 and contains a binary gap of length 2. The number 529 has binary representation 1000010001 and contains two binary gaps: one of length 4 and one of length 3. The number 20 has binary representation 10100 and contains one binary gap of length 1. The number 15 has binary representation 1111 and has no binary gaps. The number 32 has binary representation 100000 and has no binary gaps.
+
+Write a function:
+
+def solution(N)
+
+that, given a positive integer N, returns the length of its longest binary gap. The function should return 0 if N doesn't contain a binary gap.
+
+Write an efficient algorithm for the following assumptions:
+
+N is an integer within the range [1..2,147,483,647].
+</pre></b>
+
+<div class="markdown prose dark:prose-invert w-full break-words light"><p data-start="0" data-end="141" class="">Here's an efficient and clean implementation of the <code data-start="52" data-end="62">solution</code> function that computes the longest binary gap of a given positive integer <code data-start="137" data-end="140">N</code>:</p>
+    <pre class="overflow-visible!" data-start="143" data-end="566"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex items-center gap-1 px-4 py-1 select-none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">def</span></span><span> </span><span><span class="hljs-title function_">solution</span></span><span>(</span><span><span class="hljs-params">N</span></span><span>):
+        binary_str = </span><span><span class="hljs-built_in">bin</span></span><span>(N)[</span><span><span class="hljs-number">2</span></span><span>:]  </span><span><span class="hljs-comment"># Convert N to binary and remove the '0b' prefix</span></span><span>
+        max_gap = </span><span><span class="hljs-number">0</span></span><span>
+        current_gap = </span><span><span class="hljs-number">0</span></span><span>
+        counting = </span><span><span class="hljs-literal">False</span></span><span>
+    
+        </span><span><span class="hljs-keyword">for</span></span><span> char </span><span><span class="hljs-keyword">in</span></span><span> binary_str:
+            </span><span><span class="hljs-keyword">if</span></span><span> char == </span><span><span class="hljs-string">'1'</span></span><span>:
+                </span><span><span class="hljs-keyword">if</span></span><span> counting:
+                    max_gap = </span><span><span class="hljs-built_in">max</span></span><span>(max_gap, current_gap)
+                current_gap = </span><span><span class="hljs-number">0</span></span><span>
+                counting = </span><span><span class="hljs-literal">True</span></span><span>
+            </span><span><span class="hljs-keyword">elif</span></span><span> counting:
+                current_gap += </span><span><span class="hljs-number">1</span></span><span>
+    
+        </span><span><span class="hljs-keyword">return</span></span><span> max_gap
+    </span></span></code></div></div></pre>
+    <h3 data-start="568" data-end="585" class="">How it works:</h3>
+    <ul data-start="586" data-end="906">
+    <li data-start="586" data-end="657" class="" style="">
+    <p data-start="588" data-end="657" class="">Converts the number to a binary string (excluding the <code data-start="642" data-end="648">'0b'</code> prefix).</p>
+    </li>
+    <li data-start="658" data-end="906" class="" style="">
+    <p data-start="660" data-end="686" class="">Iterates through each bit:</p>
+    <ul data-start="689" data-end="906">
+    <li data-start="689" data-end="782" class="" style="">
+    <p data-start="691" data-end="782" class="">When it sees a <code data-start="706" data-end="711">'1'</code>, it checks if a gap was being counted and updates <code data-start="762" data-end="771">max_gap</code> if needed.</p>
+    </li>
+    <li data-start="785" data-end="906" class="" style="">
+    <p data-start="787" data-end="906" class="">If it's a <code data-start="797" data-end="802">'0'</code> and a gap has started (i.e., a <code data-start="834" data-end="839">'1'</code> has been encountered before), it increments the current gap count.</p>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    <h3 data-start="908" data-end="926" class="">Example usage:</h3>
+    <pre class="overflow-visible!" data-start="927" data-end="1120"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex items-center gap-1 px-4 py-1 select-none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-built_in">print</span></span><span>(solution(</span><span><span class="hljs-number">9</span></span><span>))      </span><span><span class="hljs-comment"># Output: 2</span></span><span>
+    </span><span><span class="hljs-built_in">print</span></span><span>(solution(</span><span><span class="hljs-number">529</span></span><span>))    </span><span><span class="hljs-comment"># Output: 4</span></span><span>
+    </span><span><span class="hljs-built_in">print</span></span><span>(solution(</span><span><span class="hljs-number">20</span></span><span>))     </span><span><span class="hljs-comment"># Output: 1</span></span><span>
+    </span><span><span class="hljs-built_in">print</span></span><span>(solution(</span><span><span class="hljs-number">15</span></span><span>))     </span><span><span class="hljs-comment"># Output: 0</span></span><span>
+    </span><span><span class="hljs-built_in">print</span></span><span>(solution(</span><span><span class="hljs-number">32</span></span><span>))     </span><span><span class="hljs-comment"># Output: 0</span></span><span>
+    </span></span></code></div></div></pre>
+    <p data-start="1122" data-end="1188" class="">Would you like a visual explanation of the binary gap calculation?</p></div>
+
+<b><pre class="red">
+What is the space time complexity for this code:
+
+import re
+
+pattern = re.compile("10+")
+
+def solution(N):
+
+    n = str(bin(N))[2:]
+    matches = re.finditer(pattern, n)
+    matches_ = []
+    
+    max_length = 0
+
+    for i in matches:
+        if(len(n) > i.span()[1]):
+            if(n[i.span()[1]] == '1'):
+                matches_.append(i.group())
+                if i.group().count('0') > max_length:
+                    max_length = i.group().count('0')
+
+    return max_length
+</pre></b>
+
+<div class="markdown prose dark:prose-invert w-full break-words light"><p data-start="0" data-end="107" class="">Let's analyze your code step by step for <strong data-start="41" data-end="70">space and time complexity</strong>, and touch on the concepts involved.</p>
+    <hr data-start="109" data-end="112" class="" style="">
+    <h2 data-start="114" data-end="132" class="">✅ Code Overview</h2>
+    <p data-start="134" data-end="434" class="">You are using a <strong data-start="150" data-end="172">regular expression</strong> to find potential binary gaps in the binary representation of <code data-start="235" data-end="238">N</code>. The regex pattern <code data-start="258" data-end="265">"10+"</code> looks for a <code data-start="278" data-end="281">1</code> followed by one or more <code data-start="306" data-end="309">0</code>s, but not necessarily ending with another <code data-start="352" data-end="355">1</code>. Hence, you check manually after each match to see if it is followed by a <code data-start="430" data-end="433">1</code>.</p>
+    <hr data-start="436" data-end="439" class="" style="">
+    <h2 data-start="441" data-end="461" class="">✅ Time Complexity</h2>
+    <p data-start="463" data-end="476" class="">Let’s denote:</p>
+    <ul data-start="477" data-end="541">
+    <li data-start="477" data-end="541" class="" style="">
+    <p data-start="479" data-end="541" class=""><code data-start="479" data-end="495">n = bin(N)[2:]</code>: length of the binary string is <strong data-start="528" data-end="540">O(log N)</strong>.</p>
+    </li>
+    </ul>
+    <h3 data-start="543" data-end="569" class="">Steps and their costs:</h3>
+    <ol data-start="570" data-end="1125">
+    <li data-start="570" data-end="621" class="" style="">
+    <p data-start="573" data-end="621" class=""><code data-start="573" data-end="585">bin(N)[2:]</code>: converts to binary → <strong data-start="608" data-end="620">O(log N)</strong>.</p>
+    </li>
+    <li data-start="622" data-end="802" class="" style="">
+    <p data-start="625" data-end="679" class=""><code data-start="625" data-end="643">re.finditer(...)</code>: regex pattern scan → <strong data-start="666" data-end="678">O(log N)</strong>.</p>
+    <ul data-start="683" data-end="802">
+    <li data-start="683" data-end="802" class="" style="">
+    <p data-start="685" data-end="802" class="">Regular expression engines typically scan the entire string once, so this is linear in the size of the binary string.</p>
+    </li>
+    </ul>
+    </li>
+    <li data-start="803" data-end="1054" class="" style="">
+    <p data-start="806" data-end="849" class="">Loop over matches (max <code data-start="829" data-end="839">O(log N)</code> matches):</p>
+    <ul data-start="853" data-end="1054">
+    <li data-start="853" data-end="903" class="" style="">
+    <p data-start="855" data-end="903" class="">Each <code data-start="860" data-end="870">i.span()</code> and <code data-start="875" data-end="886">i.group()</code> call → <strong data-start="894" data-end="902">O(1)</strong>.</p>
+    </li>
+    <li data-start="907" data-end="1011" class="" style="">
+    <p data-start="909" data-end="1011" class=""><code data-start="909" data-end="931">i.group().count('0')</code> → in worst case <code data-start="948" data-end="958">O(log N)</code> if the group is nearly as long as the entire string.</p>
+    </li>
+    <li data-start="1015" data-end="1054" class="" style="">
+    <p data-start="1017" data-end="1054" class="">Checking <code data-start="1026" data-end="1042">n[i.span()[1]]</code> → <strong data-start="1045" data-end="1053">O(1)</strong>.</p>
+    </li>
+    </ul>
+    </li>
+    <li data-start="1055" data-end="1125" class="" style="">
+    <p data-start="1058" data-end="1125" class="">Appending to <code data-start="1071" data-end="1081">matches_</code> list → total of at most <strong data-start="1106" data-end="1118">O(log N)</strong> items.</p>
+    </li>
+    </ol>
+    <h3 data-start="1127" data-end="1164" class="">So the <strong data-start="1138" data-end="1163">total time complexity</strong>:</h3>
+    <ul data-start="1165" data-end="1296">
+    <li data-start="1165" data-end="1296" class="" style="">
+    <p data-start="1167" data-end="1296" class="">In worst case (many small matches), it is <strong data-start="1209" data-end="1225">O((log N)^2)</strong> due to the <code data-start="1237" data-end="1249">count('0')</code> call inside a loop over up to <code data-start="1280" data-end="1287">log N</code> matches.</p>
+    </li>
+    </ul>
+    <hr data-start="1298" data-end="1301" class="" style="">
+    <h2 data-start="1303" data-end="1324" class="">✅ Space Complexity</h2>
+    <ol data-start="1326" data-end="1503">
+    <li data-start="1326" data-end="1368" class="" style="">
+    <p data-start="1329" data-end="1368" class=""><code data-start="1329" data-end="1332">n</code> is a string of length <strong data-start="1355" data-end="1367">O(log N)</strong>.</p>
+    </li>
+    <li data-start="1369" data-end="1464" class="" style="">
+    <p data-start="1372" data-end="1464" class=""><code data-start="1372" data-end="1382">matches_</code> list stores up to <strong data-start="1401" data-end="1413">O(log N)</strong> match strings (each short), so <strong data-start="1445" data-end="1457">O(log N)</strong> total.</p>
+    </li>
+    <li data-start="1465" data-end="1503" class="" style="">
+    <p data-start="1468" data-end="1503" class="">Other variables use constant space.</p>
+    </li>
+    </ol>
+    <h3 data-start="1505" data-end="1553" class="">So the <strong data-start="1516" data-end="1536">space complexity</strong> is <strong data-start="1540" data-end="1552">O(log N)</strong>.</h3>
+    <hr data-start="1555" data-end="1558" class="" style="">
+    <h2 data-start="1560" data-end="1590" class="">✅ Programming Concepts Used</h2>
+    <ol data-start="1592" data-end="1990">
+    <li data-start="1592" data-end="1680" class="" style="">
+    <p data-start="1595" data-end="1680" class=""><strong data-start="1595" data-end="1618">Regular Expressions</strong>: Used to find candidate substrings that might be binary gaps.</p>
+    </li>
+    <li data-start="1681" data-end="1772" class="" style="">
+    <p data-start="1684" data-end="1772" class=""><strong data-start="1684" data-end="1703">Greedy Checking</strong>: Manually validating whether the regex match is followed by a <code data-start="1766" data-end="1771">'1'</code>.</p>
+    </li>
+    <li data-start="1773" data-end="1861" class="" style="">
+    <p data-start="1776" data-end="1861" class=""><strong data-start="1776" data-end="1809">String Manipulation &amp; Slicing</strong>: You check bits using string positions and lengths.</p>
+    </li>
+    <li data-start="1862" data-end="1990" class="" style="">
+    <p data-start="1865" data-end="1990" class=""><strong data-start="1865" data-end="1903">Pattern Matching + Post-processing</strong>: Unlike pure regex, this approach combines regex results with manual validation logic.</p>
+    </li>
+    </ol>
+    <hr data-start="1992" data-end="1995" class="" style="">
+    <h2 data-start="1997" data-end="2010" class="">🔍 Summary</h2>
+    <div class="group pointer-events-none relative flex justify-center *:pointer-events-auto"><span class="pointer-events-none absolute start-full top-4 z-10 hidden h-full w-fit ps-2 md:block" data-state="closed"><button class="hover:bg-token-main-surface-secondary text-token-text-secondary pointer-events-auto rounded-lg px-1 py-1 opacity-0 transition-opacity duration-200 group-focus-within:opacity-100 group-hover:opacity-100"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-md-heavy"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg></button></span><div class="tableContainer horzScrollShadows relative"><table class="min-w-full" data-start="2012" data-end="2248"><thead data-start="2012" data-end="2046"><tr data-start="2012" data-end="2046"><th data-start="2012" data-end="2032">Metric</th><th data-start="2032" data-end="2046">Complexity</th></tr></thead><tbody data-start="2082" data-end="2248"><tr data-start="2082" data-end="2155"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="2082" data-end="2103">Time Complexity</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)] min-w-[calc(var(--thread-content-max-width)/3)]" data-start="2103" data-end="2155"><code data-start="2105" data-end="2119">O((log N)^2)</code> (due to <code data-start="2128" data-end="2140">count('0')</code> inside loop)</td></tr><tr data-start="2156" data-end="2191"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="2156" data-end="2177">Space Complexity</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="2177" data-end="2191"><code data-start="2179" data-end="2189">O(log N)</code></td></tr><tr data-start="2192" data-end="2248"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="2192" data-end="2213">Algorithm Concepts</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="2213" data-end="2248">Regex, Greedy, String traversal</td></tr></tbody></table></div></div>
+    <p data-start="2250" data-end="2332" class="">Would you like help optimizing this code to reduce time complexity or avoid regex?</p></div>
+
+<b><pre class="red">Between my code and your code, which one is better?</pre></b>
+
+<div class="markdown prose dark:prose-invert w-full break-words light"><p data-start="0" data-end="141" class="">Great question — let’s compare your code vs. the earlier one I gave (the non-regex one) in <strong data-start="91" data-end="140">performance, readability, and maintainability</strong>.</p>
+    <hr data-start="143" data-end="146" class="" style="">
+    <h2 data-start="148" data-end="180" class="">⚔️ <strong data-start="154" data-end="180">Performance Comparison</strong></h2>
+    <div class="group pointer-events-none relative flex justify-center *:pointer-events-auto"><span class="pointer-events-none absolute start-full top-4 z-10 hidden h-full w-fit ps-2 md:block" data-state="closed"><button class="hover:bg-token-main-surface-secondary text-token-text-secondary pointer-events-auto rounded-lg px-1 py-1 opacity-0 transition-opacity duration-200 group-focus-within:opacity-100 group-hover:opacity-100"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-md-heavy"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg></button></span><div class="tableContainer horzScrollShadows relative"><table class="min-w-full" data-start="182" data-end="715"><thead data-start="182" data-end="270"><tr data-start="182" data-end="270"><th data-start="182" data-end="205">Aspect</th><th data-start="205" data-end="238">Your Code (Regex)</th><th data-start="238" data-end="270">My Code (Loop-based)</th></tr></thead><tbody data-start="360" data-end="715"><tr data-start="360" data-end="448"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="360" data-end="383"><strong data-start="362" data-end="381">Time Complexity</strong></td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="383" data-end="416"><code data-start="385" data-end="399">O((log N)^2)</code></td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="416" data-end="448"><code data-start="418" data-end="428">O(log N)</code></td></tr><tr data-start="449" data-end="537"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="449" data-end="472"><strong data-start="451" data-end="471">Space Complexity</strong></td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="472" data-end="505"><code data-start="474" data-end="484">O(log N)</code></td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="505" data-end="537"><code data-start="507" data-end="513">O(1)</code> (ignoring binary str)</td></tr><tr data-start="538" data-end="626"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="538" data-end="561"><strong data-start="540" data-end="558">Regex Overhead</strong></td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="561" data-end="594">Yes (pattern matching engine)</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="594" data-end="626">No</td></tr><tr data-start="627" data-end="715"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="627" data-end="650"><strong data-start="629" data-end="646">Extra Storage</strong></td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="650" data-end="683">Stores matches in list</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="683" data-end="715">Just uses counters</td></tr></tbody></table></div></div>
+    <p data-start="717" data-end="845" class="">🔧 <strong data-start="720" data-end="730">Winner</strong>: <strong data-start="732" data-end="743">My Code</strong>, because it’s faster (<code data-start="766" data-end="776">O(log N)</code> vs. <code data-start="781" data-end="795">O((log N)^2)</code>) and uses less memory (no need to store matches).</p>
+    <hr data-start="847" data-end="850" class="" style="">
+    <h2 data-start="852" data-end="884" class="">🧠 <strong data-start="858" data-end="884">Algorithmic Simplicity</strong></h2>
+    <ul data-start="886" data-end="1129">
+    <li data-start="886" data-end="1023" class="" style="">
+    <p data-start="888" data-end="1023" class=""><strong data-start="888" data-end="901">Your Code</strong> is clever and compact thanks to regex, but less intuitive for someone unfamiliar with pattern matching + post-validation.</p>
+    </li>
+    <li data-start="1024" data-end="1129" class="" style="">
+    <p data-start="1026" data-end="1129" class=""><strong data-start="1026" data-end="1037">My Code</strong> walks through the bits in a very transparent and explainable way — easy to debug and adapt.</p>
+    </li>
+    </ul>
+    <p data-start="1131" data-end="1180" class="">🧠 <strong data-start="1134" data-end="1144">Winner</strong>: <strong data-start="1146" data-end="1157">My Code</strong>, due to clearer logic.</p>
+    <hr data-start="1182" data-end="1185" class="" style="">
+    <h2 data-start="1187" data-end="1226" class="">🔍 <strong data-start="1193" data-end="1226">Maintainability &amp; Readability</strong></h2>
+    <ul data-start="1228" data-end="1433">
+    <li data-start="1228" data-end="1330" class="" style="">
+    <p data-start="1230" data-end="1260" class="">Your code splits logic across:</p>
+    <ul data-start="1263" data-end="1330">
+    <li data-start="1263" data-end="1278" class="" style="">
+    <p data-start="1265" data-end="1278" class="">Regex pattern</p>
+    </li>
+    <li data-start="1281" data-end="1298" class="" style="">
+    <p data-start="1283" data-end="1298" class=""><code data-start="1283" data-end="1298">re.finditer()</code></p>
+    </li>
+    <li data-start="1301" data-end="1330" class="" style="">
+    <p data-start="1303" data-end="1330" class="">Manual follow-up validation</p>
+    </li>
+    </ul>
+    </li>
+    <li data-start="1331" data-end="1433" class="" style="">
+    <p data-start="1333" data-end="1433" class="">Mine uses a plain loop, easier for most developers to follow without understanding regex edge cases.</p>
+    </li>
+    </ul>
+    <p data-start="1435" data-end="1461" class="">📘 <strong data-start="1438" data-end="1448">Winner</strong>: <strong data-start="1450" data-end="1461">My Code</strong></p>
+    <hr data-start="1463" data-end="1466" class="" style="">
+    <h2 data-start="1468" data-end="1483" class="">✅ Conclusion</h2>
+    <div class="group pointer-events-none relative flex justify-center *:pointer-events-auto"><span class="pointer-events-none absolute start-full top-4 z-10 hidden h-full w-fit ps-2 md:block" data-state="closed"><button class="hover:bg-token-main-surface-secondary text-token-text-secondary pointer-events-auto rounded-lg px-1 py-1 opacity-0 transition-opacity duration-200 group-focus-within:opacity-100 group-hover:opacity-100"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-md-heavy"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg></button></span><div class="tableContainer horzScrollShadows relative"><table class="min-w-full" data-start="1485" data-end="1682"><thead data-start="1485" data-end="1517"><tr data-start="1485" data-end="1517"><th data-start="1485" data-end="1502">Criteria</th><th data-start="1502" data-end="1517">Better Code</th></tr></thead><tbody data-start="1551" data-end="1682"><tr data-start="1551" data-end="1583"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1551" data-end="1568">Performance</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1568" data-end="1583">My Code</td></tr><tr data-start="1584" data-end="1616"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1584" data-end="1601">Readability</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1601" data-end="1616">My Code</td></tr><tr data-start="1617" data-end="1649"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1617" data-end="1634">Maintainability</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1634" data-end="1649">My Code</td></tr><tr data-start="1650" data-end="1682"><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1650" data-end="1667">Cleverness</td><td class="max-w-[calc(var(--thread-content-max-width)*2/3)]" data-start="1667" data-end="1682">Your Code</td></tr></tbody></table></div></div>
+    <p data-start="1684" data-end="1875" class="">Your code is a smart regex-based approach, and works fine — but for production, interviews, or performance-sensitive tasks, the loop-based version is the more <strong data-start="1843" data-end="1867">optimal and readable</strong> choice.</p>
+    <p data-start="1877" data-end="1948" class="">Would you like to see how to make your regex version faster or cleaner?</p></div>
+
+<b class="red">How is your code a Greedy algorithm?</b>
+
+<div class="markdown prose dark:prose-invert w-full break-words light"><p data-start="0" data-end="113" class="">Awesome follow-up — let’s clarify what makes my loop-based solution <strong data-start="68" data-end="78">greedy</strong>, and whether that term truly fits.</p>
+    <hr data-start="115" data-end="118" class="" style="">
+    <h2 data-start="120" data-end="162" class="">🔍 First, what <em data-start="138" data-end="142">is</em> a Greedy algorithm?</h2>
+    <p data-start="164" data-end="316" class="">A <strong data-start="166" data-end="186">greedy algorithm</strong> makes a <strong data-start="195" data-end="221">locally optimal choice</strong> at each step, aiming for a <strong data-start="249" data-end="267">global optimum</strong>, without backtracking or exploring alternatives.</p>
+    <p data-start="318" data-end="327" class="">Examples:</p>
+    <ul data-start="328" data-end="444">
+    <li data-start="328" data-end="381" class="" style="">
+    <p data-start="330" data-end="381" class="">Coin change (greedily taking largest denomination).</p>
+    </li>
+    <li data-start="382" data-end="444" class="" style="">
+    <p data-start="384" data-end="444" class="">Interval scheduling (greedily picking earliest finish time).</p>
+    </li>
+    </ul>
+    <hr data-start="446" data-end="449" class="" style="">
+    <h2 data-start="451" data-end="471" class="">✅ In my solution:</h2>
+    <pre class="overflow-visible!" data-start="473" data-end="846"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><span class="" data-state="closed"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button></span><span class="" data-state="closed"><button class="flex items-center gap-1 px-4 py-1 select-none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">def</span></span><span> </span><span><span class="hljs-title function_">solution</span></span><span>(</span><span><span class="hljs-params">N</span></span><span>):
+        binary_str = </span><span><span class="hljs-built_in">bin</span></span><span>(N)[</span><span><span class="hljs-number">2</span></span><span>:]
+        max_gap = </span><span><span class="hljs-number">0</span></span><span>
+        current_gap = </span><span><span class="hljs-number">0</span></span><span>
+        counting = </span><span><span class="hljs-literal">False</span></span><span>
+    
+        </span><span><span class="hljs-keyword">for</span></span><span> char </span><span><span class="hljs-keyword">in</span></span><span> binary_str:
+            </span><span><span class="hljs-keyword">if</span></span><span> char == </span><span><span class="hljs-string">'1'</span></span><span>:
+                </span><span><span class="hljs-keyword">if</span></span><span> counting:
+                    max_gap = </span><span><span class="hljs-built_in">max</span></span><span>(max_gap, current_gap)  </span><span><span class="hljs-comment"># ← local decision</span></span><span>
+                current_gap = </span><span><span class="hljs-number">0</span></span><span>
+                counting = </span><span><span class="hljs-literal">True</span></span><span>
+            </span><span><span class="hljs-keyword">elif</span></span><span> counting:
+                current_gap += </span><span><span class="hljs-number">1</span></span><span>
+    </span></span></code></div></div></pre>
+    <h3 data-start="848" data-end="870" class="">What happens here:</h3>
+    <ul data-start="871" data-end="1158">
+    <li data-start="871" data-end="1006" class="" style="">
+    <p data-start="873" data-end="1006" class="">When we encounter a <code data-start="893" data-end="896">1</code>, we <strong data-start="901" data-end="923">immediately decide</strong> if the just-ended gap is the largest so far — that’s a <strong data-start="979" data-end="1005">local optimal decision</strong>.</p>
+    </li>
+    <li data-start="1007" data-end="1087" class="" style="">
+    <p data-start="1009" data-end="1087" class="">We don’t remember all gaps and compare later — we update <code data-start="1066" data-end="1075">max_gap</code> <em data-start="1076" data-end="1086">as we go</em>.</p>
+    </li>
+    <li data-start="1088" data-end="1158" class="" style="">
+    <p data-start="1090" data-end="1158" class="">Once a zero streak is broken by a <code data-start="1124" data-end="1127">1</code>, we never revisit that streak.</p>
+    </li>
+    </ul>
+    <hr data-start="1160" data-end="1163" class="" style="">
+    <h2 data-start="1165" data-end="1206" class="">🧠 So is it a <em data-start="1182" data-end="1188">pure</em> Greedy algorithm?</h2>
+    <p data-start="1208" data-end="1220" class="">Technically:</p>
+    <ul data-start="1221" data-end="1377">
+    <li data-start="1221" data-end="1265" class="" style="">
+    <p data-start="1223" data-end="1265" class="">It doesn't explore all possible solutions.</p>
+    </li>
+    <li data-start="1266" data-end="1315" class="" style="">
+    <p data-start="1268" data-end="1315" class="">It processes data in a <strong data-start="1291" data-end="1314">single forward pass</strong>.</p>
+    </li>
+    <li data-start="1316" data-end="1377" class="" style="">
+    <p data-start="1318" data-end="1377" class="">It <strong data-start="1321" data-end="1352">makes decisions immediately</strong> about the "best so far."</p>
+    </li>
+    </ul>
+    <p data-start="1379" data-end="1490" class="">✅ So yes, it <em data-start="1392" data-end="1416">uses greedy principles</em>, but it's a <strong data-start="1429" data-end="1462">special case of a linear scan</strong> where greedy works because:</p>
+    <ul data-start="1491" data-end="1575">
+    <li data-start="1491" data-end="1532" class="" style="">
+    <p data-start="1493" data-end="1532" class="">There are no dependencies between gaps.</p>
+    </li>
+    <li data-start="1533" data-end="1575" class="" style="">
+    <p data-start="1535" data-end="1575" class="">The problem only asks for the max value.</p>
+    </li>
+    </ul>
+    <hr data-start="1577" data-end="1580" class="" style="">
+    <h2 data-start="1582" data-end="1598" class="">🔁 Comparison</h2>
+    <p data-start="1600" data-end="1698" class="">If we had stored all gaps in a list and computed the max at the end, that would be <strong data-start="1683" data-end="1697">non-greedy</strong>.</p>
+    <p data-start="1700" data-end="1799" class="">Because we avoid that, we call it <strong data-start="1734" data-end="1758">greedy + linear scan</strong> — a common combo for problems like this.</p>
+    <hr data-start="1801" data-end="1804" class="" style="">
+    <p data-start="1806" data-end="1888" class="">Would you like to see an example of a similar problem where greedy <em data-start="1873" data-end="1882">doesn't</em> work?</p></div>
+
+<span style="display: none;">Tags: Technology,Algorithms</span>
