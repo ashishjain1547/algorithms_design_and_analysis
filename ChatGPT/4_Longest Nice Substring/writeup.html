@@ -1,0 +1,493 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    
+        .customLink:hover {
+            text-decoration: none;
+        }
+    
+        div.code-block-decoration.footer {
+            display: none;
+        }
+    
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+    
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+    
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+    
+        .custom_link_h2 a:active {
+            color: black;
+        }
+    
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+    
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+    
+        [aria-hidden='true'] {
+            display: none;
+        }
+    
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+    
+        i.ir { color: red; }
+        i.ig { color: green; }
+        i.ib { color: blue; }
+        i.im { color: magenta; }
+        i.ip { color: purple; }
+    
+        .customTable td {
+            padding: 2px;
+        }
+    
+        i.green {
+            color: green;
+        }
+    
+        i.red {
+            color: red;
+        }
+    
+        i.blue {
+            color: blue;
+        }
+    
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+    
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        button.bg-token-bg-primary {
+            display: none;
+        }
+    
+        .flex.items-center {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All Articles About Technology: <a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html" target="_blank">Index of Lessons in Technology</a>
+
+<br>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgC_CEb5W0VvrKct60Cp8DMKktJ7hiOdxR6YC8xz8uQss4SzjKlzlcVv7pvph7S-cdh7cyACb4v8ylzGQlc7Du23ObM-4O3KfV_XbLWICbx2QP2X6mLENYMpOa-7HiDnRyrE_bCptrVE0gcZK3GWMv2LF_R33j1EfYDbyOicjmFCjCMGBwzp8-O0EsFdjwe/s637/algorithms.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="346" data-original-width="637" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgC_CEb5W0VvrKct60Cp8DMKktJ7hiOdxR6YC8xz8uQss4SzjKlzlcVv7pvph7S-cdh7cyACb4v8ylzGQlc7Du23ObM-4O3KfV_XbLWICbx2QP2X6mLENYMpOa-7HiDnRyrE_bCptrVE0gcZK3GWMv2LF_R33j1EfYDbyOicjmFCjCMGBwzp8-O0EsFdjwe/s600/algorithms.png"/></a></div>
+
+<pre>
+<h2>Just The Problem Text</h2>
+
+<b>Problem: Longest Nice Substring</b>
+
+A string is considered "nice" if it contains equal numbers of vowels and consonants, and all characters are lowercase English letters.
+
+You are given a lowercase string s. Find the length of the longest contiguous "nice" substring.
+
+<b>Input</b>
+
+A single string s consisting of only lowercase English letters.
+1 &lt;= len(s) &lt;= 1000
+
+<b>Output</b>
+
+Print the length of the longest "nice" substring in s.
+
+<b>Example</b>
+
+<b>Input</b>
+
+abcdeiou
+
+<b>Output</b>
+
+6
+
+<b>~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~</b>
+</pre>
+
+<h2>Can you ask me a (that may be simple at rating of about 4/10) coding problem that tests problem solving skills of the candidate?</h2>
+
+<div class="markdown prose dark:prose-invert w-full break-words light"><p data-start="0" data-end="91" class="">Absolutely! Here's a <strong data-start="21" data-end="64">simple but insightful (4/10 difficulty)</strong> coding problem that tests:</p>
+<ul data-start="93" data-end="176">
+<li data-start="93" data-end="120" class="" style="">
+<p data-start="95" data-end="120" class="">Basic string manipulation</p>
+</li>
+<li data-start="121" data-end="133" class="" style="">
+<p data-start="123" data-end="133" class="">Loop logic</p>
+</li>
+<li data-start="134" data-end="176" class="" style="">
+<p data-start="136" data-end="176" class="">Attention to detail in pattern detection</p>
+</li>
+</ul>
+<hr data-start="178" data-end="181" class="" style="">
+<h3 data-start="183" data-end="225" class="">🔹 <strong data-start="190" data-end="225">Problem: Longest Nice Substring</strong></h3>
+<p data-start="227" data-end="377" class="">A string is considered <strong data-start="250" data-end="260">"nice"</strong> if it contains equal numbers of <strong data-start="293" data-end="303">vowels</strong> and <strong data-start="308" data-end="322">consonants</strong>, and all characters are <strong data-start="347" data-end="376">lowercase English letters</strong>.</p>
+<p data-start="379" data-end="480" class="">You are given a lowercase string <code data-start="412" data-end="415">s</code>. Find the <strong data-start="426" data-end="479">length of the longest contiguous "nice" substring</strong>.</p>
+<hr data-start="482" data-end="485" class="" style="">
+<h3 data-start="487" data-end="503" class="">🧪 <strong data-start="494" data-end="503">Input</strong></h3>
+<p data-start="504" data-end="593" class="">A single string <code data-start="520" data-end="523">s</code> consisting of only lowercase English letters.<br data-start="569" data-end="572">
+<code data-start="572" data-end="593">1 &lt;= len(s) &lt;= 1000</code></p>
+<hr data-start="595" data-end="598" class="" style="">
+<h3 data-start="600" data-end="617" class="">📤 <strong data-start="607" data-end="617">Output</strong></h3>
+<p data-start="618" data-end="674" class="">Print the length of the longest "nice" substring in <code data-start="670" data-end="673">s</code>.</p>
+<hr data-start="676" data-end="679" class="" style="">
+<h3 data-start="681" data-end="699" class="">🧾 <strong data-start="688" data-end="699">Example</strong></h3>
+<h4 data-start="701" data-end="712" class="">Input:</h4>
+<pre class="overflow-visible!" data-start="713" data-end="729"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">nginx</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button><span class="" data-state="closed"><button class="flex items-center gap-1 px-4 py-1 select-none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attribute">abcdeiou</span></span><span>
+</span></span></code></div></div></pre>
+<h4 data-start="731" data-end="743" class="">Output:</h4>
+<pre class="overflow-visible!" data-start="744" data-end="753"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]"></div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button><span class="" data-state="closed"><button class="flex items-center gap-1 px-4 py-1 select-none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>6
+</span></span></code></div></div></pre>
+<h4 data-start="755" data-end="772" class="">Explanation:</h4>
+<p data-start="773" data-end="897" class="">The substring <code data-start="787" data-end="795">cdeiou</code> has 3 consonants (<code data-start="814" data-end="817">c</code>, <code data-start="819" data-end="822">d</code>, <code data-start="824" data-end="827">e</code>) and 3 vowels (<code data-start="843" data-end="846">i</code>, <code data-start="848" data-end="851">o</code>, <code data-start="853" data-end="856">u</code>) → hence it's "nice".<br data-start="878" data-end="881">
+Its length is 6.</p>
+<hr data-start="899" data-end="902" class="" style="">
+<h3 data-start="904" data-end="931" class="">🎯 <strong data-start="911" data-end="930">What this tests</strong>:</h3>
+<ul data-start="932" data-end="1027">
+<li data-start="932" data-end="961" class="" style="">
+<p data-start="934" data-end="961" class="">Understanding of substrings</p>
+</li>
+<li data-start="962" data-end="982" class="" style="">
+<p data-start="964" data-end="982" class="">Frequency counting</p>
+</li>
+<li data-start="983" data-end="1027" class="" style="">
+<p data-start="985" data-end="1027" class="">Sliding window or brute-force optimization</p>
+</li>
+</ul>
+<hr data-start="1029" data-end="1032" class="" style="">
+<p data-start="1034" data-end="1209" class="">Would you like a follow-up version that increases difficulty slightly (e.g., rating 6/10) by adding mixed-case handling or requiring lexicographically smallest nice substring?</p></div>
+
+<h2>can you share it's solution?</h2>
+
+<div class="markdown prose dark:prose-invert w-full break-words light"><p data-start="0" data-end="120" class="">Certainly! Here's a straightforward solution using brute-force with optimizations, suitable for a 4/10 difficulty level.</p>
+<hr data-start="122" data-end="125" class="" style="">
+<h3 data-start="127" data-end="157" class="">✅ <strong data-start="133" data-end="157">Solution Explanation</strong></h3>
+<ol data-start="159" data-end="380">
+<li data-start="159" data-end="223" class="" style="">
+<p data-start="162" data-end="223" class="">Iterate over all possible substrings of the given string <code data-start="219" data-end="222">s</code>.</p>
+</li>
+<li data-start="224" data-end="380" class="" style="">
+<p data-start="227" data-end="246" class="">For each substring:</p>
+<ul data-start="250" data-end="380">
+<li data-start="250" data-end="294" class="" style="">
+<p data-start="252" data-end="294" class="">Count the number of vowels and consonants.</p>
+</li>
+<li data-start="298" data-end="343" class="" style="">
+<p data-start="300" data-end="343" class="">If both are equal, it's a "nice" substring.</p>
+</li>
+<li data-start="347" data-end="380" class="" style="">
+<p data-start="349" data-end="380" class="">Track the maximum length found.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p data-start="382" data-end="501" class="">Since the max length of <code data-start="406" data-end="409">s</code> is 1000, a brute-force approach with substring checks is still acceptable for small inputs.</p>
+<hr data-start="503" data-end="506" class="" style="">
+<h3 data-start="508" data-end="530" class="">🧠 <strong data-start="515" data-end="530">Python Code</strong></h3>
+<pre class="overflow-visible!" data-start="532" data-end="1035"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button><span class="" data-state="closed"><button class="flex items-center gap-1 px-4 py-1 select-none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">def</span></span><span> </span><span><span class="hljs-title function_">is_vowel</span></span><span>(</span><span><span class="hljs-params">ch</span></span><span>):
+    </span><span><span class="hljs-keyword">return</span></span><span> ch </span><span><span class="hljs-keyword">in</span></span><span> </span><span><span class="hljs-string">'aeiou'</span></span><span>
+
+</span><span><span class="hljs-keyword">def</span></span><span> </span><span><span class="hljs-title function_">longest_nice_substring</span></span><span>(</span><span><span class="hljs-params">s</span></span><span>):
+    n = </span><span><span class="hljs-built_in">len</span></span><span>(s)
+    max_len = </span><span><span class="hljs-number">0</span></span><span>
+
+    </span><span><span class="hljs-keyword">for</span></span><span> i </span><span><span class="hljs-keyword">in</span></span><span> </span><span><span class="hljs-built_in">range</span></span><span>(n):
+        vowels = </span><span><span class="hljs-number">0</span></span><span>
+        consonants = </span><span><span class="hljs-number">0</span></span><span>
+
+        </span><span><span class="hljs-keyword">for</span></span><span> j </span><span><span class="hljs-keyword">in</span></span><span> </span><span><span class="hljs-built_in">range</span></span><span>(i, n):
+            </span><span><span class="hljs-keyword">if</span></span><span> is_vowel(s[j]):
+                vowels += </span><span><span class="hljs-number">1</span></span><span>
+            </span><span><span class="hljs-keyword">else</span></span><span>:
+                consonants += </span><span><span class="hljs-number">1</span></span><span>
+
+            </span><span><span class="hljs-keyword">if</span></span><span> vowels == consonants:
+                max_len = </span><span><span class="hljs-built_in">max</span></span><span>(max_len, j - i + </span><span><span class="hljs-number">1</span></span><span>)
+
+    </span><span><span class="hljs-keyword">return</span></span><span> max_len
+
+</span><span><span class="hljs-comment"># Example usage</span></span><span>
+s = </span><span><span class="hljs-built_in">input</span></span><span>().strip()
+</span><span><span class="hljs-built_in">print</span></span><span>(longest_nice_substring(s))
+</span></span></code></div></div></pre>
+<hr data-start="1037" data-end="1040" class="" style="">
+<h3 data-start="1042" data-end="1068" class="">📈 <strong data-start="1049" data-end="1068">Time Complexity</strong></h3>
+<ul data-start="1070" data-end="1200">
+<li data-start="1070" data-end="1127" class="" style="">
+<p data-start="1072" data-end="1127" class="">Worst-case: <strong data-start="1084" data-end="1093">O(n²)</strong> — due to checking all substrings.</p>
+</li>
+<li data-start="1128" data-end="1200" class="" style="">
+<p data-start="1130" data-end="1200" class="">But inner loop operations are O(1), making it acceptable for n ≤ 1000.</p>
+</li>
+</ul>
+<hr data-start="1202" data-end="1205" class="">
+<h3 data-start="1207" data-end="1230" class="">🧪 <strong data-start="1214" data-end="1230">Test Example</strong></h3>
+<p data-start="1232" data-end="1238" class="">Input:</p>
+<pre class="overflow-visible!" data-start="1239" data-end="1255"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">nginx</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button><span class="" data-state="closed"><button class="flex items-center gap-1 px-4 py-1 select-none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attribute">abcdeiou</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="1257" data-end="1264" class="">Output:</p>
+<pre class="overflow-visible!" data-start="1265" data-end="1274"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]"></div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button><span class="" data-state="closed"><button class="flex items-center gap-1 px-4 py-1 select-none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>6
+</span></span></code></div></div></pre>
+<p data-start="1276" data-end="1300" class="">Nice substring: <code data-start="1292" data-end="1300">cdeiou</code></p>
+<hr data-start="1302" data-end="1305" class="">
+<p data-start="1307" data-end="1385" class="">Would you like a more optimized version using prefix sums or a sliding window?</p></div>
+
+<h2>Yes, please share the optimized solution</h2>
+
+<div class="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]"><div class="markdown prose dark:prose-invert w-full break-words light"><p data-start="0" data-end="143" class="">Great! Here's an <strong data-start="17" data-end="39">optimized solution</strong> using <strong data-start="46" data-end="75">prefix sums and hash maps</strong> to reduce the time complexity from <code data-start="111" data-end="118">O(n²)</code> to approximately <code data-start="136" data-end="142">O(n)</code>.</p>
+<hr data-start="145" data-end="148" class="" style="">
+<h3 data-start="150" data-end="201" class="">✅ <strong data-start="156" data-end="201">Optimized Approach: Prefix Sum + Hash Map</strong></h3>
+<p data-start="203" data-end="212" class="">We treat:</p>
+<ul data-start="213" data-end="256">
+<li data-start="213" data-end="232" class="" style="">
+<p data-start="215" data-end="232" class=""><strong data-start="215" data-end="224">vowel</strong> as <code data-start="228" data-end="232">+1</code></p>
+</li>
+<li data-start="233" data-end="256" class="" style="">
+<p data-start="235" data-end="256" class=""><strong data-start="235" data-end="248">consonant</strong> as <code data-start="252" data-end="256">-1</code></p>
+</li>
+</ul>
+<p data-start="258" data-end="398" class="">We compute a running sum. If the same value has occurred before, then the substring in between has an equal number of vowels and consonants.</p>
+<hr data-start="400" data-end="403" class="" style="">
+<h3 data-start="405" data-end="436" class="">🧠 Python Code (Optimized):</h3>
+<pre class="overflow-visible!" data-start="438" data-end="987"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button><span class="" data-state="closed"><button class="flex items-center gap-1 px-4 py-1 select-none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">def</span></span><span> </span><span><span class="hljs-title function_">is_vowel</span></span><span>(</span><span><span class="hljs-params">ch</span></span><span>):
+    </span><span><span class="hljs-keyword">return</span></span><span> ch </span><span><span class="hljs-keyword">in</span></span><span> </span><span><span class="hljs-string">'aeiou'</span></span><span>
+
+</span><span><span class="hljs-keyword">def</span></span><span> </span><span><span class="hljs-title function_">longest_nice_substring</span></span><span>(</span><span><span class="hljs-params">s</span></span><span>):
+    n = </span><span><span class="hljs-built_in">len</span></span><span>(s)
+    prefix_sum = </span><span><span class="hljs-number">0</span></span><span>
+    index_map = {</span><span><span class="hljs-number">0</span></span><span>: -</span><span><span class="hljs-number">1</span></span><span>}  </span><span><span class="hljs-comment"># sum -&gt; earliest index</span></span><span>
+    max_len = </span><span><span class="hljs-number">0</span></span><span>
+
+    </span><span><span class="hljs-keyword">for</span></span><span> i </span><span><span class="hljs-keyword">in</span></span><span> </span><span><span class="hljs-built_in">range</span></span><span>(n):
+        </span><span><span class="hljs-keyword">if</span></span><span> is_vowel(s[i]):
+            prefix_sum += </span><span><span class="hljs-number">1</span></span><span>
+        </span><span><span class="hljs-keyword">else</span></span><span>:
+            prefix_sum -= </span><span><span class="hljs-number">1</span></span><span>
+
+        </span><span><span class="hljs-keyword">if</span></span><span> prefix_sum </span><span><span class="hljs-keyword">in</span></span><span> index_map:
+            max_len = </span><span><span class="hljs-built_in">max</span></span><span>(max_len, i - index_map[prefix_sum])
+        </span><span><span class="hljs-keyword">else</span></span><span>:
+            index_map[prefix_sum] = i
+
+    </span><span><span class="hljs-keyword">return</span></span><span> max_len
+
+</span><span><span class="hljs-comment"># Example usage</span></span><span>
+s = </span><span><span class="hljs-built_in">input</span></span><span>().strip()
+</span><span><span class="hljs-built_in">print</span></span><span>(longest_nice_substring(s))
+</span></span></code></div></div></pre>
+<hr data-start="989" data-end="992" class="" style="">
+<h3 data-start="994" data-end="1027" class="">📈 Time and Space Complexity:</h3>
+<ul data-start="1029" data-end="1085">
+<li data-start="1029" data-end="1047" class="" style="">
+<p data-start="1031" data-end="1047" class=""><strong data-start="1031" data-end="1040">Time:</strong> <code data-start="1041" data-end="1047">O(n)</code></p>
+</li>
+<li data-start="1048" data-end="1085" class="" style="">
+<p data-start="1050" data-end="1085" class=""><strong data-start="1050" data-end="1060">Space:</strong> <code data-start="1061" data-end="1067">O(n)</code> (for the hashmap)</p>
+</li>
+</ul>
+<hr data-start="1087" data-end="1090" class="" style="">
+<h3 data-start="1092" data-end="1106" class="">🧪 Example</h3>
+<p data-start="1108" data-end="1114" class="">Input:</p>
+<pre class="overflow-visible!" data-start="1115" data-end="1132"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">nginx</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button><span class="" data-state="closed"><button class="flex items-center gap-1 px-4 py-1 select-none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attribute">aeiobcdfg</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="1134" data-end="1141" class="">Output:</p>
+<pre class="overflow-visible!" data-start="1142" data-end="1151"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]"></div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button><span class="" data-state="closed"><button class="flex items-center gap-1 px-4 py-1 select-none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>8
+</span></span></code></div></div></pre>
+<p data-start="1153" data-end="1212" class="">Explanation: <code data-start="1166" data-end="1176">eiobcdfg</code> contains 4 vowels and 4 consonants.</p>
+<hr data-start="1214" data-end="1217" class="">
+<p data-start="1219" data-end="1362" class="">Let me know if you'd like to extend this to handle <strong data-start="1270" data-end="1283">uppercase</strong>, or allow more fine-tuned constraints like ignoring non-alphabetic characters.</p></div></div>
+
+
+<h2>Can you pls breakdown and explain this solution?</h2>
+
+<div class="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]"><div class="markdown prose dark:prose-invert w-full break-words light"><p data-start="0" data-end="119" class="">Absolutely! Let's break down the <strong data-start="33" data-end="55">optimized solution</strong> step-by-step so you understand the logic and mechanics clearly.</p>
+<hr data-start="121" data-end="124" class="" style="">
+<h3 data-start="126" data-end="150" class="">🔁 <strong data-start="133" data-end="150">Problem Recap</strong></h3>
+<p data-start="152" data-end="314" class="">You are given a string of lowercase letters, and you must find the <strong data-start="219" data-end="254">length of the longest substring</strong> that contains an <strong data-start="272" data-end="313">equal number of vowels and consonants</strong>.</p>
+<hr data-start="316" data-end="319" class="" style="">
+<h3 data-start="321" data-end="343" class="">✅ <strong data-start="327" data-end="343">Key Insight:</strong></h3>
+<p data-start="345" data-end="396" class="">We convert this into a <strong data-start="368" data-end="387">running balance</strong> problem:</p>
+<ul data-start="398" data-end="475">
+<li data-start="398" data-end="434" class="" style="">
+<p data-start="400" data-end="434" class="">Every <strong data-start="406" data-end="415">vowel</strong> is treated as <code data-start="430" data-end="434">+1</code></p>
+</li>
+<li data-start="435" data-end="475" class="" style="">
+<p data-start="437" data-end="475" class="">Every <strong data-start="443" data-end="456">consonant</strong> is treated as <code data-start="471" data-end="475">-1</code></p>
+</li>
+</ul>
+<p data-start="477" data-end="624" class="">Now the goal becomes:<br data-start="498" data-end="501">
+👉 Find the <strong data-start="513" data-end="534">longest substring</strong> where the total <strong data-start="551" data-end="570">balance is zero</strong>, i.e., the number of vowels and consonants are equal.</p>
+<hr data-start="626" data-end="629" class="" style="">
+<h3 data-start="631" data-end="662" class="">🧱 Step-by-Step Explanation</h3>
+<p data-start="664" data-end="693" class="">Let's walk through this code:</p>
+<h4 data-start="695" data-end="743" class="">1. <strong data-start="703" data-end="722">Helper Function</strong>: To check for vowels</h4>
+<pre class="overflow-visible!" data-start="745" data-end="801"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">def</span></span><span> </span><span><span class="hljs-title function_">is_vowel</span></span><span>(</span><span><span class="hljs-params">ch</span></span><span>):
+    </span><span><span class="hljs-keyword">return</span></span><span> ch </span><span><span class="hljs-keyword">in</span></span><span> </span><span><span class="hljs-string">'aeiou'</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="803" data-end="848" class="">This simply checks if a character is a vowel.</p>
+<hr data-start="850" data-end="853" class="" style="">
+<h4 data-start="855" data-end="887" class="">2. <strong data-start="863" data-end="886">Core Function Setup</strong>:</h4>
+<pre class="overflow-visible!" data-start="889" data-end="960"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span>n = </span><span><span class="hljs-built_in">len</span></span><span>(s)
+prefix_sum = </span><span><span class="hljs-number">0</span></span><span>
+index_map = {</span><span><span class="hljs-number">0</span></span><span>: -</span><span><span class="hljs-number">1</span></span><span>}
+max_len = </span><span><span class="hljs-number">0</span></span><span>
+</span></span></code></div></div></pre>
+<ul data-start="962" data-end="1307">
+<li data-start="962" data-end="1053" class="" style="">
+<p data-start="964" data-end="1009" class=""><code data-start="964" data-end="976">prefix_sum</code>: This keeps a <strong data-start="991" data-end="1008">running total</strong>:</p>
+<ul data-start="1012" data-end="1053">
+<li data-start="1012" data-end="1029" class="" style="">
+<p data-start="1014" data-end="1029" class=""><code data-start="1014" data-end="1018">+1</code> for vowels</p>
+</li>
+<li data-start="1032" data-end="1053" class="" style="">
+<p data-start="1034" data-end="1053" class=""><code data-start="1034" data-end="1038">-1</code> for consonants</p>
+</li>
+</ul>
+</li>
+<li data-start="1054" data-end="1237" class="" style="">
+<p data-start="1056" data-end="1134" class=""><code data-start="1056" data-end="1067">index_map</code>: Stores the <strong data-start="1080" data-end="1095">first index</strong> at which each prefix sum value occurs.</p>
+<ul data-start="1137" data-end="1237">
+<li data-start="1137" data-end="1237" class="" style="">
+<p data-start="1139" data-end="1237" class="">Initially, we set <code data-start="1157" data-end="1164">0: -1</code> to handle the case where the whole prefix from index <code data-start="1218" data-end="1221">0</code> has a sum of 0.</p>
+</li>
+</ul>
+</li>
+<li data-start="1238" data-end="1307" class="" style="">
+<p data-start="1240" data-end="1307" class=""><code data-start="1240" data-end="1249">max_len</code>: Stores the length of the longest "nice" substring found.</p>
+</li>
+</ul>
+<hr data-start="1309" data-end="1312" class="" style="">
+<h4 data-start="1314" data-end="1353" class="">3. <strong data-start="1322" data-end="1352">Iterate Through the String</strong>:</h4>
+<pre class="overflow-visible!" data-start="1355" data-end="1468"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">for</span></span><span> i </span><span><span class="hljs-keyword">in</span></span><span> </span><span><span class="hljs-built_in">range</span></span><span>(n):
+    </span><span><span class="hljs-keyword">if</span></span><span> is_vowel(s[i]):
+        prefix_sum += </span><span><span class="hljs-number">1</span></span><span>
+    </span><span><span class="hljs-keyword">else</span></span><span>:
+        prefix_sum -= </span><span><span class="hljs-number">1</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="1470" data-end="1581" class="">As we go character by character, we <strong data-start="1506" data-end="1531">update the prefix sum</strong> depending on whether we hit a vowel or consonant.</p>
+<hr data-start="1583" data-end="1586" class="" style="">
+<h4 data-start="1588" data-end="1629" class="">4. <strong data-start="1596" data-end="1628">Check If Balance Seen Before</strong>:</h4>
+<pre class="overflow-visible!" data-start="1631" data-end="1778"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span>    </span><span><span class="hljs-keyword">if</span></span><span> prefix_sum </span><span><span class="hljs-keyword">in</span></span><span> index_map:
+        max_len = </span><span><span class="hljs-built_in">max</span></span><span>(max_len, i - index_map[prefix_sum])
+    </span><span><span class="hljs-keyword">else</span></span><span>:
+        index_map[prefix_sum] = i
+</span></span></code></div></div></pre>
+<ul data-start="1780" data-end="2138">
+<li data-start="1780" data-end="2037" class="" style="">
+<p data-start="1782" data-end="1835" class="">If we’ve <strong data-start="1791" data-end="1822">seen this prefix sum before</strong>, that means:</p>
+<ul data-start="1838" data-end="2037">
+<li data-start="1838" data-end="1959" class="" style="">
+<p data-start="1840" data-end="1959" class="">The substring <strong data-start="1854" data-end="1923">between that earlier index and the current one has a net sum of 0</strong>, i.e., equal vowels and consonants.</p>
+</li>
+<li data-start="1962" data-end="2037" class="" style="">
+<p data-start="1964" data-end="2037" class="">So we calculate <code data-start="1980" data-end="1999">i - earlier_index</code> and update the <code data-start="2015" data-end="2024">max_len</code> accordingly.</p>
+</li>
+</ul>
+</li>
+<li data-start="2038" data-end="2138" class="" style="">
+<p data-start="2040" data-end="2138" class="">If we haven’t seen this prefix sum before, we <strong data-start="2086" data-end="2113">store the current index</strong> as the first occurrence.</p>
+</li>
+</ul>
+<hr data-start="2140" data-end="2143" class="" style="">
+<h3 data-start="2145" data-end="2171" class="">👀 Example Walkthrough</h3>
+<p data-start="2173" data-end="2179" class="">Input:</p>
+<pre class="overflow-visible!" data-start="2180" data-end="2203"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">ini</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-sm"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attr">s</span></span><span> = </span><span><span class="hljs-string">"aeiobcdfg"</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="2205" data-end="2220" class="">Let's evaluate:</p>
+<div class="_tableContainer_16hzy_1"><div tabindex="-1" class="_tableWrapper_16hzy_14 group flex w-fit flex-col-reverse"><table data-start="2222" data-end="3121" class="w-fit min-w-(--thread-content-width)"><thead data-start="2222" data-end="2302"><tr data-start="2222" data-end="2302"><th data-start="2222" data-end="2226" data-col-size="sm">i</th><th data-start="2226" data-end="2233" data-col-size="sm">s[i]</th><th data-start="2233" data-end="2245" data-col-size="sm">Is Vowel?</th><th data-start="2245" data-end="2258" data-col-size="sm">prefix_sum</th><th data-start="2258" data-end="2273" data-col-size="sm">Seen Before?</th><th data-start="2273" data-end="2291" data-col-size="sm">Length if match</th><th data-start="2291" data-end="2302" data-col-size="sm">max_len</th></tr></thead><tbody data-start="2384" data-end="3121"><tr data-start="2384" data-end="2465"><td data-start="2384" data-end="2388" data-col-size="sm">0</td><td data-start="2388" data-end="2395" data-col-size="sm">a</td><td data-start="2395" data-end="2407" data-col-size="sm">Yes</td><td data-start="2407" data-end="2420" data-col-size="sm">+1</td><td data-start="2420" data-end="2435" data-col-size="sm">No</td><td data-start="2435" data-end="2454" data-col-size="sm">-</td><td data-start="2454" data-end="2465" data-col-size="sm">0</td></tr><tr data-start="2466" data-end="2547"><td data-start="2466" data-end="2470" data-col-size="sm">1</td><td data-start="2470" data-end="2477" data-col-size="sm">e</td><td data-start="2477" data-end="2489" data-col-size="sm">Yes</td><td data-start="2489" data-end="2502" data-col-size="sm">+2</td><td data-start="2502" data-end="2517" data-col-size="sm">No</td><td data-start="2517" data-end="2536" data-col-size="sm">-</td><td data-col-size="sm" data-start="2536" data-end="2547">0</td></tr><tr data-start="2548" data-end="2629"><td data-start="2548" data-end="2552" data-col-size="sm">2</td><td data-start="2552" data-end="2559" data-col-size="sm">i</td><td data-start="2559" data-end="2571" data-col-size="sm">Yes</td><td data-start="2571" data-end="2584" data-col-size="sm">+3</td><td data-start="2584" data-end="2599" data-col-size="sm">No</td><td data-start="2599" data-end="2618" data-col-size="sm">-</td><td data-col-size="sm" data-start="2618" data-end="2629">0</td></tr><tr data-start="2630" data-end="2711"><td data-start="2630" data-end="2634" data-col-size="sm">3</td><td data-start="2634" data-end="2641" data-col-size="sm">o</td><td data-col-size="sm" data-start="2641" data-end="2653">Yes</td><td data-col-size="sm" data-start="2653" data-end="2666">+4</td><td data-col-size="sm" data-start="2666" data-end="2681">No</td><td data-col-size="sm" data-start="2681" data-end="2700">-</td><td data-col-size="sm" data-start="2700" data-end="2711">0</td></tr><tr data-start="2712" data-end="2793"><td data-start="2712" data-end="2716" data-col-size="sm">4</td><td data-start="2716" data-end="2723" data-col-size="sm">b</td><td data-start="2723" data-end="2735" data-col-size="sm">No</td><td data-start="2735" data-end="2748" data-col-size="sm">+3</td><td data-start="2748" data-end="2763" data-col-size="sm">Yes (@i=2)</td><td data-start="2763" data-end="2782" data-col-size="sm">4 - 2 = 2</td><td data-start="2782" data-end="2793" data-col-size="sm">2</td></tr><tr data-start="2794" data-end="2875"><td data-start="2794" data-end="2798" data-col-size="sm">5</td><td data-start="2798" data-end="2805" data-col-size="sm">c</td><td data-start="2805" data-end="2817" data-col-size="sm">No</td><td data-start="2817" data-end="2830" data-col-size="sm">+2</td><td data-start="2830" data-end="2845" data-col-size="sm">Yes (@i=1)</td><td data-start="2845" data-end="2864" data-col-size="sm">5 - 1 = 4</td><td data-start="2864" data-end="2875" data-col-size="sm">4</td></tr><tr data-start="2876" data-end="2957"><td data-start="2876" data-end="2880" data-col-size="sm">6</td><td data-start="2880" data-end="2887" data-col-size="sm">d</td><td data-start="2887" data-end="2899" data-col-size="sm">No</td><td data-start="2899" data-end="2912" data-col-size="sm">+1</td><td data-start="2912" data-end="2927" data-col-size="sm">Yes (@i=0)</td><td data-col-size="sm" data-start="2927" data-end="2946">6 - 0 = 6</td><td data-col-size="sm" data-start="2946" data-end="2957">6</td></tr><tr data-start="2958" data-end="3039"><td data-start="2958" data-end="2962" data-col-size="sm">7</td><td data-start="2962" data-end="2969" data-col-size="sm">f</td><td data-col-size="sm" data-start="2969" data-end="2981">No</td><td data-col-size="sm" data-start="2981" data-end="2994">0</td><td data-col-size="sm" data-start="2994" data-end="3009">Yes (@i=-1)</td><td data-col-size="sm" data-start="3009" data-end="3028">7 - (-1) = 8</td><td data-col-size="sm" data-start="3028" data-end="3039">8</td></tr><tr data-start="3040" data-end="3121"><td data-start="3040" data-end="3044" data-col-size="sm">8</td><td data-start="3044" data-end="3051" data-col-size="sm">g</td><td data-start="3051" data-end="3063" data-col-size="sm">No</td><td data-start="3063" data-end="3076" data-col-size="sm">-1</td><td data-start="3076" data-end="3091" data-col-size="sm">No</td><td data-start="3091" data-end="3110" data-col-size="sm">-</td><td data-start="3110" data-end="3121" data-col-size="sm">8</td></tr></tbody></table><div class="sticky end-(--thread-content-margin) h-0 self-end select-none"><div class="absolute end-0 flex items-end" style="height: 49.2188px;"><span class="" data-state="closed"><button class="bg-token-bg-primary hover:bg-token-bg-tertiary text-token-text-secondary my-1 rounded-sm p-1 transition-opacity group-[:not(:hover):not(:focus-within)]:pointer-events-none group-[:not(:hover):not(:focus-within)]:opacity-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-md-heavy"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg></button></span></div></div></div></div>
+<p data-start="3123" data-end="3162" class="">✅ Final answer: <code data-start="3139" data-end="3142">8</code> (from index 0 to 7)</p>
+<hr data-start="3164" data-end="3167" class="" style="">
+<h3 data-start="3169" data-end="3187" class="">📊 Final Notes</h3>
+<ul data-start="3189" data-end="3332">
+<li data-start="3189" data-end="3252" class="" style="">
+<p data-start="3191" data-end="3252" class=""><strong data-start="3191" data-end="3210">Time complexity</strong>: <code data-start="3212" data-end="3218">O(n)</code> — you go through the string once.</p>
+</li>
+<li data-start="3253" data-end="3332" class="" style="">
+<p data-start="3255" data-end="3332" class=""><strong data-start="3255" data-end="3275">Space complexity</strong>: <code data-start="3277" data-end="3283">O(n)</code> — for storing prefix sum indices in the hashmap.</p>
+</li>
+</ul>
+<hr data-start="3334" data-end="3337" class="">
+<p data-start="3339" data-end="3497" class="">Let me know if you'd like a <strong data-start="3367" data-end="3385">visual diagram</strong> or if you want to handle <strong data-start="3411" data-end="3433">upper-case letters</strong>, <strong data-start="3435" data-end="3454">other alphabets</strong>, or build a <strong data-start="3467" data-end="3496">full working test harness</strong>.</p></div></div>
