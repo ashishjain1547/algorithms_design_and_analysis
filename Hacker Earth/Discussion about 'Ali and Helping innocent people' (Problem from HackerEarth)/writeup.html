@@ -1,0 +1,462 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    
+        .customLink:hover {
+            text-decoration: none;
+        }
+    
+        div.code-block-decoration.footer {
+            display: none;
+        }
+    
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+    
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+    
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+    
+        .custom_link_h2 a:active {
+            color: black;
+        }
+    
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+    
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+    
+        [aria-hidden='true'] {
+            display: none;
+        }
+    
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+    
+        i.ir { color: red; }
+        i.ig { color: green; }
+        i.ib { color: blue; }
+        i.im { color: magenta; }
+        i.ip { color: purple; }
+    
+        .customTable td {
+            padding: 2px;
+        }
+    
+        i.green {
+            color: green;
+        }
+    
+        i.red {
+            color: red;
+        }
+    
+        i.blue {
+            color: blue;
+        }
+    
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+    
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        button.bg-token-bg-primary {
+            display: none;
+        }
+    
+        .flex.items-center {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All Articles About Technology: <a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html" target="_blank">Index of Lessons in Technology</a>
+
+<br>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgC_CEb5W0VvrKct60Cp8DMKktJ7hiOdxR6YC8xz8uQss4SzjKlzlcVv7pvph7S-cdh7cyACb4v8ylzGQlc7Du23ObM-4O3KfV_XbLWICbx2QP2X6mLENYMpOa-7HiDnRyrE_bCptrVE0gcZK3GWMv2LF_R33j1EfYDbyOicjmFCjCMGBwzp8-O0EsFdjwe/s637/algorithms.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="346" data-original-width="637" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgC_CEb5W0VvrKct60Cp8DMKktJ7hiOdxR6YC8xz8uQss4SzjKlzlcVv7pvph7S-cdh7cyACb4v8ylzGQlc7Du23ObM-4O3KfV_XbLWICbx2QP2X6mLENYMpOa-7HiDnRyrE_bCptrVE0gcZK3GWMv2LF_R33j1EfYDbyOicjmFCjCMGBwzp8-O0EsFdjwe/s600/algorithms.png"/></a></div>
+<br>
+<a href="https://www.hackerearth.com/practice/basic-programming/input-output/basics-of-input-output/practice-problems/algorithm/cartag-948c2b02/" target="_blank">Try it out</a>
+
+<pre><b>Problem</b>
+
+Arpasland has surrounded by attackers. A truck enters the city. The driver claims the load is food and medicine from Iranians. Ali is one of the soldiers in Arpasland. He doubts about the truck, maybe it's from the siege. He knows that a tag is valid if the sum of every two consecutive digits of it is even and its letter is not a vowel. Determine if the tag of the truck is valid or not.
+
+We consider the letters "A","E","I","O","U","Y" to be vowels for this problem.
+
+<b>Input Format</b>
+
+The first line contains a string of length 9. The format is "DDXDDD-DD", where D stands for a digit (non zero) and X is an uppercase english letter.
+
+<b>Output Format</b>
+
+Print "valid" (without quotes) if the tag is valid, print "invalid" otherwise (without quotes)
+
+Sample Input
+12X345-67
+Sample Output
+invalid
+Time Limit: 1
+Memory Limit: 256
+Source Limit:
+Explanation
+The tag is invalid because the sum of first and second digit of it is odd (also the sum of 4'th and 5'th, 5'th and 6'th and 8'th and 9'th are odd).
+
+<h2>Psuedo-code</h2>
+
+There are two ways I can think of for solving this problem.
+
+<h3>Way 1</h3>
+
+1. Assuming that the format of tag does not change over time. To determine if a tag is valid or not, I would take following steps:
+
+2. I would check if tag[2] is a vowel or not. If it's a vowel: return invalid.
+
+3. I would sum up tag[0]+tag[1] and check if it is even. If it's odd: return invalid.
+
+4. I would sum up tag[4]+tag[5] and check if it is even. If it's odd: return invalid.
+
+5. I would sum up tag[5]+tag[6] and check if it is even. If it's odd: return invalid.
+
+6. I would sum up tag[8]+tag[9] and check if it is even. If it's odd: return invalid.
+
+7. Return valid.
+
+<h3>Way 2</h3>
+
+1. Assuming that the format of tag does change over time with only allowed characters as A-Z, 1-9 and "-". To determine if a tag is valid or not, I would take the following steps:
+
+2. I would loop over all the characters of the tag.
+
+3. Initialize a variable last_char as "NA".
+
+3. For first character: if it's a number: store it in last_char. Else if is a alphabet: check if is a vowel, if it's vowel then return invalid.
+
+4. Second character onwards: if it's a number and last_char is also a number: sum up the number and last_char. If the sum is odd, return invalid.
+Else if it's alphabet: check if is a vowel, if it's vowel then return invalid.
+
+5. Return valid.
+
+Compare and contrast two approaches and critique both.
+</pre>
+
+<h2>Critique by ChatGPT</h2>
+
+<div class="markdown prose dark:prose-invert w-full break-words light"><p data-start="0" data-end="253">Great job outlining <strong data-start="20" data-end="45">two viable approaches</strong> to this problem! Both are valid and solve the problem in different ways. Let’s break them down one by one, compare them, and identify pros and cons to help you decide which is better in different situations.</p>
+<hr data-start="255" data-end="258">
+<h2 data-start="260" data-end="303">✅ <strong data-start="265" data-end="303">Restating the Problem Requirements</strong></h2>
+<p data-start="305" data-end="349">Given a string like <code data-start="325" data-end="338">"12X345-67"</code>, you must:</p>
+<ul data-start="350" data-end="567">
+<li data-start="350" data-end="411">
+<p data-start="352" data-end="411">Check if the <strong data-start="365" data-end="375">letter</strong> in position <code data-start="388" data-end="391">2</code> is <strong data-start="395" data-end="402">not</strong> a vowel.</p>
+</li>
+<li data-start="412" data-end="567">
+<p data-start="414" data-end="479">Check if the <strong data-start="427" data-end="470">sum of specific consecutive digit pairs</strong> is even:</p>
+<ul data-start="482" data-end="567">
+<li data-start="482" data-end="501">
+<p data-start="484" data-end="501"><code data-start="484" data-end="501">tag[0] + tag[1]</code></p>
+</li>
+<li data-start="504" data-end="523">
+<p data-start="506" data-end="523"><code data-start="506" data-end="523">tag[3] + tag[4]</code></p>
+</li>
+<li data-start="526" data-end="545">
+<p data-start="528" data-end="545"><code data-start="528" data-end="545">tag[4] + tag[5]</code></p>
+</li>
+<li data-start="548" data-end="567">
+<p data-start="550" data-end="567"><code data-start="550" data-end="567">tag[7] + tag[8]</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p data-start="569" data-end="609">Now let's evaluate both your approaches.</p>
+<hr data-start="611" data-end="614">
+<h2 data-start="616" data-end="669">✅ <strong data-start="621" data-end="669">Way 1: Index-based validation (Fixed Format)</strong></h2>
+<h3 data-start="671" data-end="690">🔍 Steps Recap:</h3>
+<ul data-start="691" data-end="815">
+<li data-start="691" data-end="723">
+<p data-start="693" data-end="723">Check <code data-start="699" data-end="707">tag[2]</code> is not a vowel.</p>
+</li>
+<li data-start="724" data-end="776">
+<p data-start="726" data-end="776">Validate digit pairs: <code data-start="748" data-end="776">[0+1], [3+4], [4+5], [7+8]</code></p>
+</li>
+<li data-start="777" data-end="815">
+<p data-start="779" data-end="815">Return <code data-start="786" data-end="795">invalid</code> if any check fails.</p>
+</li>
+</ul>
+<hr data-start="817" data-end="820">
+<h3 data-start="822" data-end="837">✅ <strong data-start="828" data-end="837">Pros:</strong></h3>
+<ul data-start="838" data-end="1016">
+<li data-start="838" data-end="905">
+<p data-start="840" data-end="905"><strong data-start="840" data-end="860">Highly efficient</strong> (constant time, O(1)) — only 4 fixed checks.</p>
+</li>
+<li data-start="906" data-end="960">
+<p data-start="908" data-end="960"><strong data-start="908" data-end="931">Simple and readable</strong> if the format is guaranteed.</p>
+</li>
+<li data-start="961" data-end="1016">
+<p data-start="963" data-end="1016"><strong data-start="963" data-end="986">Minimal computation</strong> — avoids unnecessary looping.</p>
+</li>
+</ul>
+<hr data-start="1018" data-end="1021">
+<h3 data-start="1023" data-end="1038">❌ <strong data-start="1029" data-end="1038">Cons:</strong></h3>
+<ul data-start="1039" data-end="1218">
+<li data-start="1039" data-end="1172">
+<p data-start="1041" data-end="1092"><strong data-start="1041" data-end="1050">Rigid</strong>: Completely breaks if the format changes.</p>
+<ul data-start="1095" data-end="1172">
+<li data-start="1095" data-end="1172">
+<p data-start="1097" data-end="1172">e.g., if the position of digits or letters changes, or new rules are added.</p>
+</li>
+</ul>
+</li>
+<li data-start="1173" data-end="1218">
+<p data-start="1175" data-end="1218"><strong data-start="1175" data-end="1198">Not easily reusable</strong> for other patterns.</p>
+</li>
+</ul>
+<hr data-start="1220" data-end="1223">
+<h3 data-start="1225" data-end="1246">🔎 Best use-case:</h3>
+<blockquote data-start="1247" data-end="1372">
+<p data-start="1249" data-end="1372"><strong data-start="1249" data-end="1286">When the format is strictly fixed</strong> — great for tightly scoped system checks like license plate formats or barcode rules.</p>
+</blockquote>
+<hr data-start="1374" data-end="1377">
+<h2 data-start="1379" data-end="1438">✅ <strong data-start="1384" data-end="1438">Way 2: Character-based validation (Dynamic Format)</strong></h2>
+<h3 data-start="1440" data-end="1459">🔍 Steps Recap:</h3>
+<ul data-start="1460" data-end="1639">
+<li data-start="1460" data-end="1483">
+<p data-start="1462" data-end="1483">Loop over the string.</p>
+</li>
+<li data-start="1484" data-end="1512">
+<p data-start="1486" data-end="1512">Track the last digit seen.</p>
+</li>
+<li data-start="1513" data-end="1639">
+<p data-start="1515" data-end="1534">For each character:</p>
+<ul data-start="1537" data-end="1639">
+<li data-start="1537" data-end="1568">
+<p data-start="1539" data-end="1568">If alphabet → check if vowel.</p>
+</li>
+<li data-start="1571" data-end="1639">
+<p data-start="1573" data-end="1582">If digit:</p>
+<ul data-start="1587" data-end="1639">
+<li data-start="1587" data-end="1639">
+<p data-start="1589" data-end="1639">If previous was also digit → check if sum is even.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr data-start="1641" data-end="1644">
+<h3 data-start="1646" data-end="1661">✅ <strong data-start="1652" data-end="1661">Pros:</strong></h3>
+<ul data-start="1662" data-end="1854">
+<li data-start="1662" data-end="1722">
+<p data-start="1664" data-end="1722"><strong data-start="1664" data-end="1676">Flexible</strong>: Works even if the format evolves or changes.</p>
+</li>
+<li data-start="1723" data-end="1806">
+<p data-start="1725" data-end="1806"><strong data-start="1725" data-end="1737">Scalable</strong>: Easier to extend or modify (e.g., different lengths or more rules).</p>
+</li>
+<li data-start="1807" data-end="1854">
+<p data-start="1809" data-end="1854"><strong data-start="1809" data-end="1819">Robust</strong>: Does not rely on exact positions.</p>
+</li>
+</ul>
+<hr data-start="1856" data-end="1859">
+<h3 data-start="1861" data-end="1876">❌ <strong data-start="1867" data-end="1876">Cons:</strong></h3>
+<ul data-start="1877" data-end="2119">
+<li data-start="1877" data-end="1946">
+<p data-start="1879" data-end="1946"><strong data-start="1879" data-end="1898">Less performant</strong>: O(n), though still fast for small input (n=9).</p>
+</li>
+<li data-start="1947" data-end="2014">
+<p data-start="1949" data-end="2014"><strong data-start="1949" data-end="1974">Slightly more complex</strong> logic-wise than hardcoded index checks.</p>
+</li>
+<li data-start="2015" data-end="2119">
+<p data-start="2017" data-end="2119">Might validate unintended patterns if not carefully handled (e.g., two digits from separate segments).</p>
+</li>
+</ul>
+<hr data-start="2121" data-end="2124">
+<h3 data-start="2126" data-end="2147">🔎 Best use-case:</h3>
+<blockquote data-start="2148" data-end="2253">
+<p data-start="2150" data-end="2253"><strong data-start="2150" data-end="2184">When the input format can vary</strong>, or the rules are expected to change or be reused in other contexts.</p>
+</blockquote>
+<hr data-start="2255" data-end="2258">
+<h2 data-start="2260" data-end="2294">⚖️ <strong data-start="2266" data-end="2294">Comparison Summary Table</strong></h2>
+<div class="_tableContainer_16hzy_1"><div tabindex="-1" class="_tableWrapper_16hzy_14 group flex w-fit flex-col-reverse"><table data-start="2296" data-end="3020" class="w-fit min-w-(--thread-content-width)"><thead data-start="2296" data-end="2385"><tr data-start="2296" data-end="2385"><th data-start="2296" data-end="2324" data-col-size="sm">Criteria</th><th data-start="2324" data-end="2351" data-col-size="sm">Way 1 (Fixed Format)</th><th data-start="2351" data-end="2385" data-col-size="sm">Way 2 (Flexible Format)</th></tr></thead><tbody data-start="2477" data-end="3020"><tr data-start="2477" data-end="2566"><td data-start="2477" data-end="2505" data-col-size="sm">Performance</td><td data-col-size="sm" data-start="2505" data-end="2533">✅ Faster (O(1))</td><td data-col-size="sm" data-start="2533" data-end="2566">❌ Slower (O(n))</td></tr><tr data-start="2567" data-end="2656"><td data-start="2567" data-end="2595" data-col-size="sm">Flexibility</td><td data-col-size="sm" data-start="2595" data-end="2623">❌ Not flexible</td><td data-col-size="sm" data-start="2623" data-end="2656">✅ Highly flexible</td></tr><tr data-start="2657" data-end="2747"><td data-start="2657" data-end="2685" data-col-size="sm">Readability</td><td data-col-size="sm" data-start="2685" data-end="2713">✅ Easier to follow</td><td data-col-size="sm" data-start="2713" data-end="2747">⚠ Slightly more complex</td></tr><tr data-start="2748" data-end="2838"><td data-start="2748" data-end="2776" data-col-size="sm">Robustness</td><td data-start="2776" data-end="2804" data-col-size="sm">❌ Fragile to format change</td><td data-start="2804" data-end="2838" data-col-size="sm">✅ Handles varied inputs</td></tr><tr data-start="2839" data-end="2929"><td data-start="2839" data-end="2867" data-col-size="sm">Scalability</td><td data-start="2867" data-end="2895" data-col-size="sm">❌ Hard to extend</td><td data-start="2895" data-end="2929" data-col-size="sm">✅ Easy to generalize</td></tr><tr data-start="2930" data-end="3020"><td data-start="2930" data-end="2958" data-col-size="sm">Best for</td><td data-start="2958" data-end="2986" data-col-size="sm">Fixed formats</td><td data-start="2986" data-end="3020" data-col-size="sm">Variable formats</td></tr></tbody></table><div class="sticky end-(--thread-content-margin) h-0 self-end select-none"><div class="absolute end-0 flex items-end" style="height: 33.2188px;"><span class="" data-state="closed"><button class="bg-token-bg-primary hover:bg-token-bg-tertiary text-token-text-secondary my-1 rounded-sm p-1 transition-opacity group-[:not(:hover):not(:focus-within)]:pointer-events-none group-[:not(:hover):not(:focus-within)]:opacity-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-md-heavy"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg></button></span></div></div></div></div>
+<hr data-start="3022" data-end="3025">
+<h2 data-start="3027" data-end="3047">🏁 <strong data-start="3033" data-end="3047">Conclusion</strong></h2>
+<ul data-start="3049" data-end="3338">
+<li data-start="3049" data-end="3167">
+<p data-start="3051" data-end="3167">Use <strong data-start="3055" data-end="3064">Way 1</strong> if you're working in a controlled environment with <strong data-start="3116" data-end="3132">fixed format</strong> tags (like this specific problem).</p>
+</li>
+<li data-start="3168" data-end="3338">
+<p data-start="3170" data-end="3338">Use <strong data-start="3174" data-end="3183">Way 2</strong> if you want your code to be <strong data-start="3212" data-end="3234">robust, extensible</strong>, or you’re designing for systems where <strong data-start="3274" data-end="3296">formats may change</strong> (e.g., real-world parsers or validators).</p>
+</li>
+</ul>
+<p data-start="3340" data-end="3506">If this were an interview, I'd recommend starting with <strong data-start="3395" data-end="3419">Way 1 for efficiency</strong> and then explaining that <strong data-start="3445" data-end="3505">Way 2 could be used in production systems for robustness</strong>.</p>
+<p data-start="3508" data-end="3584" data-is-last-node="" data-is-only-node="">Let me know if you'd like implementations of both approaches for comparison.</p></div>
+
+<h2>How would you solve it?</h2>
+
+<div class="markdown prose dark:prose-invert w-full break-words light"><p data-start="0" data-end="110">To solve the <strong data-start="13" data-end="38">"Truck Tag Validator"</strong> problem, I would <strong data-start="56" data-end="101">choose Way 1 (fixed index-based approach)</strong> because:</p>
+<ul data-start="112" data-end="258">
+<li data-start="112" data-end="169">
+<p data-start="114" data-end="169">The format <code data-start="125" data-end="138">"DDXDDD-DD"</code> is fixed (length is always 9).</p>
+</li>
+<li data-start="170" data-end="258">
+<p data-start="172" data-end="258">Index-based validation is <strong data-start="198" data-end="239">clean, fast, and easy to reason about</strong> for such problems.</p>
+</li>
+</ul>
+<hr data-start="260" data-end="263">
+<h3 data-start="265" data-end="322">✅ <strong data-start="271" data-end="322">Key Validation Rules (based on fixed positions)</strong></h3>
+<p data-start="324" data-end="369">Given the string: <code data-start="342" data-end="361">tag = "DDXDDD-DD"</code>, check:</p>
+<ol data-start="371" data-end="601">
+<li data-start="371" data-end="458">
+<p data-start="374" data-end="458">The character at index <strong data-start="397" data-end="402">2</strong> must <strong data-start="408" data-end="415">not</strong> be a vowel: <code data-start="428" data-end="458">'A', 'E', 'I', 'O', 'U', 'Y'</code></p>
+</li>
+<li data-start="459" data-end="601">
+<p data-start="462" data-end="497">The <strong data-start="466" data-end="483">sum of digits</strong> at positions:</p>
+<ul data-start="501" data-end="601">
+<li data-start="501" data-end="523">
+<p data-start="503" data-end="523"><code data-start="503" data-end="510">0 + 1</code> must be even</p>
+</li>
+<li data-start="527" data-end="549">
+<p data-start="529" data-end="549"><code data-start="529" data-end="536">3 + 4</code> must be even</p>
+</li>
+<li data-start="553" data-end="575">
+<p data-start="555" data-end="575"><code data-start="555" data-end="562">4 + 5</code> must be even</p>
+</li>
+<li data-start="579" data-end="601">
+<p data-start="581" data-end="601"><code data-start="581" data-end="588">7 + 8</code> must be even</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr data-start="603" data-end="606">
+<h3 data-start="608" data-end="630">✅ Python Solution:</h3>
+<pre class="overflow-visible!" data-start="632" data-end="1334"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button><span class="" data-state="closed"><button class="flex items-center gap-1 px-4 py-1 select-none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">def</span></span><span> </span><span><span class="hljs-title function_">is_valid_tag</span></span><span>(</span><span><span class="hljs-params">tag</span></span><span>):
+    vowels = {</span><span><span class="hljs-string">'A'</span></span><span>, </span><span><span class="hljs-string">'E'</span></span><span>, </span><span><span class="hljs-string">'I'</span></span><span>, </span><span><span class="hljs-string">'O'</span></span><span>, </span><span><span class="hljs-string">'U'</span></span><span>, </span><span><span class="hljs-string">'Y'</span></span><span>}
+
+    </span><span><span class="hljs-comment"># Check the letter is not a vowel</span></span><span>
+    </span><span><span class="hljs-keyword">if</span></span><span> tag[</span><span><span class="hljs-number">2</span></span><span>] </span><span><span class="hljs-keyword">in</span></span><span> vowels:
+        </span><span><span class="hljs-keyword">return</span></span><span> </span><span><span class="hljs-string">"invalid"</span></span><span>
+
+    </span><span><span class="hljs-comment"># Helper to check if sum of two digit characters is even</span></span><span>
+    </span><span><span class="hljs-keyword">def</span></span><span> </span><span><span class="hljs-title function_">is_even_sum</span></span><span>(</span><span><span class="hljs-params">i, j</span></span><span>):
+        </span><span><span class="hljs-keyword">return</span></span><span> (</span><span><span class="hljs-built_in">int</span></span><span>(tag[i]) + </span><span><span class="hljs-built_in">int</span></span><span>(tag[j])) % </span><span><span class="hljs-number">2</span></span><span> == </span><span><span class="hljs-number">0</span></span><span>
+
+    </span><span><span class="hljs-keyword">if</span></span><span> </span><span><span class="hljs-keyword">not</span></span><span> is_even_sum(</span><span><span class="hljs-number">0</span></span><span>, </span><span><span class="hljs-number">1</span></span><span>):
+        </span><span><span class="hljs-keyword">return</span></span><span> </span><span><span class="hljs-string">"invalid"</span></span><span>
+    </span><span><span class="hljs-keyword">if</span></span><span> </span><span><span class="hljs-keyword">not</span></span><span> is_even_sum(</span><span><span class="hljs-number">3</span></span><span>, </span><span><span class="hljs-number">4</span></span><span>):
+        </span><span><span class="hljs-keyword">return</span></span><span> </span><span><span class="hljs-string">"invalid"</span></span><span>
+    </span><span><span class="hljs-keyword">if</span></span><span> </span><span><span class="hljs-keyword">not</span></span><span> is_even_sum(</span><span><span class="hljs-number">4</span></span><span>, </span><span><span class="hljs-number">5</span></span><span>):
+        </span><span><span class="hljs-keyword">return</span></span><span> </span><span><span class="hljs-string">"invalid"</span></span><span>
+    </span><span><span class="hljs-keyword">if</span></span><span> </span><span><span class="hljs-keyword">not</span></span><span> is_even_sum(</span><span><span class="hljs-number">7</span></span><span>, </span><span><span class="hljs-number">8</span></span><span>):
+        </span><span><span class="hljs-keyword">return</span></span><span> </span><span><span class="hljs-string">"invalid"</span></span><span>
+
+    </span><span><span class="hljs-keyword">return</span></span><span> </span><span><span class="hljs-string">"valid"</span></span><span>
+
+</span><span><span class="hljs-comment"># Sample Inputs</span></span><span>
+</span><span><span class="hljs-built_in">print</span></span><span>(is_valid_tag(</span><span><span class="hljs-string">"12X345-67"</span></span><span>))  </span><span><span class="hljs-comment"># ➞ invalid</span></span><span>
+</span><span><span class="hljs-built_in">print</span></span><span>(is_valid_tag(</span><span><span class="hljs-string">"24B468-80"</span></span><span>))  </span><span><span class="hljs-comment"># ➞ valid (if B is not a vowel and sums are all even)</span></span><span>
+</span></span></code></div></div></pre>
+<hr data-start="1336" data-end="1339">
+<h3 data-start="1341" data-end="1359">🧪 Sample Run:</h3>
+<p data-start="1361" data-end="1385">For input: <code data-start="1372" data-end="1385">"12X345-67"</code></p>
+<ul data-start="1387" data-end="1460">
+<li data-start="1387" data-end="1419">
+<p data-start="1389" data-end="1419"><code data-start="1389" data-end="1401">tag[2] = X</code> → Not a vowel ✅</p>
+</li>
+<li data-start="1420" data-end="1460">
+<p data-start="1422" data-end="1460"><code data-start="1422" data-end="1431">1+2 = 3</code> → Odd ❌ → Return <code data-start="1449" data-end="1460">"invalid"</code></p>
+</li>
+</ul>
+<hr data-start="1462" data-end="1465">
+<h3 data-start="1467" data-end="1497">⚙️ Time &amp; Space Complexity</h3>
+<ul data-start="1499" data-end="1589">
+<li data-start="1499" data-end="1543">
+<p data-start="1501" data-end="1543"><strong data-start="1501" data-end="1510">Time:</strong> O(1) → constant number of checks</p>
+</li>
+<li data-start="1544" data-end="1589">
+<p data-start="1546" data-end="1589"><strong data-start="1546" data-end="1556">Space:</strong> O(1) → uses only a few variables</p>
+</li>
+</ul>
+<hr data-start="1591" data-end="1594">
+<p data-start="1596" data-end="1687" data-is-last-node="" data-is-only-node="">Let me know if you'd like the flexible (Way 2) version too or want to make it more generic.</p></div>
+
+<span style="display: none;">Tags: Technology,Algorithms,</span>
