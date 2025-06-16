@@ -1,0 +1,586 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        .up {
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .customLink:hover {
+            text-decoration: none;
+        }
+
+        div.code-block-decoration.footer {
+            display: none;
+        }
+
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+
+        .custom_link_h2 a:active {
+            color: black;
+        }
+
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+
+        [aria-hidden='true'] {
+            display: none;
+        }
+    </style>
+
+    <style>
+        i.ir {
+            color: red;
+        }
+
+        p.pb {
+            color: blue;
+        }
+    </style>
+
+</head>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDqwpmL-n8HXwBIYMtyYyt_fsuFmQEjjyvuKGMMB1Fh2ltcRJKW7I88b1P27WYDWqF7BEDDUQa0W1vl1oTU5DrcxdRJS1MIhfKo3ZLtER6Y0f-KPyfBSSl1p6yGxIWSwScULEgnGMeZQnhPceCHI_eBHTb8djsj6D0wuIICpvZ-FsrdpQOrIZc3B49Rp_1/s500/algo.webp" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="333" data-original-width="500" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDqwpmL-n8HXwBIYMtyYyt_fsuFmQEjjyvuKGMMB1Fh2ltcRJKW7I88b1P27WYDWqF7BEDDUQa0W1vl1oTU5DrcxdRJS1MIhfKo3ZLtER6Y0f-KPyfBSSl1p6yGxIWSwScULEgnGMeZQnhPceCHI_eBHTb8djsj6D0wuIICpvZ-FsrdpQOrIZc3B49Rp_1/s600/algo.webp"/></a></div>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<span class="customLink toggleBtn">Toggle All Sections</span>
+
+<br>
+<div id="customAlgorithmsAnalysisAndDesign">
+    <h4 class="customCodilityHeader"><span class="arrow up"></span> From Codility</h4>
+    <div id="customCodility">
+    <b>Course Link: <a href="https://www.udemy.com/course/beat-the-codility-coding-interview-in-python/"
+            target="_blank">By James Cutajar</a></b>
+    <ol>
+        <li>Binary Gap (Problem of Iterations)
+            <ul>
+                <li>
+                    <a href="http://survival8.blogspot.com/2023/11/binary-gap-problem-of-iterations-lesson.html" target="_blank">
+                        Binary Gap (Problem of Iterations)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2025/04/discussion-on-binary-gap-problem-of.html" target="_blank">
+                        Discussion on "Binary Gap - A problem of iterations"
+                    </a>
+                </li>
+            </ul>
+            
+        </li>
+
+        <li>
+            Arrays
+            <ul>
+                <li>
+                    <a href="https://survival8.blogspot.com/2023/11/21-cyclic-rotation-problem-of-arrays.html"
+                        target="_blank">
+                        2.1: Cyclic rotation (Problem of Arrays)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2023/11/22-odd-occurrences-in-array.html" target="_blank">
+                        2.2: Odd occurrences in an array
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            Time Complexity
+            <ul>
+                <li>
+                    <a href="http://survival8.blogspot.com/2023/12/frog-jump-problem-of-time-complexity.html"
+                        target="_blank">
+                        Frog Jump (Level: Easy)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="http://survival8.blogspot.com/2023/12/perm-missing-element-problem-of-time.html"
+                        target="_blank">
+                        Perm Missing Element
+                    </a>
+                </li>
+
+                <li>
+                    <a href="http://survival8.blogspot.com/2023/12/tape-equilibrium-problem-in-time.html"
+                        target="_blank">
+                        Tape Equilibrium
+                        <br>
+                        Minimize the value |(A[0] + ... + A[P-1]) - (A[P] + ... + A[N-1])|
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>Counting Elements
+            <ul>
+                <li>
+                    <a href="https://survival8.blogspot.com/2023/12/swap-elements-problem-on-counting.html"
+                        target="_blank">
+                        Swap The Elements (A problem on counting elements)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2023/12/frog-river-one-problem-of-counting.html"
+                        target="_blank">
+                        Frog River One (A problem of counting elements)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2023/12/perm-check-problem-of-counting-elements.html"
+                        target="_blank">
+                        Perm Check (A problem of counting elements)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2023/12/max-counters-problem-on-counting.html"
+                        target="_blank">
+                        Max Counters (a problem on counting elements)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2023/12/missinginteger-find-smallest-positive.html"
+                        target="_blank">
+                        Missing Integer: Find the smallest positive integer that does not occur in a given sequence.
+                    </a>
+                </li>
+            </ul>
+
+        </li>
+
+        <li>
+            Prefix Sums
+            <ul>
+                <li>
+                    <a href="https://survival8.blogspot.com/2023/12/mushroom-picker-problem-on-prefix-sums.html"
+                        target="_blank">
+                        Mushroom Picker (A problem on Prefix Sums)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2024/01/passing-cars-count-number-of-passing.html"
+                        target="_blank">
+                        Passing Cars (Count the number of passing cars on the road)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2024/01/div-count-problem-on-prefix-sums.html"
+                        target="_blank">
+                        Div Count (Problem on Prefix Sums)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2024/01/genomic-range-query-find-minimal.html"
+                        target="_blank">
+                        Genomic Range Query: Find the minimal nucleotide from a range of sequence DNA (Medium
+                        Complexity)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="http://survival8.blogspot.com/2024/01/min-avg-two-slice-problem-on-prefix.html"
+                        target="_blank">
+                        Min Avg Two Slice: Find the minimal average of any slice containing at least two elements.
+                        (Complexity: Medium)
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li> Sorting
+            <ul>
+                <li>
+                    <a href="https://survival8.blogspot.com/2024/01/count-distinct-elements-in-array.html"
+                        target="_blank">
+                        Count distinct elements in an array (Complexity: Easy)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2024/01/max-product-of-three-problem-on-sorting.html"
+                        target="_blank">
+                        MaxProductOfThree <br>
+                        Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R). <br>
+                        Complexity: Easy
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2024/01/triangle-formation-from-three-sides.html"
+                        target="_blank">
+                        Triangle formation from three sides (Complexity: Easy)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2024/03/number-of-disc-intersections-problem-in.html"
+                        target="_blank">
+                        Number of disc intersections (Problem in sorting and searching)
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            Stacks and Queues
+            <ul>
+                <li>
+                    <a href="https://survival8.blogspot.com/2024/03/brackets-problem-related-to-stacks.html"
+                        target="_blank">
+                        Brackets (A problem related to Stacks)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2024/03/voracious-fish-problem-on-concept-of.html"
+                        target="_blank">
+                        Voracious Fish (A problem on the concept of Stacks)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2024/04/manhattan-stonewall-problem-on-concept.html"
+                        target="_blank">
+                        Manhattan stonewall problem on the concept of Stacks
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            Leader using Boyer-Moore Majority Vote Algo
+            <ul>
+                <li>
+                    <a href="https://survival8.blogspot.com/2024/04/dominator-problem-on-concept-of-leader.html"
+                        target="_blank">
+                        Dominator (a problem on the concept of Leader in Algorithms using Boyer-Moore Majority Vote
+                        Algo)
+                    </a>
+                </li>
+                <li>
+                    <a href="https://survival8.blogspot.com/2024/04/equileader-problem-in-concept-of-leader.html"
+                        target="_blank">
+                        EquiLeader (A problem in the concept of Leader in DSA)
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>Maximum Slice Problem (using Kadane's Algo leveraging Dynamic Programming)
+            <ul>
+                <li>
+                    <a href="https://survival8.blogspot.com/2024/04/max-slice-sum.html" target="_blank">
+                        The Original Maximum Slice Problem
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="https://survival8.blogspot.com/2023/09/recursion-introduction.html" target="_blank">Recursion (An
+                Introduction)</a>
+            <ul>
+                <li>
+                    <a href="https://survival8.blogspot.com/2023/12/permutations-of-set-of-alphabets-using.html"
+                        target="_blank">
+                        Permutations of a set of alphabets using JavaScript
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2023/12/combinations-of-set-of-alphabets-using.html"
+                        target="_blank">
+                        Combinations of a set of alphabets using JavaScript
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2023/12/bubble-sort-using-recursion.html" target="_blank">
+                        Bubble Sort (Using Recursion)
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://survival8.blogspot.com/2023/12/building-tree-from-bodmas-expression.html"
+                        target="_blank">
+                        Building a Tree from a BODMAS Expression
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="http://survival8.blogspot.com/2023/12/substring-in-another-string-lesson-in.html" target="_blank">
+                Substring in another string (Lesson in Algorithms)
+            </a>
+        </li>
+    </ol>
+
+    </div>
+    
+    <h4 class="customHackerEarthHeader"><span class="arrow up"></span> From Hacker Earth</h4>
+    <div id="customHackerEarth">
+    <i><b>Track: Basic Programming > Input/Output > Basics of Input/Output</b></i>
+    <h5>Super Easy</h5>
+    <ol>
+        <li>
+            <a href="https://survival8.blogspot.com/2025/05/discusson-about-zoos-problem-from.html" target="_blank">
+                Discusson about Zoos (Super Easy Problem)
+                <br> Track: Basic Programming > Input/Output > Basics of Input/Output
+            </a>
+        </li>
+
+        <li>
+            <a href="https://survival8.blogspot.com/2025/05/discussion-on-split-houses-problem-from.html" target="_blank">
+                Discussion on Split houses (Super Easy Problem)
+                <br> Track: Basic Programming > Input/Output > Basics of Input/Output
+            </a>
+        </li>
+
+
+    </ol>
+
+    <h5>Easy</h5>
+    <ol>
+        <li>
+            <a href="https://survival8.blogspot.com/2025/05/discussion-about-favourite-singer.html" target="_blank">
+                Discussion about Favourite Singer (Easy Problem)
+            </a>
+        </li>
+
+        <li>
+            <a href="https://survival8.blogspot.com/2025/05/discussion-about-maximum-border-problem.html" target="_blank">
+                Discussion about Maximum Border (Easy Problem)
+            </a>
+        </li>
+
+        <li>
+            <a href="https://survival8.blogspot.com/2025/05/discussion-on-cost-of-balloons-problem.html" target="_blank">
+                Discussion on Cost of Balloons (Easy Problem)
+            </a>
+        </li>
+
+        <li>
+            <a href="https://survival8.blogspot.com/2025/06/discussion-on-seven-segment-display.html" target="_blank">
+                Discussion on Seven-Segment Display 
+            </a>
+        </li>
+
+        <li>
+            <a href="https://survival8.blogspot.com/2025/06/discussion-about-ali-and-helping.html" target="_blank">
+                Discussion about 'Ali and Helping innocent people'
+            </a>
+        </li>
+
+        <li>
+            <a href="https://survival8.blogspot.com/2025/06/discussion-about-find-product-problem.html" target="_blank">
+                Discussion About 'Find Product'
+            </a>
+        </li>
+
+        <li>
+            <a href="https://survival8.blogspot.com/2025/06/discussion-on-toggle-string-problem.html" target="_blank">
+                Discussion on 'Toggle String' 
+            </a>
+        </li>
+
+        <li>
+            <a href="https://survival8.blogspot.com/2025/06/discussion-on-palindromic-strings.html" target="_blank">
+                Discussion on 'Palindromic Strings' 
+            </a>
+        </li>
+
+        <li>
+            <a href="https://survival8.blogspot.com/2025/06/discussion-on-count-divisors-problem.html" target="_blank">
+                Discussion on 'Count Divisors'
+            </a>
+        </li>
+    </ol>
+    </div>
+    <h4 class="customChatGPTHeader"><span class="arrow up"></span> From ChatGPT</h4>
+    <div id="customChatGPT">
+    <h5>Difficulty: 3/10</h5>
+    <ol>
+        <li>
+            <a href="https://survival8.blogspot.com/2025/05/discussion-on-remove-consecutive.html" target="_blank">
+                Discussion on "Remove Consecutive Duplicates" Problem
+            </a>
+        </li>
+
+        <li>
+            <a href="https://survival8.blogspot.com/2025/05/discussion-on-alternating-characters.html" target="_blank">Discussion on "Alternating Characters Cleanup - minimum number of deletions required"</a>
+        </li>
+    </ol>
+
+    <h5>Difficulty: 4/10</h5>
+
+    <ol>
+        <li>
+            <a href="https://survival8.blogspot.com/2025/05/discussion-on-longest-nice-substring.html" target="_blank">
+                Discussion on "Longest Nice Substring" Problem
+            </a>
+        </li>
+    </ol>
+</div>
+
+</div>
+
+
+<script>
+
+
+    $('h4.customCodilityHeader').click(function () {
+        $("div#customCodility").fadeToggle();
+        $("h4.customCodilityHeader > .arrow").toggleClass('up').toggleClass('down');
+    });
+
+    $('h4.customHackerEarthHeader').click(function () {
+        $("div#customHackerEarth").fadeToggle();
+        $("h4.customHackerEarthHeader > .arrow").toggleClass('up').toggleClass('down');
+    });
+
+    $('h4.customChatGPTHeader').click(function () {
+        $("div#customChatGPT").fadeToggle();
+        $("h4.customChatGPTHeader > .arrow").toggleClass('up').toggleClass('down');
+    });
+
+
+
+    var sectionClosedFlag = false;
+    $(".customLink.toggleBtn").click(function () {
+
+        if (sectionClosedFlag) {
+            sectionClosedFlag = false;
+        } else {
+            sectionClosedFlag = true;
+        }
+
+        $("h4[class$='Header']").click();
+    }); 
+</script>
+
+
+<span style="display: none;">Tags: <</span>
