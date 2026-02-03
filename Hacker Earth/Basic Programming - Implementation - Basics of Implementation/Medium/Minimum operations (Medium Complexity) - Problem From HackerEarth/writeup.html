@@ -1,0 +1,435 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    
+        .customLink:hover {
+            text-decoration: none;
+        }
+    
+        div.code-block-decoration.footer {
+            display: none;
+        }
+    
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+    
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+    
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+    
+        .custom_link_h2 a:active {
+            color: black;
+        }
+    
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+    
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+    
+        [aria-hidden='true'] {
+            display: none;
+        }
+    
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+    
+        i.ir { color: red; }
+        i.ig { color: green; }
+        i.ib { color: blue; }
+        i.im { color: magenta; }
+        i.ip { color: purple; }
+    
+        .customTable td {
+            padding: 2px;
+        }
+    
+        i.green {
+            color: green;
+        }
+    
+        i.red {
+            color: red;
+        }
+    
+        i.blue {
+            color: blue;
+        }
+    
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+    
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        button.bg-token-bg-primary {
+            display: none;
+        }
+    
+        .flex.items-center {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink" href="https://survival8.blogspot.com/2025/06/index-of-algorithms-design-and-analysis.html" target="_blank">
+    Index of "Algorithms: Design and Analysis"
+</a>
+
+<br>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgC_CEb5W0VvrKct60Cp8DMKktJ7hiOdxR6YC8xz8uQss4SzjKlzlcVv7pvph7S-cdh7cyACb4v8ylzGQlc7Du23ObM-4O3KfV_XbLWICbx2QP2X6mLENYMpOa-7HiDnRyrE_bCptrVE0gcZK3GWMv2LF_R33j1EfYDbyOicjmFCjCMGBwzp8-O0EsFdjwe/s637/algorithms.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="346" data-original-width="637" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgC_CEb5W0VvrKct60Cp8DMKktJ7hiOdxR6YC8xz8uQss4SzjKlzlcVv7pvph7S-cdh7cyACb4v8ylzGQlc7Du23ObM-4O3KfV_XbLWICbx2QP2X6mLENYMpOa-7HiDnRyrE_bCptrVE0gcZK3GWMv2LF_R33j1EfYDbyOicjmFCjCMGBwzp8-O0EsFdjwe/s600/algorithms.png"/></a></div>
+<br>
+
+
+<pre>
+<i>Can you explain the solution to this problem:</i>
+
+Problem
+You are given an array A of size N. You can perform the following operation on array A:
+
+Select two indices i and j such that 1 ≤  i, j ≤  N. (note that i and j can be equal)
+Assign Ai = Ai + 2
+Then assign Aj = Aj - 1
+You need to make all the elements of the array equal to zero.
+
+<b>Task</b>
+Determine the minimum number of operations required to make all the elements of A equal to zero. Else, print -1 if it is not possible to do so.
+
+<b>Function description</b>
+
+Complete the function solve() provided in the editor. This function takes the following parameters and returns the required answer:
+
+N: Represents the size of the array A
+A: Represents the elements of array A.
+
+<b>Input format</b>
+
+Note: This is the input format that you must use to provide custom input (available above the Compile and Test button).
+
+The first line contains T, denoting the number of test cases. T also specifies the number of times you have to run the solve() function on a different set of inputs.
+For each test case:
+The first line contains N, denoting the size of array A.
+The second line contains space-separated values, denoting the elements of array A.
+Output format For each test case, print the output on a new line. Either the minimum number of operations required to make all the elements of A equal to zero or print -1 if it is impossible to do so.
+
+
+Sample Input
+2
+1
+-2
+2
+1 -1
+Sample Output
+2
+-1
+Time Limit: 2
+Memory Limit: 256
+Source Limit:
+Explanation
+The first line contains the number of test cases, T = 2.
+
+The first test case
+
+Given
+
+N = 1
+A = [-2]
+Approach
+
+We can perform the following operations on A:
+
+Select i = 1, j = 1, A1 = -2 + 2 = 0 and A2 = 0 - 1 = -1, A becomes [-1].
+Select i = 1, j = 1, A1 = -1 + 2 = 1 and A2 = 1 - 1 = 0, A becomes [0].
+Hence, all the elements are equal to zero after 2 operations. Thus, the answer is 2.
+
+The second test case
+
+Given
+
+N = 2
+A = [1, -1]
+Approach
+
+It can be shown that it is not possible to reduce all the elements of A equal to zero simultaneously. Thus, the answer is -1.
+</pre>
+
+<a class="customLink" href="https://github.com/ashishjain1547/algorithms_design_and_analysis/tree/main/Hacker%20Earth/Basic%20Programming%20-%20Implementation%20-%20Basics%20of%20Implementation/Minimum%20operations%20(Medium%20Complexity)%20-%20Problem%20From%20HackerEarth/testcases" target="_blank">
+    Download Test Cases
+</a>
+<br>
+
+<a class="customLink" href="https://www.hackerearth.com/practice/basic-programming/implementation/basics-of-implementation/practice-problems/algorithm/plus-two-minus-one-51ea94de/" target="_blank">Solve on HackerEarth</a>
+
+<div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling"><p data-start="0" data-end="122">This is a <strong data-start="10" data-end="27">great problem</strong> because it looks simple, but it’s really about <strong data-start="75" data-end="105">invariants and feasibility</strong>, not simulation.</p>
+<p data-start="124" data-end="152">Let’s break it down cleanly.</p>
+<hr data-start="154" data-end="157">
+<h2 data-start="159" data-end="195">🔁 The operation (very important)</h2>
+<p data-start="197" data-end="218">In <strong data-start="200" data-end="217">one operation</strong>:</p>
+<ul data-start="220" data-end="307">
+<li data-start="220" data-end="269">
+<p data-start="222" data-end="269">Pick indices <code data-start="235" data-end="238">i</code> and <code data-start="243" data-end="246">j</code> (they can be the same)</p>
+</li>
+<li data-start="270" data-end="307">
+<p data-start="272" data-end="275">Do:</p>
+<ul data-start="278" data-end="307">
+<li data-start="278" data-end="291">
+<p data-start="280" data-end="291"><code data-start="280" data-end="291">A[i] += 2</code></p>
+</li>
+<li data-start="294" data-end="307">
+<p data-start="296" data-end="307"><code data-start="296" data-end="307">A[j] -= 1</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p data-start="309" data-end="364">So <strong data-start="312" data-end="363">each operation changes the array in a fixed way</strong>.</p>
+<hr data-start="366" data-end="369">
+<h2 data-start="371" data-end="427">🔑 Step 1: Understand what never changes (invariants)</h2>
+<h3 data-start="429" data-end="478">🔹 Invariant 1: Total sum increases by <strong data-start="472" data-end="478">+1</strong></h3>
+<p data-start="479" data-end="499">Each operation does:</p>
+<pre class="overflow-visible! px-0!" data-start="500" data-end="538"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">diff</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-d46pasyz.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-addition">+2  and  -1  → net change = +1</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="540" data-end="564">So after <code data-start="549" data-end="552">k</code> operations:</p>
+<pre class="overflow-visible! px-0!" data-start="565" data-end="602"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">sql</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-d46pasyz.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-built_in">sum</span></span><span>(</span><span><span class="hljs-keyword">final</span></span><span>) </span><span><span class="hljs-operator">=</span></span><span> </span><span><span class="hljs-built_in">sum</span></span><span>(</span><span><span class="hljs-keyword">initial</span></span><span>) </span><span><span class="hljs-operator">+</span></span><span> k
+</span></span></code></div></div></pre>
+<p data-start="604" data-end="621">But your goal is:</p>
+<pre class="overflow-visible! px-0!" data-start="622" data-end="675"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">sql</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-d46pasyz.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-keyword">final</span></span><span> </span><span><span class="hljs-keyword">array</span></span><span> </span><span><span class="hljs-operator">=</span></span><span> [</span><span><span class="hljs-number">0</span></span><span>, </span><span><span class="hljs-number">0</span></span><span>, ..., </span><span><span class="hljs-number">0</span></span><span>]
+⇒ </span><span><span class="hljs-built_in">sum</span></span><span>(</span><span><span class="hljs-keyword">final</span></span><span>) </span><span><span class="hljs-operator">=</span></span><span> </span><span><span class="hljs-number">0</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="677" data-end="687">Therefore:</p>
+<pre class="overflow-visible! px-0!" data-start="688" data-end="724"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">bash</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-d46pasyz.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>0 = </span><span><span class="hljs-built_in">sum</span></span><span>(A) + k
+⇒ k = -</span><span><span class="hljs-built_in">sum</span></span><span>(A)
+</span></span></code></div></div></pre>
+<p data-start="726" data-end="747">📌 <strong data-start="729" data-end="745">Conclusion 1</strong></p>
+<ul data-start="748" data-end="822">
+<li data-start="748" data-end="794">
+<p data-start="750" data-end="794">If <code data-start="753" data-end="765">sum(A) &gt; 0</code>, then <code data-start="772" data-end="779">k &lt; 0</code> → impossible</p>
+</li>
+<li data-start="795" data-end="822">
+<p data-start="797" data-end="822">So <strong data-start="800" data-end="822">sum(A) must be ≤ 0</strong></p>
+</li>
+</ul>
+<hr data-start="824" data-end="827">
+<h3 data-start="829" data-end="885">🔹 Invariant 2: What happens to individual elements?</h3>
+<p data-start="887" data-end="898">An element:</p>
+<ul data-start="899" data-end="979">
+<li data-start="899" data-end="922">
+<p data-start="901" data-end="922">Can <strong data-start="905" data-end="922">increase by 2</strong></p>
+</li>
+<li data-start="923" data-end="945">
+<p data-start="925" data-end="945">Or <strong data-start="928" data-end="945">decrease by 1</strong></p>
+</li>
+<li data-start="946" data-end="979">
+<p data-start="948" data-end="979">Or both (if <code data-start="960" data-end="968">i == j</code>, net <code data-start="974" data-end="978">+1</code>)</p>
+</li>
+</ul>
+<p data-start="981" data-end="1103">So to reduce a <strong data-start="996" data-end="1014">positive value</strong>, you <em data-start="1020" data-end="1026">must</em> apply <code data-start="1033" data-end="1037">-1</code> operations to it.<br>
+To increase a <strong data-start="1070" data-end="1088">negative value</strong>, you use <code data-start="1098" data-end="1102">+2</code>.</p>
+<p data-start="1105" data-end="1139">This creates a <strong data-start="1120" data-end="1138">cost structure</strong>.</p>
+<hr data-start="1141" data-end="1144">
+<h2 data-start="1146" data-end="1198">🔢 Step 2: What must the number of operations be?</h2>
+<p data-start="1200" data-end="1217">From invariant 1:</p>
+<pre class="overflow-visible! px-0!" data-start="1218" data-end="1237"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">ini</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-d46pasyz.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attr">k</span></span><span> = -sum(A)
+</span></span></code></div></div></pre>
+<p data-start="1239" data-end="1309">So the number of operations is <strong data-start="1270" data-end="1279">fixed</strong>, not something we can choose.</p>
+<p data-start="1311" data-end="1356">If a solution exists, the answer <strong data-start="1344" data-end="1355">must be</strong>:</p>
+<pre class="overflow-visible! px-0!" data-start="1357" data-end="1381"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">ini</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-d46pasyz.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attr">answer</span></span><span> = -sum(A)
+</span></span></code></div></div></pre>
+<p data-start="1383" data-end="1400">No more, no less.</p>
+<hr data-start="1402" data-end="1405">
+<h2 data-start="1407" data-end="1459">🧠 Step 3: Feasibility condition (the real trick)</h2>
+<p data-start="1461" data-end="1482">Each operation gives:</p>
+<ul data-start="1483" data-end="1512">
+<li data-start="1483" data-end="1497">
+<p data-start="1485" data-end="1497"><strong data-start="1485" data-end="1492">one</strong> <code data-start="1493" data-end="1497">-1</code></p>
+</li>
+<li data-start="1498" data-end="1512">
+<p data-start="1500" data-end="1512"><strong data-start="1500" data-end="1507">one</strong> <code data-start="1508" data-end="1512">+2</code></p>
+</li>
+</ul>
+<p data-start="1514" data-end="1536">Across <code data-start="1521" data-end="1524">k</code> operations:</p>
+<ul data-start="1537" data-end="1601">
+<li data-start="1537" data-end="1568">
+<p data-start="1539" data-end="1568">Total negative capacity = <code data-start="1565" data-end="1568">k</code></p>
+</li>
+<li data-start="1569" data-end="1601">
+<p data-start="1571" data-end="1601">Total positive capacity = <code data-start="1597" data-end="1601">2k</code></p>
+</li>
+</ul>
+<p data-start="1603" data-end="1626">Now think element-wise:</p>
+<h3 data-start="1628" data-end="1664">For positive elements <code data-start="1654" data-end="1664">A[i] &gt; 0</code></h3>
+<p data-start="1665" data-end="1716">They must be reduced to zero using <code data-start="1700" data-end="1704">-1</code> operations:</p>
+<pre class="overflow-visible! px-0!" data-start="1717" data-end="1773"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">bash</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-d46pasyz.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>Total required decrements = </span><span><span class="hljs-built_in">sum</span></span><span> of positive A[i]
+</span></span></code></div></div></pre>
+<p data-start="1775" data-end="1819">But we only have <strong data-start="1792" data-end="1818">k decrements available</strong>.</p>
+<p data-start="1821" data-end="1832">So we need:</p>
+<pre class="overflow-visible! px-0!" data-start="1833" data-end="1857"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">nginx</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-d46pasyz.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attribute">sum_positive</span></span><span> ≤ k
+</span></span></code></div></div></pre>
+<p data-start="1859" data-end="1884">Substitute <code data-start="1870" data-end="1883">k = -sum(A)</code>:</p>
+<pre class="overflow-visible! px-0!" data-start="1885" data-end="1915"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">scss</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-d46pasyz.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>sum_positive ≤ </span><span><span class="hljs-built_in">-sum</span></span><span>(A)
+</span></span></code></div></div></pre>
+<p data-start="1917" data-end="1923">Since:</p>
+<pre class="overflow-visible! px-0!" data-start="1924" data-end="1968"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">bash</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-d46pasyz.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-built_in">sum</span></span><span>(A) = sum_positive + sum_negative
+</span></span></code></div></div></pre>
+<p data-start="1970" data-end="1983">This becomes:</p>
+<pre class="overflow-visible! px-0!" data-start="1984" data-end="2072"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">scss</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-d46pasyz.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>sum_positive ≤ </span><span><span class="hljs-built_in">-</span></span><span>(sum_positive + sum_negative)
+⇒ </span><span><span class="hljs-number">2</span></span><span> * sum_positive ≤ -sum_negative
+</span></span></code></div></div></pre>
+<p data-start="2074" data-end="2118">📌 <strong data-start="2077" data-end="2118">This is the key feasibility condition</strong></p>
+<hr data-start="2120" data-end="2123">
+<h2 data-start="2125" data-end="2161">✅ Final Conditions for a Solution</h2>
+<p data-start="2163" data-end="2200">A solution exists <strong data-start="2181" data-end="2199">if and only if</strong>:</p>
+<ol data-start="2202" data-end="2255">
+<li data-start="2202" data-end="2217">
+<p data-start="2205" data-end="2217"><code data-start="2205" data-end="2217">sum(A) ≤ 0</code></p>
+</li>
+<li data-start="2218" data-end="2255">
+<p data-start="2221" data-end="2255"><code data-start="2221" data-end="2255">2 * sum_positive ≤ -sum_negative</code></p>
+</li>
+</ol>
+<p data-start="2257" data-end="2279">If both are satisfied:</p>
+<pre class="overflow-visible! px-0!" data-start="2280" data-end="2316"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">bash</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-d46pasyz.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>minimum operations = -</span><span><span class="hljs-built_in">sum</span></span><span>(A)
+</span></span></code></div></div></pre>
+<p data-start="2318" data-end="2328">Otherwise:</p>
+<pre class="overflow-visible! px-0!" data-start="2329" data-end="2348"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">ini</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-d46pasyz.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attr">answer</span></span><span> = -</span><span><span class="hljs-number">1</span></span><span>
+</span></span></code></div></div></pre>
+<hr data-start="2350" data-end="2353">
+<h2 data-start="2355" data-end="2386">🧪 Apply to the sample cases</h2>
+<h3 data-start="2388" data-end="2400">✅ Case 1</h3>
+<pre class="overflow-visible! px-0!" data-start="2401" data-end="2500"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">makefile</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-d46pasyz.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>A = [-2]
+sum = -2 → k = 2
+sum_positive = 0
+sum_negative = -2
+
+</span><span><span class="hljs-section">Check:</span></span><span>
+2 * 0 ≤ 2 ✔
+Answer = 2
+</span></span></code></div></div></pre>
+<h3 data-start="2502" data-end="2514">❌ Case 2</h3>
+<pre class="overflow-visible! px-0!" data-start="2515" data-end="2617"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">makefile</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-d46pasyz.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>A = [1, -1]
+sum = 0 → k = 0
+sum_positive = 1
+sum_negative = -1
+
+</span><span><span class="hljs-section">Check:</span></span><span>
+2 * 1 ≤ 1 ❌
+Answer = -1
+</span></span></code></div></div></pre>
+<hr data-start="2619" data-end="2622">
+<h2 data-start="2624" data-end="2659">🧠 What this problem teaches you</h2>
+<p data-start="2661" data-end="2701">This is <strong data-start="2669" data-end="2700">very important conceptually</strong>:</p>
+<h3 data-start="2703" data-end="2753">🧩 1. Don’t simulate when operations are large</h3>
+<p data-start="2754" data-end="2786">Look for <strong data-start="2763" data-end="2777">invariants</strong> instead.</p>
+<h3 data-start="2788" data-end="2836">🧩 2. Operations define resource constraints</h3>
+<p data-start="2837" data-end="2842">Here:</p>
+<ul data-start="2843" data-end="2894">
+<li data-start="2843" data-end="2894">
+<p data-start="2845" data-end="2894">Each operation provides limited <code data-start="2877" data-end="2880">+</code> and <code data-start="2885" data-end="2888">−</code> power</p>
+</li>
+</ul>
+<h3 data-start="2896" data-end="2936">🧩 3. Sometimes the answer is forced</h3>
+<p data-start="2937" data-end="3018">The number of operations wasn’t something to minimize — it was <strong data-start="3000" data-end="3017">fixed by math</strong>.</p>
+<hr data-start="3020" data-end="3023">
+<h2 data-start="3025" data-end="3047">🧾 Final Pseudocode</h2>
+<pre class="overflow-visible! px-0!" data-start="3049" data-end="3253"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">python</div><div class="sticky top-[calc(--spacing(9)+var(--header-height))] @w-xl/main:top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-d46pasyz.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span>sumA = </span><span><span class="hljs-built_in">sum</span></span><span>(A)
+</span><span><span class="hljs-keyword">if</span></span><span> sumA &gt; </span><span><span class="hljs-number">0</span></span><span>:
+    </span><span><span class="hljs-keyword">return</span></span><span> -</span><span><span class="hljs-number">1</span></span><span>
+
+sum_pos = </span><span><span class="hljs-built_in">sum</span></span><span>(x </span><span><span class="hljs-keyword">for</span></span><span> x </span><span><span class="hljs-keyword">in</span></span><span> A </span><span><span class="hljs-keyword">if</span></span><span> x &gt; </span><span><span class="hljs-number">0</span></span><span>)
+sum_neg = </span><span><span class="hljs-built_in">sum</span></span><span>(x </span><span><span class="hljs-keyword">for</span></span><span> x </span><span><span class="hljs-keyword">in</span></span><span> A </span><span><span class="hljs-keyword">if</span></span><span> x &lt; </span><span><span class="hljs-number">0</span></span><span>)  </span><span><span class="hljs-comment"># negative number</span></span><span>
+
+</span><span><span class="hljs-keyword">if</span></span><span> </span><span><span class="hljs-number">2</span></span><span> * sum_pos &gt; -sum_neg:
+    </span><span><span class="hljs-keyword">return</span></span><span> -</span><span><span class="hljs-number">1</span></span><span>
+
+</span><span><span class="hljs-keyword">return</span></span><span> -sumA
+</span></span></code></div></div></pre>
+</div>
+
+<h3>Failing Test Case</h3>
+
+<pre>
+1
+10
+858 268 -73 -83 -613 -88 -240 -463 -605 -90
+</pre>
+
+<span style="opacity: 0;">Tags: Algorithms,</span>

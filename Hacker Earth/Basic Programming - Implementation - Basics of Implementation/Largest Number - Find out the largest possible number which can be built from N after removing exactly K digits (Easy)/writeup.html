@@ -1,0 +1,442 @@
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgryMq0djPXWwfl0RegWQncFaWckBfay7wS7Tx0egCBZK7fvy60Bse60hPdyQGxZcGX4xNiaQN4sPyCRnbp9Np0Ch7r9LIUkjbZWur0wlpL8AHtuhxEbZl9QDavFnSxbsIEGDKW291TApBKDkZ5t74f13o5jntId3nXes2Cvfxyw34p14PZvWggOAtG962D/s617/problem.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="617" data-original-width="613" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgryMq0djPXWwfl0RegWQncFaWckBfay7wS7Tx0egCBZK7fvy60Bse60hPdyQGxZcGX4xNiaQN4sPyCRnbp9Np0Ch7r9LIUkjbZWur0wlpL8AHtuhxEbZl9QDavFnSxbsIEGDKW291TApBKDkZ5t74f13o5jntId3nXes2Cvfxyw34p14PZvWggOAtG962D/s600/problem.png"/></a></div>
+
+<pre>
+Given an integer N which has D digits. You have to delete exactly K digits in integer N.
+
+Find out the largest possible number which can be built from N after removing exactly K digits.
+
+Input Format:
+
+First line contains two space separated integers: N K
+ 
+Output Format:
+
+Print the largest possible number which can be built from 
+ after removing exactly 
+ digits.
+
+Constraints:
+
+
+Sample Input
+3412 1
+Sample Output
+412
+Time Limit: 1
+Memory Limit: 256
+Source Limit:
+
+<b>Explanation</b>
+
+After removing exactly 1 digit, we can make
+
+412
+312
+342
+341
+
+Among, them 412 is the largest possible number.
+
+</pre>
+
+
+<h2>Solution:</h2>
+
+<pre>
+Couple of intuitive questions to ask yourself before jumping to code:
+1. What is the power of 10 that will remain from the original number after removing K digits?
+   Ans: D - K
+2. What is the position and value of the largest digit in the remaining number?
+   Ans: The largest digit must be in the first D - K digits of the original number.
+   If largest digit is not in the first D - K digits, we go for the second largest digit.
+
+<b>Psuedo Code</b>
+
+Initialize empty stack
+For each digit in N:
+    While stack not empty AND
+          last digit in stack &lt; current digit AND
+          deletions remaining:
+        pop stack
+        decrease K
+    push current digit to stack
+
+If deletions still left:
+    remove last K digits from stack
+
+Answer = digits in stack joined together
+
+<b>My Code</b>
+
+
+</pre>
+
+<h2>Q: Explain the solution to this problem in layman terms. Give clear descriptions of what this problem is trying to teach/assess, what design pattern, what problem solving trick/technique.</h2>
+
+<div class="markdown prose dark:prose-invert w-full wrap-break-word light markdown-new-styling"><p data-start="0" data-end="137">Great problem choice 👍 — this is a <strong data-start="36" data-end="91">classic interview + competitive programming problem</strong>, and it teaches an important way of thinking.</p>
+<p data-start="139" data-end="267">I’ll explain this in <strong data-start="160" data-end="176">layman terms</strong>, then connect it to <strong data-start="197" data-end="218">what it’s testing</strong>, <strong data-start="220" data-end="242">the design pattern</strong>, and <strong data-start="248" data-end="266">the core trick</strong>.</p>
+<hr data-start="269" data-end="272">
+<h2 data-start="274" data-end="303">🔍 Problem in simple words</h2>
+<p data-start="305" data-end="319">You are given:</p>
+<ul data-start="320" data-end="399">
+<li data-start="320" data-end="348">
+<p data-start="322" data-end="348">A number <strong data-start="331" data-end="336">N</strong> (as digits)</p>
+</li>
+<li data-start="349" data-end="399">
+<p data-start="351" data-end="399">A number <strong data-start="360" data-end="365">K</strong> (how many digits you must delete)</p>
+</li>
+</ul>
+<p data-start="401" data-end="567">👉 Your task:<br>
+<strong data-start="415" data-end="442">Delete exactly K digits</strong> from N<br data-start="449" data-end="452">
+<strong data-start="452" data-end="506">without changing the order of the remaining digits</strong>,<br data-start="507" data-end="510">
+so that the resulting number is <strong data-start="542" data-end="566">as large as possible</strong>.</p>
+<hr data-start="569" data-end="572">
+<h3 data-start="574" data-end="585">Example</h3>
+<pre class="overflow-visible! px-0!" data-start="587" data-end="609"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">ini</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attr">N</span></span><span> = </span><span><span class="hljs-number">3412</span></span><span>
+</span><span><span class="hljs-attr">K</span></span><span> = </span><span><span class="hljs-number">1</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="611" data-end="651">Possible results after deleting 1 digit:</p>
+<ul data-start="653" data-end="720">
+<li data-start="653" data-end="669">
+<p data-start="655" data-end="669">Remove 3 → 412</p>
+</li>
+<li data-start="670" data-end="686">
+<p data-start="672" data-end="686">Remove 4 → 312</p>
+</li>
+<li data-start="687" data-end="703">
+<p data-start="689" data-end="703">Remove 1 → 342</p>
+</li>
+<li data-start="704" data-end="720">
+<p data-start="706" data-end="720">Remove 2 → 341</p>
+</li>
+</ul>
+<p data-start="722" data-end="742">✔️ Largest = <strong data-start="735" data-end="742">412</strong></p>
+<hr data-start="744" data-end="747">
+<h2 data-start="749" data-end="782">🧠 Key constraint that matters</h2>
+<blockquote data-start="784" data-end="848">
+<p data-start="786" data-end="848"><strong data-start="786" data-end="818">You cannot rearrange digits.</strong><br data-start="818" data-end="821">
+You can only delete digits.</p>
+</blockquote>
+<p data-start="850" data-end="893">This is what makes the problem non-trivial.</p>
+<hr data-start="895" data-end="898">
+<h2 data-start="900" data-end="948">🧩 How to think about it (layman explanation)</h2>
+<p data-start="950" data-end="997">Let’s think like a human looking at the number:</p>
+<blockquote data-start="999" data-end="1083">
+<p data-start="1001" data-end="1083">“If I can delete some digits, I want <strong data-start="1038" data-end="1081">big digits to come as early as possible</strong>.”</p>
+</blockquote>
+<p data-start="1085" data-end="1093">Because:</p>
+<ul data-start="1094" data-end="1177">
+<li data-start="1094" data-end="1150">
+<p data-start="1096" data-end="1150">A bigger digit at the <strong data-start="1118" data-end="1126">left</strong> makes the number larger</p>
+</li>
+<li data-start="1151" data-end="1177">
+<p data-start="1153" data-end="1177">Later digits matter less</p>
+</li>
+</ul>
+<hr data-start="1179" data-end="1182">
+<h2 data-start="1184" data-end="1217">💡 Core idea (greedy thinking)</h2>
+<p data-start="1219" data-end="1236">Whenever you see:</p>
+<ul data-start="1237" data-end="1316">
+<li data-start="1237" data-end="1280">
+<p data-start="1239" data-end="1280">A <strong data-start="1241" data-end="1280">smaller digit before a bigger digit</strong></p>
+</li>
+<li data-start="1281" data-end="1316">
+<p data-start="1283" data-end="1316">AND you still have deletions left</p>
+</li>
+</ul>
+<p data-start="1318" data-end="1349">👉 <strong data-start="1321" data-end="1349">Delete the smaller digit</strong></p>
+<h3 data-start="1351" data-end="1359">Why?</h3>
+<p data-start="1360" data-end="1433">Because keeping the bigger digit earlier makes the number larger overall.</p>
+<hr data-start="1435" data-end="1438">
+<h3 data-start="1440" data-end="1464">Example walk-through</h3>
+<pre class="overflow-visible! px-0!" data-start="1466" data-end="1488"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">ini</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attr">N</span></span><span> = </span><span><span class="hljs-number">3412</span></span><span>
+</span><span><span class="hljs-attr">K</span></span><span> = </span><span><span class="hljs-number">1</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="1490" data-end="1514">Compare adjacent digits:</p>
+<pre class="overflow-visible! px-0!" data-start="1515" data-end="1539"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">cpp</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-number">3</span></span><span> &lt; </span><span><span class="hljs-number">4</span></span><span> → </span><span><span class="hljs-keyword">delete</span></span><span> </span><span><span class="hljs-number">3</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="1541" data-end="1545">Now:</p>
+<pre class="overflow-visible! px-0!" data-start="1546" data-end="1557"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1"></div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>412
+</span></span></code></div></div></pre>
+<p data-start="1559" data-end="1583">No deletions left → stop</p>
+<p data-start="1585" data-end="1602">✔️ Correct answer</p>
+<hr data-start="1604" data-end="1607">
+<h2 data-start="1609" data-end="1634">🧰 Design Pattern Used</h2>
+<h3 data-start="1636" data-end="1658">✅ Greedy Algorithm</h3>
+<p data-start="1659" data-end="1708">You make the <strong data-start="1672" data-end="1693">best local choice</strong> at every step:</p>
+<blockquote data-start="1709" data-end="1771">
+<p data-start="1711" data-end="1771">“If removing this digit makes the number bigger, do it now.”</p>
+</blockquote>
+<p data-start="1773" data-end="1799">Greedy works here because:</p>
+<ul data-start="1800" data-end="1922">
+<li data-start="1800" data-end="1849">
+<p data-start="1802" data-end="1849">Earlier digits dominate the value of the number</p>
+</li>
+<li data-start="1850" data-end="1922">
+<p data-start="1852" data-end="1922">Once a digit is fixed, future digits can’t compensate for a bad choice</p>
+</li>
+</ul>
+<hr data-start="1924" data-end="1927">
+<h2 data-start="1929" data-end="1959">🔄 Implementation Technique</h2>
+<h3 data-start="1961" data-end="1984"><strong data-start="1965" data-end="1984">Monotonic Stack</strong></h3>
+<p data-start="1986" data-end="2023">This problem is usually solved using:</p>
+<ul data-start="2024" data-end="2137">
+<li data-start="2024" data-end="2075">
+<p data-start="2026" data-end="2075">A stack that keeps digits in <strong data-start="2055" data-end="2075">decreasing order</strong></p>
+</li>
+<li data-start="2076" data-end="2137">
+<p data-start="2078" data-end="2084">While:</p>
+<ul data-start="2087" data-end="2137">
+<li data-start="2087" data-end="2114">
+<p data-start="2089" data-end="2114">Stack top &lt; current digit</p>
+</li>
+<li data-start="2117" data-end="2137">
+<p data-start="2119" data-end="2137">AND deletions left</p>
+</li>
+</ul>
+</li>
+</ul>
+<p data-start="2139" data-end="2168">Pop the stack (delete digit).</p>
+<hr data-start="2170" data-end="2173">
+<h3 data-start="2175" data-end="2191">Why a stack?</h3>
+<p data-start="2192" data-end="2205">It helps you:</p>
+<ul data-start="2206" data-end="2298">
+<li data-start="2206" data-end="2236">
+<p data-start="2208" data-end="2236">Look back at previous digits</p>
+</li>
+<li data-start="2237" data-end="2262">
+<p data-start="2239" data-end="2262">Remove them efficiently</p>
+</li>
+<li data-start="2263" data-end="2298">
+<p data-start="2265" data-end="2298">Maintain the best possible prefix</p>
+</li>
+</ul>
+<hr data-start="2300" data-end="2303">
+<h2 data-start="2305" data-end="2338">✏️ Pseudocode (human-readable)</h2>
+<pre class="overflow-visible! px-0!" data-start="2340" data-end="2675"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">sql</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>Initialize </span><span><span class="hljs-keyword">empty</span></span><span> stack
+</span><span><span class="hljs-keyword">For</span></span><span> </span><span><span class="hljs-keyword">each</span></span><span> digit </span><span><span class="hljs-keyword">in</span></span><span> N:
+    While stack </span><span><span class="hljs-keyword">not</span></span><span> </span><span><span class="hljs-keyword">empty</span></span><span> </span><span><span class="hljs-keyword">AND</span></span><span>
+          </span><span><span class="hljs-keyword">last</span></span><span> digit </span><span><span class="hljs-keyword">in</span></span><span> stack </span><span><span class="hljs-operator">&lt;</span></span><span> </span><span><span class="hljs-keyword">current</span></span><span> digit </span><span><span class="hljs-keyword">AND</span></span><span>
+          deletions remaining:
+        pop stack
+        decrease K
+    push </span><span><span class="hljs-keyword">current</span></span><span> digit </span><span><span class="hljs-keyword">to</span></span><span> stack
+
+If deletions still </span><span><span class="hljs-keyword">left</span></span><span>:
+    remove </span><span><span class="hljs-keyword">last</span></span><span> K digits </span><span><span class="hljs-keyword">from</span></span><span> stack
+
+Answer </span><span><span class="hljs-operator">=</span></span><span> digits </span><span><span class="hljs-keyword">in</span></span><span> stack joined together
+</span></span></code></div></div></pre>
+<hr data-start="2677" data-end="2680">
+<h2 data-start="2682" data-end="2717">🧪 Edge cases this problem tests</h2>
+<ol data-start="2719" data-end="2954">
+<li data-start="2719" data-end="2819">
+<p data-start="2722" data-end="2751"><strong data-start="2722" data-end="2751">Digits already decreasing</strong></p>
+<pre class="overflow-visible! px-0!" data-start="2755" data-end="2789"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">ini</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attr">N</span></span><span> = </span><span><span class="hljs-number">9876</span></span><span>, K = </span><span><span class="hljs-number">2</span></span><span> → </span><span><span class="hljs-number">98</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="2793" data-end="2819">→ Just remove from the end</p>
+</li>
+<li data-start="2821" data-end="2880">
+<p data-start="2824" data-end="2841"><strong data-start="2824" data-end="2841">Leading zeros</strong></p>
+<pre class="overflow-visible! px-0!" data-start="2845" data-end="2880"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">ini</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attr">N</span></span><span> = </span><span><span class="hljs-number">1002</span></span><span>, K = </span><span><span class="hljs-number">1</span></span><span> → </span><span><span class="hljs-number">102</span></span><span>
+</span></span></code></div></div></pre>
+</li>
+<li data-start="2882" data-end="2954">
+<p data-start="2885" data-end="2954"><strong data-start="2885" data-end="2894">K = D</strong><br>
+→ Result is empty or 0 (depending on problem definition)</p>
+</li>
+</ol>
+<hr data-start="2956" data-end="2959">
+<h2 data-start="2961" data-end="3004">🎯 What this problem is really assessing</h2>
+<div class="TyagGW_tableContainer"><div tabindex="-1" class="group TyagGW_tableWrapper flex flex-col-reverse w-fit"><table data-start="3006" data-end="3195" class="w-fit min-w-(--thread-content-width)"><thead data-start="3006" data-end="3024"><tr data-start="3006" data-end="3024"><th data-start="3006" data-end="3014" data-col-size="sm">Skill</th><th data-start="3014" data-end="3024" data-col-size="sm">Tested</th></tr></thead><tbody data-start="3041" data-end="3195"><tr data-start="3041" data-end="3064"><td data-start="3041" data-end="3059" data-col-size="sm">Greedy thinking</td><td data-col-size="sm" data-start="3059" data-end="3064">✅</td></tr><tr data-start="3065" data-end="3084"><td data-start="3065" data-end="3079" data-col-size="sm">Stack usage</td><td data-start="3079" data-end="3084" data-col-size="sm">✅</td></tr><tr data-start="3085" data-end="3111"><td data-start="3085" data-end="3106" data-col-size="sm">Digit manipulation</td><td data-start="3106" data-end="3111" data-col-size="sm">✅</td></tr><tr data-start="3112" data-end="3138"><td data-start="3112" data-end="3133" data-col-size="sm">Order preservation</td><td data-start="3133" data-end="3138" data-col-size="sm">✅</td></tr><tr data-start="3139" data-end="3165"><td data-start="3139" data-end="3160" data-col-size="sm">Edge-case handling</td><td data-start="3160" data-end="3165" data-col-size="sm">✅</td></tr><tr data-start="3166" data-end="3195"><td data-start="3166" data-end="3190" data-col-size="sm">Algorithmic intuition</td><td data-start="3190" data-end="3195" data-col-size="sm">✅</td></tr></tbody></table><div class="sticky h-0 select-none end-(--thread-content-margin) self-end"><div class="absolute end-0 flex items-end" style="height: 33.0781px;"><span class="" data-state="closed"><button aria-label="Copy table" class="hover:bg-token-bg-tertiary text-token-text-secondary my-1 rounded-sm p-1 transition-opacity group-[:not(:hover):not(:focus-within)]:pointer-events-none group-[:not(:hover):not(:focus-within)]:opacity-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg></button></span></div></div></div></div>
+<hr data-start="3197" data-end="3200">
+<h2 data-start="3202" data-end="3220">🧠 Big takeaway</h2>
+<blockquote data-start="3222" data-end="3335">
+<p data-start="3224" data-end="3335">To maximize a number, <strong data-start="3246" data-end="3279">fix the leftmost digits first</strong><br data-start="3279" data-end="3282">
+by deleting smaller digits when you get the chance.</p>
+</blockquote>
+<p data-start="3337" data-end="3372">This idea appears in many problems:</p>
+<ul data-start="3373" data-end="3467">
+<li data-start="3373" data-end="3390">
+<p data-start="3375" data-end="3390">Remove K digits</p>
+</li>
+<li data-start="3391" data-end="3422">
+<p data-start="3393" data-end="3422">Build largest/smallest number</p>
+</li>
+<li data-start="3423" data-end="3444">
+<p data-start="3425" data-end="3444">Stock span problems</p>
+</li>
+<li data-start="3445" data-end="3467">
+<p data-start="3447" data-end="3467">Next greater element</p>
+</li>
+</ul>
+<hr data-start="3469" data-end="3472">
+<h2 data-start="3474" data-end="3502">🏁 Final one-line summary</h2>
+<p data-start="3504" data-end="3536">This problem teaches you how to:</p>
+<blockquote data-start="3537" data-end="3653">
+<p data-start="3539" data-end="3653"><strong data-start="3539" data-end="3653">Use greedy decisions + a stack to build the best possible number while deleting digits without changing order.</strong></p>
+</blockquote>
+<p data-start="3655" data-end="3672">If you want next:</p>
+<ul data-start="3673" data-end="3788">
+<li data-start="3673" data-end="3691">
+<p data-start="3675" data-end="3691">Full Python code</p>
+</li>
+<li data-start="3692" data-end="3720">
+<p data-start="3694" data-end="3720">Dry-run with more examples</p>
+</li>
+<li data-start="3721" data-end="3753">
+<p data-start="3723" data-end="3753">Why greedy is provably correct</p>
+</li>
+<li data-start="3754" data-end="3788">
+<p data-start="3756" data-end="3788">How this compares to brute force</p>
+</li>
+</ul>
+<p data-start="3790" data-end="3805" data-is-last-node="" data-is-only-node="">Just tell me 🙂</p></div>
+
+<hr>
+<hr>
+
+<h2>Full Python Code From ChatGPT</h2>
+
+<div class="markdown prose dark:prose-invert w-full wrap-break-word light markdown-new-styling"><p data-start="0" data-end="125">Here is the <strong data-start="12" data-end="63">clean, correct, interview-ready Python solution</strong> using the <strong data-start="74" data-end="102">greedy + monotonic stack</strong> approach we discussed.</p>
+<p data-start="127" data-end="187">This works efficiently even for very large <code data-start="170" data-end="173">N</code> (up to 10¹⁸).</p>
+<hr data-start="189" data-end="192">
+<h2 data-start="194" data-end="215">✅ Full Python Code</h2>
+<pre class="overflow-visible! px-0!" data-start="217" data-end="848"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">python</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">def</span></span><span> </span><span><span class="hljs-title function_">largest_number_after_k_deletions</span></span><span>(</span><span><span class="hljs-params">N, K</span></span><span>):
+    digits = </span><span><span class="hljs-built_in">list</span></span><span>(</span><span><span class="hljs-built_in">str</span></span><span>(N))
+    stack = []
+
+    </span><span><span class="hljs-keyword">for</span></span><span> d </span><span><span class="hljs-keyword">in</span></span><span> digits:
+        </span><span><span class="hljs-comment"># Remove smaller digits from stack if possible</span></span><span>
+        </span><span><span class="hljs-keyword">while</span></span><span> stack </span><span><span class="hljs-keyword">and</span></span><span> K &gt; </span><span><span class="hljs-number">0</span></span><span> </span><span><span class="hljs-keyword">and</span></span><span> stack[-</span><span><span class="hljs-number">1</span></span><span>] &lt; d:
+            stack.pop()
+            K -= </span><span><span class="hljs-number">1</span></span><span>
+        stack.append(d)
+
+    </span><span><span class="hljs-comment"># If deletions still remain, remove from the end</span></span><span>
+    </span><span><span class="hljs-keyword">while</span></span><span> K &gt; </span><span><span class="hljs-number">0</span></span><span>:
+        stack.pop()
+        K -= </span><span><span class="hljs-number">1</span></span><span>
+
+    </span><span><span class="hljs-comment"># Join digits and remove leading zeros if any</span></span><span>
+    result = </span><span><span class="hljs-string">''</span></span><span>.join(stack).lstrip(</span><span><span class="hljs-string">'0'</span></span><span>)
+
+    </span><span><span class="hljs-keyword">return</span></span><span> result </span><span><span class="hljs-keyword">if</span></span><span> result </span><span><span class="hljs-keyword">else</span></span><span> </span><span><span class="hljs-string">"0"</span></span><span>
+
+
+</span><span><span class="hljs-comment"># ---- Driver code ----</span></span><span>
+N, K = </span><span><span class="hljs-built_in">map</span></span><span>(</span><span><span class="hljs-built_in">int</span></span><span>, </span><span><span class="hljs-built_in">input</span></span><span>().split())
+</span><span><span class="hljs-built_in">print</span></span><span>(largest_number_after_k_deletions(N, K))
+</span></span></code></div></div></pre>
+<hr data-start="850" data-end="853">
+<h2 data-start="855" data-end="903">🧠 Step-by-Step Explanation (Layman Friendly)</h2>
+<h3 data-start="905" data-end="942">🔹 Convert the number into digits</h3>
+<pre class="overflow-visible! px-0!" data-start="943" data-end="978"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">python</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span>digits = </span><span><span class="hljs-built_in">list</span></span><span>(</span><span><span class="hljs-built_in">str</span></span><span>(N))
+</span></span></code></div></div></pre>
+<p data-start="979" data-end="1044">We treat the number as characters so we can remove digits easily.</p>
+<hr data-start="1046" data-end="1049">
+<h3 data-start="1051" data-end="1094">🔹 Use a stack to build the best number</h3>
+<pre class="overflow-visible! px-0!" data-start="1095" data-end="1119"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">python</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span>stack = []
+</span></span></code></div></div></pre>
+<p data-start="1120" data-end="1188">The stack keeps digits in <strong data-start="1146" data-end="1166">descending order</strong>, as much as possible.</p>
+<hr data-start="1190" data-end="1193">
+<h3 data-start="1195" data-end="1219">🔹 Main greedy logic</h3>
+<pre class="overflow-visible! px-0!" data-start="1220" data-end="1301"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">python</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">while</span></span><span> stack </span><span><span class="hljs-keyword">and</span></span><span> K &gt; </span><span><span class="hljs-number">0</span></span><span> </span><span><span class="hljs-keyword">and</span></span><span> stack[-</span><span><span class="hljs-number">1</span></span><span>] &lt; d:
+    stack.pop()
+    K -= </span><span><span class="hljs-number">1</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="1303" data-end="1314">This means:</p>
+<ul data-start="1315" data-end="1464">
+<li data-start="1315" data-end="1376">
+<p data-start="1317" data-end="1376">If the previous digit is <strong data-start="1342" data-end="1353">smaller</strong> than the current digit</p>
+</li>
+<li data-start="1377" data-end="1411">
+<p data-start="1379" data-end="1411">AND we still have deletions left</p>
+</li>
+<li data-start="1412" data-end="1464">
+<p data-start="1414" data-end="1464">Remove the smaller digit to make the number bigger</p>
+</li>
+</ul>
+<hr data-start="1466" data-end="1469">
+<h3 data-start="1471" data-end="1503">🔹 Handle leftover deletions</h3>
+<pre class="overflow-visible! px-0!" data-start="1504" data-end="1557"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">python</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">while</span></span><span> K &gt; </span><span><span class="hljs-number">0</span></span><span>:
+    stack.pop()
+    K -= </span><span><span class="hljs-number">1</span></span><span>
+</span></span></code></div></div></pre>
+<p data-start="1559" data-end="1641">If digits are already decreasing (like <code data-start="1598" data-end="1604">9876</code>), we remove digits from the <strong data-start="1633" data-end="1640">end</strong>.</p>
+<hr data-start="1643" data-end="1646">
+<h3 data-start="1648" data-end="1667">🔹 Clean result</h3>
+<pre class="overflow-visible! px-0!" data-start="1668" data-end="1717"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">python</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span>result = </span><span><span class="hljs-string">''</span></span><span>.join(stack).lstrip(</span><span><span class="hljs-string">'0'</span></span><span>)
+</span></span></code></div></div></pre>
+<p data-start="1719" data-end="1756">Removes leading zeros if they appear.</p>
+<hr data-start="1758" data-end="1761">
+<h2 data-start="1763" data-end="1788">🧪 Example Walkthrough</h2>
+<h3 data-start="1790" data-end="1799">Input</h3>
+<pre class="overflow-visible! px-0!" data-start="1800" data-end="1814"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">yaml</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-number">3412 </span></span><span><span class="hljs-number">1</span></span><span>
+</span></span></code></div></div></pre>
+<h3 data-start="1816" data-end="1835">Stack evolution</h3>
+<div class="TyagGW_tableContainer"><div tabindex="-1" class="group TyagGW_tableWrapper flex flex-col-reverse w-fit"><table data-start="1836" data-end="1977" class="w-fit min-w-(--thread-content-width)"><thead data-start="1836" data-end="1864"><tr data-start="1836" data-end="1864"><th data-start="1836" data-end="1843" data-col-size="sm">Step</th><th data-start="1843" data-end="1851" data-col-size="sm">Digit</th><th data-start="1851" data-end="1859" data-col-size="sm">Stack</th><th data-start="1859" data-end="1864" data-col-size="sm">K</th></tr></thead><tbody data-start="1887" data-end="1977"><tr data-start="1887" data-end="1906"><td data-start="1887" data-end="1891" data-col-size="sm">1</td><td data-start="1891" data-end="1895" data-col-size="sm">3</td><td data-start="1895" data-end="1901" data-col-size="sm">[3]</td><td data-start="1901" data-end="1906" data-col-size="sm">1</td></tr><tr data-start="1907" data-end="1931"><td data-start="1907" data-end="1911" data-col-size="sm">2</td><td data-start="1911" data-end="1915" data-col-size="sm">4</td><td data-start="1915" data-end="1926" data-col-size="sm">[] → [4]</td><td data-start="1926" data-end="1931" data-col-size="sm">0</td></tr><tr data-start="1932" data-end="1953"><td data-start="1932" data-end="1936" data-col-size="sm">3</td><td data-start="1936" data-end="1940" data-col-size="sm">1</td><td data-start="1940" data-end="1948" data-col-size="sm">[4,1]</td><td data-start="1948" data-end="1953" data-col-size="sm">0</td></tr><tr data-start="1954" data-end="1977"><td data-start="1954" data-end="1958" data-col-size="sm">4</td><td data-start="1958" data-end="1962" data-col-size="sm">2</td><td data-start="1962" data-end="1972" data-col-size="sm">[4,1,2]</td><td data-col-size="sm" data-start="1972" data-end="1977">0</td></tr></tbody></table><div class="sticky h-0 select-none end-(--thread-content-margin) self-end"><div class="absolute end-0 flex items-end" style="height: 33.0781px;"><span class="" data-state="closed"><button aria-label="Copy table" class="hover:bg-token-bg-tertiary text-token-text-secondary my-1 rounded-sm p-1 transition-opacity group-[:not(:hover):not(:focus-within)]:pointer-events-none group-[:not(:hover):not(:focus-within)]:opacity-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg></button></span></div></div></div></div>
+<p data-start="1979" data-end="1997">✔️ Output: <strong data-start="1990" data-end="1997">412</strong></p>
+<hr data-start="1999" data-end="2002">
+<h2 data-start="2004" data-end="2033">⏱️ Time &amp; Space Complexity</h2>
+<div class="TyagGW_tableContainer"><div tabindex="-1" class="group TyagGW_tableWrapper flex flex-col-reverse w-fit"><table data-start="2035" data-end="2110" class="w-fit min-w-(--thread-content-width)"><thead data-start="2035" data-end="2053"><tr data-start="2035" data-end="2053"><th data-start="2035" data-end="2044" data-col-size="sm">Metric</th><th data-start="2044" data-end="2053" data-col-size="sm">Value</th></tr></thead><tbody data-start="2070" data-end="2110"><tr data-start="2070" data-end="2089"><td data-start="2070" data-end="2077" data-col-size="sm">Time</td><td data-start="2077" data-end="2089" data-col-size="sm"><strong data-start="2079" data-end="2087">O(D)</strong></td></tr><tr data-start="2090" data-end="2110"><td data-start="2090" data-end="2098" data-col-size="sm">Space</td><td data-start="2098" data-end="2110" data-col-size="sm"><strong data-start="2100" data-end="2108">O(D)</strong></td></tr></tbody></table><div class="sticky h-0 select-none end-(--thread-content-margin) self-end"><div class="absolute end-0 flex items-end" style="height: 33.0781px;"><span class="" data-state="closed"><button aria-label="Copy table" class="hover:bg-token-bg-tertiary text-token-text-secondary my-1 rounded-sm p-1 transition-opacity group-[:not(:hover):not(:focus-within)]:pointer-events-none group-[:not(:hover):not(:focus-within)]:opacity-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg></button></span></div></div></div></div>
+<p data-start="2112" data-end="2148">Where <code data-start="2118" data-end="2121">D</code> = number of digits in <code data-start="2144" data-end="2147">N</code>.</p>
+<hr data-start="2150" data-end="2153">
+<h2 data-start="2155" data-end="2189">🎯 Why this solution is optimal</h2>
+<ul data-start="2191" data-end="2302">
+<li data-start="2191" data-end="2207">
+<p data-start="2193" data-end="2207">No brute force</p>
+</li>
+<li data-start="2208" data-end="2222">
+<p data-start="2210" data-end="2222">No recursion</p>
+</li>
+<li data-start="2223" data-end="2240">
+<p data-start="2225" data-end="2240">No permutations</p>
+</li>
+<li data-start="2241" data-end="2266">
+<p data-start="2243" data-end="2266">Works for large numbers</p>
+</li>
+<li data-start="2267" data-end="2302">
+<p data-start="2269" data-end="2302">Industry-standard greedy solution</p>
+</li>
+</ul>
+<hr data-start="2304" data-end="2307">
+<h2 data-start="2309" data-end="2340">🧩 What this problem teaches</h2>
+<ul data-start="2342" data-end="2461">
+<li data-start="2342" data-end="2370">
+<p data-start="2344" data-end="2370"><strong data-start="2344" data-end="2370">Greedy decision making</strong></p>
+</li>
+<li data-start="2371" data-end="2393">
+<p data-start="2373" data-end="2393"><strong data-start="2373" data-end="2393">Monotonic stacks</strong></p>
+</li>
+<li data-start="2394" data-end="2424">
+<p data-start="2396" data-end="2424"><strong data-start="2396" data-end="2424">Digit-level manipulation</strong></p>
+</li>
+<li data-start="2425" data-end="2461">
+<p data-start="2427" data-end="2461"><strong data-start="2427" data-end="2461">Why earlier digits matter more</strong></p>
+</li>
+</ul>
+<hr data-start="2463" data-end="2466">
+<p data-start="2468" data-end="2485">If you want next:</p>
+<ul data-start="2486" data-end="2602">
+<li data-start="2486" data-end="2511">
+<p data-start="2488" data-end="2511">A brute-force validator</p>
+</li>
+<li data-start="2512" data-end="2530">
+<p data-start="2514" data-end="2530">Handling <code data-start="2523" data-end="2530">K &gt; 3</code></p>
+</li>
+<li data-start="2531" data-end="2571">
+<p data-start="2533" data-end="2571">Explanation of why greedy always works</p>
+</li>
+<li data-start="2572" data-end="2602">
+<p data-start="2574" data-end="2602">Similar problems to practice</p>
+</li>
+</ul>
+<p data-start="2604" data-end="2615" data-is-last-node="" data-is-only-node="">Just say 👍</p></div>
+
+<hr>
+<hr>
+
+<h2>What is the greedy algorithm in 100 words?</h2>
+
+<div class="markdown prose dark:prose-invert w-full wrap-break-word light markdown-new-styling"><p data-start="0" data-end="665" data-is-last-node="" data-is-only-node="">A <strong data-start="2" data-end="22">greedy algorithm</strong> is a problem-solving approach where, at each step, you make the <strong data-start="87" data-end="130">best immediate (locally optimal) choice</strong> with the hope that these choices lead to an <strong data-start="175" data-end="203">overall optimal solution</strong>. It does not look ahead or reconsider past decisions. Greedy algorithms work well when a problem has the <strong data-start="309" data-end="335">greedy-choice property</strong>, meaning a locally optimal choice is also globally optimal. They are usually simple, fast, and memory-efficient. Common examples include activity selection, coin change (with certain coin systems), shortest path algorithms like Dijkstra, and problems involving monotonic stacks such as removing digits to form the largest number.</p></div>
