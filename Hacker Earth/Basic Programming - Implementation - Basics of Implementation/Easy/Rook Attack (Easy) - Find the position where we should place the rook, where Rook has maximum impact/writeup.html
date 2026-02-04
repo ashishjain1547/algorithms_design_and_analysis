@@ -1,0 +1,634 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    
+        .customLink:hover {
+            text-decoration: none;
+        }
+    
+        div.code-block-decoration.footer {
+            display: none;
+        }
+    
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+    
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+    
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+    
+        .custom_link_h2 a:active {
+            color: black;
+        }
+    
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+    
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+    
+        [aria-hidden='true'] {
+            display: none;
+        }
+    
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+    
+        i.ir { color: red; }
+        i.ig { color: green; }
+        i.ib { color: blue; }
+        i.im { color: magenta; }
+        i.ip { color: purple; }
+    
+        .customTable td {
+            padding: 2px;
+        }
+    
+        i.green {
+            color: green;
+        }
+    
+        i.red {
+            color: red;
+        }
+    
+        i.blue {
+            color: blue;
+        }
+    
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+    
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        button.bg-token-bg-primary {
+            display: none;
+        }
+    
+        .flex.items-center {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink" href="https://survival8.blogspot.com/2025/06/index-of-algorithms-design-and-analysis.html" target="_blank">
+    Index of "Algorithms: Design and Analysis"
+</a>
+
+<br>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgC_CEb5W0VvrKct60Cp8DMKktJ7hiOdxR6YC8xz8uQss4SzjKlzlcVv7pvph7S-cdh7cyACb4v8ylzGQlc7Du23ObM-4O3KfV_XbLWICbx2QP2X6mLENYMpOa-7HiDnRyrE_bCptrVE0gcZK3GWMv2LF_R33j1EfYDbyOicjmFCjCMGBwzp8-O0EsFdjwe/s637/algorithms.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="346" data-original-width="637" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgC_CEb5W0VvrKct60Cp8DMKktJ7hiOdxR6YC8xz8uQss4SzjKlzlcVv7pvph7S-cdh7cyACb4v8ylzGQlc7Du23ObM-4O3KfV_XbLWICbx2QP2X6mLENYMpOa-7HiDnRyrE_bCptrVE0gcZK3GWMv2LF_R33j1EfYDbyOicjmFCjCMGBwzp8-O0EsFdjwe/s600/algorithms.png"/></a></div>
+<br>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGFr-bGUwV4GnRXBrPrWCvXqr5KRLkbSk9ZlQ_BXF-hkOTx7iekS4xo3o8MN6IpWv38RJNJKbIppubeuO9CYYK2d7a4UzW4DH6Nf-XfbWwa2fS29SQANEpzNksvdEFVp5Xt8gqPWSgC5sPMTm932ZcArE5D1gM5hLaP2t4Ft1Uq6RwQ87N9QjvKttiLajM/s706/Screenshot%20from%202026-02-04%2007-59-20.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" height="600" data-original-height="706" data-original-width="675" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGFr-bGUwV4GnRXBrPrWCvXqr5KRLkbSk9ZlQ_BXF-hkOTx7iekS4xo3o8MN6IpWv38RJNJKbIppubeuO9CYYK2d7a4UzW4DH6Nf-XfbWwa2fS29SQANEpzNksvdEFVp5Xt8gqPWSgC5sPMTm932ZcArE5D1gM5hLaP2t4Ft1Uq6RwQ87N9QjvKttiLajM/s600/Screenshot%20from%202026-02-04%2007-59-20.png"/></a></div>
+
+<a href="https://www.hackerearth.com/practice/basic-programming/implementation/basics-of-implementation/practice-problems/algorithm/rook-attack-b899b655/" target="_blank">Try out the problem on Hacker Earth</a>
+
+<pre>
+<b>Rook Attack</b>
+
+Given a N x M chessboard, where every cell has a value assigned to it denoted by 
+ (Cell in the ith row from top and jth column from left).
+
+Find the position (x, y) where we should place the rook, just the sum of cells which are under attack of rook is maximum possible. The rook can not attack the cell on which it is placed.
+
+If there are more than one positions for (x, y), return the position where x is as minimum as possible. If there are more than one positions with equal x, return the position where y is as minimum as possible.
+
+<b>Note:</b>
+
+-> 1 based indexing is followed.
+-> A rook can attack all the cells which are either in horizontal or vertical direction to the rook's position.
+Input
+
+First line contains two space separated integers denoting N and M.
+
+Next N lines contains M space separated integers denoting the values of array A.
+
+<b>Output</b>
+
+Print two space separated integers x and y denoting the rook's position.
+
+<b>Constraints</b>
+
+1 ≤ N, M ≤ 10**6
+1 ≤ A[i][j] ≤ 10**4
+
+Sample Input
+2 2
+4 1 
+3 1
+
+Sample Output
+1 2
+
+Time Limit: 1.5
+Memory Limit: 256
+Source Limit:
+
+<b>Explanation</b>
+
+If we place the rook at (1, 2) position, the cells under attack of rook will be
+(1, 1), (2, 2)
+The sum of these cells will be
+4 + 1 = 5, which is maximum possible.
+
+</pre>
+
+<hr><hr>
+
+<pre>
+<b>Brute-Force Thinking....</b>
+
+Iterate through each cell of the chessboard and for each cell, calculate the sum of values in its row and column, excluding the value of the cell itself. Keep track of the maximum sum found and the corresponding position. If a new maximum is found, update the position. If the same maximum is found, check for the smallest row and column indices.
+
+
+<b>My Code:</b>
+
+<i>
+N, M = map(int, input().split())
+
+A = [list(map(int, input().split())) for _ in range(N)]
+
+rowSum = [0] * N
+colSum = [0] * M
+
+for i in range(N):
+    for j in range(M):
+        rowSum[i] += A[i][j]
+        colSum[j] += A[i][j]
+
+best_score = -1
+best_row = -1
+best_col = -1
+
+for i in range(N):
+    for j in range(M):
+        score = rowSum[i] + colSum[j] - 2 * A[i][j]
+
+        # print("Score: ", score)
+        # print(best_score, best_row, best_col)
+
+        if score > best_score or (score == best_score and (i + 1 < best_row or (i + 1 == best_row and j + 1 < best_col))):
+            best_score = score
+            best_row = i + 1
+            best_col = j + 1
+
+print(best_row, best_col)
+</i>
+</pre>
+
+<mark><h1>BEFORE I GIVE YOU CHATGPT'S THOUGHT: I WOULD LIKE TO TELL YOU THAT CHATGPT MADE A MISTAKE -- SAME MISTAKE REPEATEDLY WHEN TALKING ON A POINT ON MULTIPLE OCCASIONS</h1></mark>
+
+<pre>
+<mark>You see that when score is computed a cell: the value A[i][j] should be subtracted twice because it is counted in both rowSum and colSum. However, in the code and hints provided by ChatGPT, it is subtracted only once. </mark>
+
+So the correct formula for score should be:
+score = rowSum[i] + colSum[j] - 2 * A[i][j
+</pre>
+
+<h1>ChatGPT's Thoughts</h1>
+
+<h2>Explain the solution to this problem in layman terms. Give clear descriptions of what this problem is trying to teach/assess, what design pattern, what problem solving trick/technique.</h2>
+
+<div class="markdown prose dark:prose-invert w-full wrap-break-word light markdown-new-styling"><p data-start="0" data-end="91">Let’s break this down <strong data-start="22" data-end="57">slowly, simply, and intuitively</strong>, without jumping into code first.</p>
+<hr data-start="93" data-end="96">
+<h2 data-start="98" data-end="150">🧩 What is the problem saying (in plain English)?</h2>
+<p data-start="152" data-end="221">You are given a chessboard (a grid) where <strong data-start="194" data-end="220">each cell has a number</strong>.</p>
+<p data-start="223" data-end="267">You want to place <strong data-start="241" data-end="253">one rook</strong> on the board.</p>
+<p data-start="269" data-end="276">A rook:</p>
+<ul data-start="277" data-end="408">
+<li data-start="277" data-end="319">
+<p data-start="279" data-end="319">Can attack <strong data-start="290" data-end="319">all cells in the same row</strong></p>
+</li>
+<li data-start="320" data-end="365">
+<p data-start="322" data-end="365">Can attack <strong data-start="333" data-end="365">all cells in the same column</strong></p>
+</li>
+<li data-start="366" data-end="408">
+<p data-start="368" data-end="408">❌ Cannot attack the cell it is placed on</p>
+</li>
+</ul>
+<p data-start="410" data-end="426">Your goal is to:</p>
+<blockquote data-start="427" data-end="518">
+<p data-start="429" data-end="518"><strong data-start="429" data-end="518">Choose the cell where placing the rook gives the maximum total sum of attacked cells.</strong></p>
+</blockquote>
+<p data-start="520" data-end="568">If multiple positions give the same maximum sum:</p>
+<ol data-start="569" data-end="660">
+<li data-start="569" data-end="605">
+<p data-start="572" data-end="605">Choose the smallest row index <code data-start="602" data-end="605">x</code></p>
+</li>
+<li data-start="606" data-end="660">
+<p data-start="609" data-end="660">If still tied, choose the smallest column index <code data-start="657" data-end="660">y</code></p>
+</li>
+</ol>
+<hr data-start="662" data-end="665">
+<h2 data-start="667" data-end="702">🧠 What does the rook “collect”?</h2>
+<p data-start="704" data-end="747">If you place the rook at position <code data-start="738" data-end="746">(x, y)</code>:</p>
+<ul data-start="748" data-end="881">
+<li data-start="748" data-end="787">
+<p data-start="750" data-end="787">It collects <strong data-start="762" data-end="787">all values in row <code data-start="782" data-end="785">x</code></strong></p>
+</li>
+<li data-start="788" data-end="823">
+<p data-start="790" data-end="823">Plus <strong data-start="795" data-end="823">all values in column <code data-start="818" data-end="821">y</code></strong></p>
+</li>
+<li data-start="824" data-end="881">
+<p data-start="826" data-end="881">Minus <code data-start="832" data-end="841">A[x][y]</code> (because it cannot attack its own cell)</p>
+</li>
+</ul>
+<p data-start="883" data-end="898">So effectively:</p>
+<pre class="overflow-visible! px-0!" data-start="899" data-end="952"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1"></div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>score(x, y) = rowSum[x] + colSum[y] - A[x][y]
+</span></span></code></div></div></pre>
+<hr data-start="954" data-end="957">
+<h2 data-start="959" data-end="981">🧪 Sample intuition</h2>
+<p data-start="983" data-end="989">Input:</p>
+<pre class="overflow-visible! px-0!" data-start="990" data-end="1005"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1"></div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>4 1
+3 1
+</span></span></code></div></div></pre>
+<p data-start="1007" data-end="1012">Grid:</p>
+<pre class="overflow-visible! px-0!" data-start="1013" data-end="1030"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1"></div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>4  1
+3  1
+</span></span></code></div></div></pre>
+<p data-start="1032" data-end="1052">At position <code data-start="1044" data-end="1051">(1,2)</code>:</p>
+<ul data-start="1053" data-end="1129">
+<li data-start="1053" data-end="1076">
+<p data-start="1055" data-end="1076">Row 1 sum = 4 + 1 = 5</p>
+</li>
+<li data-start="1077" data-end="1103">
+<p data-start="1079" data-end="1103">Column 2 sum = 1 + 1 = 2</p>
+</li>
+<li data-start="1104" data-end="1129">
+<p data-start="1106" data-end="1129">Subtract cell (1,2) = 1</p>
+</li>
+</ul>
+<p data-start="1131" data-end="1160">Final score = <code data-start="1145" data-end="1160">5 + 2 - 1 = 6</code></p>
+<p data-start="1162" data-end="1210">This is the maximum possible → answer is <code data-start="1203" data-end="1210">(1,2)</code></p>
+<hr data-start="1212" data-end="1215">
+<h2 data-start="1217" data-end="1262">🚀 The naïve (slow) way — and why it fails</h2>
+<p data-start="1264" data-end="1287">A beginner might think:</p>
+<ul data-start="1288" data-end="1348">
+<li data-start="1288" data-end="1335">
+<p data-start="1290" data-end="1335">For each cell, scan its entire row and column</p>
+</li>
+<li data-start="1336" data-end="1348">
+<p data-start="1338" data-end="1348">Add values</p>
+</li>
+</ul>
+<p data-start="1350" data-end="1366">That would cost:</p>
+<pre class="overflow-visible! px-0!" data-start="1367" data-end="1421"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">mathematica</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-built_in">O</span></span><span><span class="hljs-punctuation">(</span></span><span><span class="hljs-built_in">N</span></span><span> </span><span><span class="hljs-operator">+</span></span><span> </span><span><span class="hljs-variable">M</span></span><span><span class="hljs-punctuation">)</span></span><span> </span><span><span class="hljs-variable">per</span></span><span> </span><span><span class="hljs-variable">cell</span></span><span>
+</span><span><span class="hljs-built_in">Total</span></span><span> </span><span><span class="hljs-operator">=</span></span><span> </span><span><span class="hljs-built_in">O</span></span><span><span class="hljs-punctuation">(</span></span><span><span class="hljs-built_in">N</span></span><span> </span><span><span class="hljs-operator">*</span></span><span> </span><span><span class="hljs-variable">M</span></span><span> </span><span><span class="hljs-operator">*</span></span><span> </span><span><span class="hljs-punctuation">(</span></span><span><span class="hljs-built_in">N</span></span><span> </span><span><span class="hljs-operator">+</span></span><span> </span><span><span class="hljs-variable">M</span></span><span><span class="hljs-punctuation">)</span></span><span><span class="hljs-punctuation">)</span></span><span> ❌
+</span></span></code></div></div></pre>
+<p data-start="1423" data-end="1478">This is <strong data-start="1431" data-end="1443">too slow</strong> for large grids (up to 10⁶ cells).</p>
+<hr data-start="1480" data-end="1483">
+<h2 data-start="1485" data-end="1530">💡 The key insight (problem-solving trick)</h2>
+<p data-start="1532" data-end="1605">Instead of recalculating row and column sums <strong data-start="1577" data-end="1596">again and again</strong>, we can:</p>
+<h3 data-start="1607" data-end="1629">Step 1: Precompute</h3>
+<ul data-start="1630" data-end="1704">
+<li data-start="1630" data-end="1665">
+<p data-start="1632" data-end="1665">The sum of every row → <code data-start="1655" data-end="1665">rowSum[]</code></p>
+</li>
+<li data-start="1666" data-end="1704">
+<p data-start="1668" data-end="1704">The sum of every column → <code data-start="1694" data-end="1704">colSum[]</code></p>
+</li>
+</ul>
+<p data-start="1706" data-end="1722">This takes only:</p>
+<pre class="overflow-visible! px-0!" data-start="1723" data-end="1739"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">scss</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-built_in">O</span></span><span>(N * M)
+</span></span></code></div></div></pre>
+<h3 data-start="1741" data-end="1776">Step 2: For every cell <code data-start="1768" data-end="1776">(x, y)</code></h3>
+<p data-start="1777" data-end="1816">Compute the score in <strong data-start="1798" data-end="1815">constant time</strong>:</p>
+<pre class="overflow-visible! px-0!" data-start="1817" data-end="1856"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">css</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span>rowSum</span><span><span class="hljs-selector-attr">[x]</span></span><span> + colSum</span><span><span class="hljs-selector-attr">[y]</span></span><span> - </span><span><span class="hljs-selector-tag">A</span></span><span><span class="hljs-selector-attr">[x]</span></span><span><span class="hljs-selector-attr">[y]</span></span><span>
+</span></span></code></div></div></pre>
+<hr data-start="1858" data-end="1861">
+<h2 data-start="1863" data-end="1904">🎯 What this problem is really testing</h2>
+<h3 data-start="1906" data-end="1938">1️⃣ Precomputation / Caching</h3>
+<ul data-start="1939" data-end="2006">
+<li data-start="1939" data-end="1958">
+<p data-start="1941" data-end="1958">Don’t repeat work</p>
+</li>
+<li data-start="1959" data-end="1993">
+<p data-start="1961" data-end="1993">Compute row and column sums once</p>
+</li>
+<li data-start="1994" data-end="2006">
+<p data-start="1996" data-end="2006">Reuse them</p>
+</li>
+</ul>
+<h3 data-start="2008" data-end="2036">2️⃣ Optimization mindset</h3>
+<ul data-start="2037" data-end="2124">
+<li data-start="2037" data-end="2084">
+<p data-start="2039" data-end="2084">Replace nested loops with smart preprocessing</p>
+</li>
+<li data-start="2085" data-end="2124">
+<p data-start="2087" data-end="2124">Turn an expensive operation into O(1)</p>
+</li>
+</ul>
+<h3 data-start="2126" data-end="2157">3️⃣ Grid / Matrix reasoning</h3>
+<ul data-start="2158" data-end="2234">
+<li data-start="2158" data-end="2203">
+<p data-start="2160" data-end="2203">Understanding how rows and columns interact</p>
+</li>
+<li data-start="2204" data-end="2234">
+<p data-start="2206" data-end="2234">Applying formulas on 2D data</p>
+</li>
+</ul>
+<h3 data-start="2236" data-end="2262">4️⃣ Tie-breaking logic</h3>
+<ul data-start="2263" data-end="2324">
+<li data-start="2263" data-end="2289">
+<p data-start="2265" data-end="2289">Careful comparison logic</p>
+</li>
+<li data-start="2290" data-end="2324">
+<p data-start="2292" data-end="2324">Attention to problem constraints</p>
+</li>
+</ul>
+<hr data-start="2326" data-end="2329">
+<h2 data-start="2331" data-end="2356">🧠 Design pattern used</h2>
+<h3 data-start="2358" data-end="2396">✅ <strong data-start="2364" data-end="2396">Precomputation + Enumeration</strong></h3>
+<p data-start="2398" data-end="2452">This is a very common competitive-programming pattern:</p>
+<ol data-start="2454" data-end="2598">
+<li data-start="2454" data-end="2509">
+<p data-start="2457" data-end="2509">Precompute useful aggregates (row sums, column sums)</p>
+</li>
+<li data-start="2510" data-end="2549">
+<p data-start="2513" data-end="2549">Enumerate all candidates efficiently</p>
+</li>
+<li data-start="2550" data-end="2598">
+<p data-start="2553" data-end="2598">Track the best result with tie-breaking rules</p>
+</li>
+</ol>
+<hr data-start="2600" data-end="2603">
+<h2 data-start="2605" data-end="2634">📌 Why subtract <code data-start="2624" data-end="2633">A[x][y]</code>?</h2>
+<p data-start="2636" data-end="2644">Because:</p>
+<ul data-start="2645" data-end="2796">
+<li data-start="2645" data-end="2698">
+<p data-start="2647" data-end="2698">The rook <strong data-start="2656" data-end="2698">cannot attack the cell it is placed on</strong></p>
+</li>
+<li data-start="2699" data-end="2742">
+<p data-start="2701" data-end="2742">That cell is included once in the row sum</p>
+</li>
+<li data-start="2743" data-end="2771">
+<p data-start="2745" data-end="2771">And once in the column sum</p>
+</li>
+<li data-start="2772" data-end="2796">
+<p data-start="2774" data-end="2796">So we subtract it once</p>
+</li>
+</ul>
+<hr data-start="2798" data-end="2801">
+<h2 data-start="2803" data-end="2831">🧠 One-sentence intuition</h2>
+<blockquote data-start="2833" data-end="2966">
+<p data-start="2835" data-end="2966">“For each cell, imagine the rook collects everything in its row and column — so we just need fast access to row and column totals.”</p>
+</blockquote>
+<hr data-start="2968" data-end="2971">
+<h2 data-start="2973" data-end="2993">🏁 Final takeaway</h2>
+<p data-start="2995" data-end="3020">This problem teaches you:</p>
+<ul data-start="3021" data-end="3203">
+<li data-start="3021" data-end="3060">
+<p data-start="3023" data-end="3060">How to <strong data-start="3030" data-end="3060">optimize brute-force ideas</strong></p>
+</li>
+<li data-start="3061" data-end="3106">
+<p data-start="3063" data-end="3106">How to think in terms of <strong data-start="3088" data-end="3106">precomputation</strong></p>
+</li>
+<li data-start="3107" data-end="3146">
+<p data-start="3109" data-end="3146">How to handle <strong data-start="3123" data-end="3146">2D data efficiently</strong></p>
+</li>
+<li data-start="3147" data-end="3203">
+<p data-start="3149" data-end="3203">How to apply <strong data-start="3162" data-end="3194">clean mathematical reasoning</strong> to grids</p>
+</li>
+</ul>
+<p data-start="3205" data-end="3222">If you want next:</p>
+<ul data-start="3223" data-end="3350">
+<li data-start="3223" data-end="3241">
+<p data-start="3225" data-end="3241">Full Python code</p>
+</li>
+<li data-start="3242" data-end="3273">
+<p data-start="3244" data-end="3273">Dry-run with a larger example</p>
+</li>
+<li data-start="3274" data-end="3315">
+<p data-start="3276" data-end="3315">How this idea appears in other problems</p>
+</li>
+<li data-start="3316" data-end="3350">
+<p data-start="3318" data-end="3350">Space/time complexity discussion</p>
+</li>
+</ul>
+<p data-start="3352" data-end="3367" data-is-last-node="" data-is-only-node="">Just tell me 😊</p></div>
+
+<hr>
+<hr>
+
+<h2>Full Python code</h2>
+
+<div class="markdown prose dark:prose-invert w-full wrap-break-word light markdown-new-styling"><p data-start="0" data-end="114">Here is the <strong data-start="12" data-end="60">full, correct, and efficient Python solution</strong>, followed by a <strong data-start="76" data-end="97">clear explanation</strong> of how it works.</p>
+<hr data-start="116" data-end="119">
+<h2 data-start="121" data-end="142">✅ Full Python Code</h2>
+<pre class="overflow-visible! px-0!" data-start="144" data-end="1024"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">python</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">def</span></span><span> </span><span><span class="hljs-title function_">solve</span></span><span>():
+    </span><span><span class="hljs-keyword">import</span></span><span> sys
+    </span><span><span class="hljs-built_in">input</span></span><span> = sys.stdin.readline
+
+    N, M = </span><span><span class="hljs-built_in">map</span></span><span>(</span><span><span class="hljs-built_in">int</span></span><span>, </span><span><span class="hljs-built_in">input</span></span><span>().split())
+    A = [</span><span><span class="hljs-built_in">list</span></span><span>(</span><span><span class="hljs-built_in">map</span></span><span>(</span><span><span class="hljs-built_in">int</span></span><span>, </span><span><span class="hljs-built_in">input</span></span><span>().split())) </span><span><span class="hljs-keyword">for</span></span><span> _ </span><span><span class="hljs-keyword">in</span></span><span> </span><span><span class="hljs-built_in">range</span></span><span>(N)]
+
+    </span><span><span class="hljs-comment"># Step 1: Compute row sums and column sums</span></span><span>
+    row_sum = [</span><span><span class="hljs-number">0</span></span><span>] * N
+    col_sum = [</span><span><span class="hljs-number">0</span></span><span>] * M
+
+    </span><span><span class="hljs-keyword">for</span></span><span> i </span><span><span class="hljs-keyword">in</span></span><span> </span><span><span class="hljs-built_in">range</span></span><span>(N):
+        </span><span><span class="hljs-keyword">for</span></span><span> j </span><span><span class="hljs-keyword">in</span></span><span> </span><span><span class="hljs-built_in">range</span></span><span>(M):
+            row_sum[i] += A[i][j]
+            col_sum[j] += A[i][j]
+
+    </span><span><span class="hljs-comment"># Step 2: Find the best position</span></span><span>
+    max_score = -</span><span><span class="hljs-number">1</span></span><span>
+    best_x = </span><span><span class="hljs-number">1</span></span><span>
+    best_y = </span><span><span class="hljs-number">1</span></span><span>
+
+    </span><span><span class="hljs-keyword">for</span></span><span> i </span><span><span class="hljs-keyword">in</span></span><span> </span><span><span class="hljs-built_in">range</span></span><span>(N):
+        </span><span><span class="hljs-keyword">for</span></span><span> j </span><span><span class="hljs-keyword">in</span></span><span> </span><span><span class="hljs-built_in">range</span></span><span>(M):
+            score = row_sum[i] + col_sum[j] - A[i][j]
+
+            </span><span><span class="hljs-keyword">if</span></span><span> (score &gt; max_score </span><span><span class="hljs-keyword">or</span></span><span>
+               (score == max_score </span><span><span class="hljs-keyword">and</span></span><span> (i + </span><span><span class="hljs-number">1</span></span><span> &lt; best_x </span><span><span class="hljs-keyword">or</span></span><span>
+               (i + </span><span><span class="hljs-number">1</span></span><span> == best_x </span><span><span class="hljs-keyword">and</span></span><span> j + </span><span><span class="hljs-number">1</span></span><span> &lt; best_y)))):
+                max_score = score
+                best_x = i + </span><span><span class="hljs-number">1</span></span><span>   </span><span><span class="hljs-comment"># convert to 1-based indexing</span></span><span>
+                best_y = j + </span><span><span class="hljs-number">1</span></span><span>
+
+    </span><span><span class="hljs-built_in">print</span></span><span>(best_x, best_y)
+</span></span></code></div></div></pre>
+<hr data-start="1026" data-end="1029">
+<h2 data-start="1031" data-end="1064">🧠 Explanation in Simple Terms</h2>
+<h3 data-start="1066" data-end="1088">What are we doing?</h3>
+<p data-start="1090" data-end="1237">We want to place a <strong data-start="1109" data-end="1117">rook</strong> on a chessboard-like grid so that the <strong data-start="1156" data-end="1187">sum of values it can attack</strong> (same row + same column) is as large as possible.</p>
+<p data-start="1239" data-end="1248">The rook:</p>
+<ul data-start="1249" data-end="1355">
+<li data-start="1249" data-end="1280">
+<p data-start="1251" data-end="1280">Attacks everything in its row</p>
+</li>
+<li data-start="1281" data-end="1315">
+<p data-start="1283" data-end="1315">Attacks everything in its column</p>
+</li>
+<li data-start="1316" data-end="1355">
+<p data-start="1318" data-end="1355">❌ Does NOT attack the cell it sits on</p>
+</li>
+</ul>
+<p data-start="1357" data-end="1382">So for any cell <code data-start="1373" data-end="1381">(i, j)</code>:</p>
+<pre class="overflow-visible! px-0!" data-start="1384" data-end="1431"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">ini</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attr">score</span></span><span> = rowSum[i] + colSum[j] - A[i][j]
+</span></span></code></div></div></pre>
+<hr data-start="1433" data-end="1436">
+<h3 data-start="1438" data-end="1460">Step-by-step logic</h3>
+<h4 data-start="1462" data-end="1508">🔹 Step 1: Precompute row and column sums</h4>
+<p data-start="1509" data-end="1592">Instead of re-adding rows and columns repeatedly (which would be slow), we compute:</p>
+<ul data-start="1593" data-end="1631">
+<li data-start="1593" data-end="1610">
+<p data-start="1595" data-end="1610">Sum of each row</p>
+</li>
+<li data-start="1611" data-end="1631">
+<p data-start="1613" data-end="1631">Sum of each column</p>
+</li>
+</ul>
+<p data-start="1633" data-end="1673">This makes later calculations very fast.</p>
+<hr data-start="1675" data-end="1678">
+<h4 data-start="1680" data-end="1730">🔹 Step 2: Try placing the rook at every cell</h4>
+<p data-start="1731" data-end="1759">For every position <code data-start="1750" data-end="1758">(i, j)</code>:</p>
+<ul data-start="1760" data-end="1945">
+<li data-start="1760" data-end="1808">
+<p data-start="1762" data-end="1808">Compute the attack sum using the formula above</p>
+</li>
+<li data-start="1809" data-end="1848">
+<p data-start="1811" data-end="1848">Keep track of the maximum score found</p>
+</li>
+<li data-start="1849" data-end="1945">
+<p data-start="1851" data-end="1865">If scores tie:</p>
+<ul data-start="1868" data-end="1945">
+<li data-start="1868" data-end="1896">
+<p data-start="1870" data-end="1896">Pick the smaller row index</p>
+</li>
+<li data-start="1899" data-end="1945">
+<p data-start="1901" data-end="1945">If still tied, pick the smaller column index</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr data-start="1947" data-end="1950">
+<h2 data-start="1952" data-end="1981">⏱️ Time &amp; Space Complexity</h2>
+<div class="TyagGW_tableContainer"><div tabindex="-1" class="group TyagGW_tableWrapper flex flex-col-reverse w-fit"><table data-start="1983" data-end="2075" class="w-fit min-w-(--thread-content-width)"><thead data-start="1983" data-end="2006"><tr data-start="1983" data-end="2006"><th data-start="1983" data-end="1992" data-col-size="sm" class="">Metric</th><th data-start="1992" data-end="2006" data-col-size="sm" class="">Complexity</th></tr></thead><tbody data-start="2027" data-end="2075"><tr data-start="2027" data-end="2050"><td data-start="2027" data-end="2034" data-col-size="sm">Time</td><td data-start="2034" data-end="2050" data-col-size="sm"><strong data-start="2036" data-end="2048">O(N × M)</strong></td></tr><tr data-start="2051" data-end="2075"><td data-start="2051" data-end="2059" data-col-size="sm">Space</td><td data-start="2059" data-end="2075" data-col-size="sm"><strong data-start="2061" data-end="2073">O(N + M)</strong></td></tr></tbody></table><div class="sticky h-0 select-none end-(--thread-content-margin) self-end"><div class="absolute end-0 flex items-end" style="height: 33.0781px;"><span class="" data-state="closed"><button aria-label="Copy table" class="hover:bg-token-bg-tertiary text-token-text-secondary my-1 rounded-sm p-1 transition-opacity group-[:not(:hover):not(:focus-within)]:pointer-events-none group-[:not(:hover):not(:focus-within)]:opacity-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg></button></span></div></div></div></div>
+<p data-start="2077" data-end="2135">This is optimal for a grid with up to <strong data-start="2115" data-end="2134">1 million cells</strong>.</p>
+<hr data-start="2137" data-end="2140">
+<h2 data-start="2142" data-end="2173">🧩 What this problem teaches</h2>
+<ul data-start="2175" data-end="2340">
+<li data-start="2175" data-end="2228">
+<p data-start="2177" data-end="2228"><strong data-start="2177" data-end="2208">Precomputation optimization</strong> (don’t repeat work)</p>
+</li>
+<li data-start="2229" data-end="2252">
+<p data-start="2231" data-end="2252"><strong data-start="2231" data-end="2252">2D grid reasoning</strong></p>
+</li>
+<li data-start="2253" data-end="2294">
+<p data-start="2255" data-end="2294"><strong data-start="2255" data-end="2294">Greedy comparison with tie-breaking</strong></p>
+</li>
+<li data-start="2295" data-end="2340">
+<p data-start="2297" data-end="2340"><strong data-start="2297" data-end="2340">Turning brute force into efficient code</strong></p>
+</li>
+</ul>
+<hr data-start="2342" data-end="2345">
+<h2 data-start="2347" data-end="2379">🏁 Final intuition (one line)</h2>
+<blockquote data-start="2381" data-end="2470">
+<p data-start="2383" data-end="2470">“Precompute row and column totals, then test every cell using a constant-time formula.”</p>
+</blockquote>
+<p data-start="2472" data-end="2484">If you want:</p>
+<ul data-start="2485" data-end="2581">
+<li data-start="2485" data-end="2504">
+<p data-start="2487" data-end="2504">A dry-run example</p>
+</li>
+<li data-start="2505" data-end="2534">
+<p data-start="2507" data-end="2534">A version using less memory</p>
+</li>
+<li data-start="2535" data-end="2565">
+<p data-start="2537" data-end="2565">Similar problems to practice</p>
+</li>
+<li data-start="2566" data-end="2581">
+<p data-start="2568" data-end="2581">Visualization</p>
+</li>
+</ul>
+<p data-start="2583" data-end="2603" data-is-last-node="" data-is-only-node="">Just say the word 🙂</p></div>
+
+<hr>
+<hr>
+
+<h1><mark>I am super excited to see GPT 5.2 make mistakes and hallucinate... so capturing a couple of screenshots below:</mark></h1>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpp2yW1DpD4M8hgpsNtp31Sn5tKdAPOvurP2Kox54-zll8u_QplDHROiUWRFMF-RbFyCKO_PhwEHHtQZzn0WB2Jh_lmeSUYXjMNYfl8UkfSgH-r4DpuDMbBolXr95zaKjJC-ZcxuukEC4sVHvTYjre-BJGSumDrjKtt23rKlL0rqZxw_dXigdUxo2hlVXh/s1006/Screenshot%20from%202026-02-04%2009-20-49.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="900" data-original-width="1006" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpp2yW1DpD4M8hgpsNtp31Sn5tKdAPOvurP2Kox54-zll8u_QplDHROiUWRFMF-RbFyCKO_PhwEHHtQZzn0WB2Jh_lmeSUYXjMNYfl8UkfSgH-r4DpuDMbBolXr95zaKjJC-ZcxuukEC4sVHvTYjre-BJGSumDrjKtt23rKlL0rqZxw_dXigdUxo2hlVXh/s600/Screenshot%20from%202026-02-04%2009-20-49.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhIGAmes7BePuxQJCYeCXK3GwzkvRfbnjzUc5y-1xY9079pbSuKS7UrQoe4lUJNBOOfsOlgHNiTlGfl-RYAkK4ZRwO7Dyw_X5nBxLHy8uV3qsejmODgwhdLHpKSGz2vsHRuLRrGsEHEPvdKMyTak6ehsXrNeqsR9ADX4h1lKU-Xj-8HYI8b61x50qFa4Zhp/s1006/Screenshot%20from%202026-02-04%2009-21-03.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="900" data-original-width="1006" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhIGAmes7BePuxQJCYeCXK3GwzkvRfbnjzUc5y-1xY9079pbSuKS7UrQoe4lUJNBOOfsOlgHNiTlGfl-RYAkK4ZRwO7Dyw_X5nBxLHy8uV3qsejmODgwhdLHpKSGz2vsHRuLRrGsEHEPvdKMyTak6ehsXrNeqsR9ADX4h1lKU-Xj-8HYI8b61x50qFa4Zhp/s600/Screenshot%20from%202026-02-04%2009-21-03.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiL8nRD_ZiIB02M3VEGHVdEcr_s04PJC2F-PMhyoxBF1PPL-HkJoCmjoDctrZRLAcUCT1gQ0AZwisicVTPhXHGh9ls5O4Ud1KCEb4kmhtoEihevFLuM3SrtCFssQpwXT4YhbtAJz0rIeLzm1xoDbYO_Iqp5j0h-Hcp6daGO7xZ717BYXnyIzmWfvVVqMi_Q/s1006/Screenshot%20from%202026-02-04%2009-21-20.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="900" data-original-width="1006" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiL8nRD_ZiIB02M3VEGHVdEcr_s04PJC2F-PMhyoxBF1PPL-HkJoCmjoDctrZRLAcUCT1gQ0AZwisicVTPhXHGh9ls5O4Ud1KCEb4kmhtoEihevFLuM3SrtCFssQpwXT4YhbtAJz0rIeLzm1xoDbYO_Iqp5j0h-Hcp6daGO7xZ717BYXnyIzmWfvVVqMi_Q/s600/Screenshot%20from%202026-02-04%2009-21-20.png"/></a></div><div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGlBOI3EH3tokHQM5QeaphQFgnjidMjhthH9d6-OGVpUiEkfrv3ot-viE85Z9hIwdtkaRpHCXp1cHL922IOBOvtWes0A5ejslDe1cfCFumgIjtT6Eluv5lD6YeenxR9Sfm070Vt3dFZr_BEVbvPCWhyphenhyphenEaNYlESF-mGKC3NIkSK7LiNLWPOKUGS2l94ZXKM/s1006/Screenshot%20from%202026-02-04%2009-21-34.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="900" data-original-width="1006" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGlBOI3EH3tokHQM5QeaphQFgnjidMjhthH9d6-OGVpUiEkfrv3ot-viE85Z9hIwdtkaRpHCXp1cHL922IOBOvtWes0A5ejslDe1cfCFumgIjtT6Eluv5lD6YeenxR9Sfm070Vt3dFZr_BEVbvPCWhyphenhyphenEaNYlESF-mGKC3NIkSK7LiNLWPOKUGS2l94ZXKM/s600/Screenshot%20from%202026-02-04%2009-21-34.png"/></a></div>
