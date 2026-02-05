@@ -1,0 +1,473 @@
+
+
+<a href="https://www.hackerearth.com/practice/basic-programming/implementation/basics-of-implementation/practice-problems/algorithm/asme-to-same-3-3e7c0c0d/" target="_blank">Attempt it on HackerEarth</a>
+
+<pre>
+You are given 2 strings s and t both containing only lowercase English characters with s containing some ? as well. You can swap characters at positions i and j in the string s (j > i) any number of times and can also replace any ? with any lowercase English character. Can you convert s into t ?
+
+<b>Input Format</b>
+
+The first line contains an integer T denoting the number of test cases. 
+
+The first line of each test case contains an integer N, the length of the strings.
+
+The second line of each test case contains N lowercase English characters with some ? (possibly 0) denoting string s.
+
+The third line of each test case contains N lowercase English characters denoting string t.
+
+<b>Output Format</b>
+
+For each test case, print 'Yes' (without quotation marks) if it is possible to convert s into t. Otherwise, print 'No' (without quotation marks). Print the output in a new line.
+
+<b>Constraints</b>
+
+1 &lt;= T &lt;= 100
+1 &lt;= N &lt;= 10**5
+
+<b>Sample Input</b>
+
+3
+4
+???n
+aman
+4
+aacb
+aabc
+3
+?po
+oyo
+
+<b>Sample Output</b>
+
+Yes
+Yes
+No
+
+Time Limit: 2
+Memory Limit: 256
+Source Limit:
+
+<b>Explanation</b>
+
+In the first sample, we can replace first 3 with characters a, m, a respectively to obtain the final string.
+
+In the second sample, we can swap 3rd and 4th characters to get our final string.
+
+In the third testcase, no matter what we do, we cannot convert s into t.
+</pre>
+
+<hr><hr>
+
+<h3>Initial Thoughts</h3>
+
+<pre>
+1. The problem requires checking if we can transform string s into string t by swapping characters and replacing '?' characters.
+2. Since we can swap characters freely, the order of characters in s does not matter.
+3. We need to ensure that for every character in t, there are enough corresponding characters in s or '?' characters to replace.
+4. We can use frequency counts to compare the characters in both strings.
+5. If the count of any character in t exceeds the count in s plus the number of '?' characters, then the transformation is not possible.
+6. Otherwise, it is possible to transform s into t.
+7. We also need to check if there is some character in t that is not present in s (and otherwise: in s that is not in t) at all and there are no '?' characters in s to replace it with.
+</pre>
+
+<hr><hr>
+
+<h2>My Code</h2>
+
+<pre><i>from collections import Counter
+
+def can_convert(s, t):
+    if len(s) != len(t):
+        return "No"
+    count_s = Counter(s)
+    count_t = Counter(t)
+
+    wildcards_s = count_s.get('?', 0)
+
+    for char in count_t:
+        if count_t[char] > count_s.get(char, 0):
+            needed = count_t[char] - count_s.get(char, 0)
+            wildcards_s -= needed
+            if wildcards_s < 0:
+                return "No"
+        elif count_s.get(char, 0) > count_t[char]:
+            return "No"
+    return "Yes"
+
+    
+
+T = int(input())
+for _ in range(T):
+    N = int(input())
+    s = input().strip()
+    t = input().strip()
+    print(can_convert(s, t))
+</i></pre>
+
+<hr><hr>
+
+<pre><mark>Note: I have tested my code. And ChatGPT's code (below) is not tested for correctness, mistakes or hallucinations.</mark></pre>
+
+<hr><hr>
+
+<h2>ChatGPT's Thoughts</h2>
+
+<pre><b>Me: Explain the solution to this problem in layman terms. Give clear descriptions of what this problem is trying to teach/assess, what design pattern, what problem solving trick/technique.</b></pre>
+
+<div class="markdown prose dark:prose-invert w-full wrap-break-word light markdown-new-styling"><p data-start="0" data-end="191">Let’s explain this <strong data-start="19" data-end="44">from first principles</strong>, in a way that a layman (or an early learner) can follow, and then connect it to <strong data-start="126" data-end="157">what the problem is testing</strong> and <strong data-start="162" data-end="190">the underlying technique</strong>.</p>
+<hr data-start="193" data-end="196">
+<h2 data-start="198" data-end="236">🧩 Problem restated in simple words</h2>
+<p data-start="238" data-end="287">You are given <strong data-start="252" data-end="267">two strings</strong> of the same length:</p>
+<ul data-start="289" data-end="382">
+<li data-start="289" data-end="340">
+<p data-start="291" data-end="340"><strong data-start="291" data-end="296">s</strong> → may contain lowercase letters <strong data-start="329" data-end="340">and <code data-start="335" data-end="338">?</code></strong></p>
+</li>
+<li data-start="341" data-end="382">
+<p data-start="343" data-end="382"><strong data-start="343" data-end="348">t</strong> → contains only lowercase letters</p>
+</li>
+</ul>
+<p data-start="384" data-end="403">You are allowed to:</p>
+<ol data-start="404" data-end="526">
+<li data-start="404" data-end="469">
+<p data-start="407" data-end="469"><strong data-start="407" data-end="441">Swap any two characters in <code data-start="436" data-end="439">s</code></strong> (as many times as you want)</p>
+</li>
+<li data-start="470" data-end="526">
+<p data-start="473" data-end="526"><strong data-start="473" data-end="526">Replace each <code data-start="488" data-end="491">?</code> in <code data-start="495" data-end="498">s</code> with any lowercase letter</strong></p>
+</li>
+</ol>
+<p data-start="528" data-end="602">Your task:<br>
+👉 Decide whether it is <strong data-start="563" data-end="575">possible</strong> to transform <code data-start="589" data-end="592">s</code> into <code data-start="598" data-end="601">t</code>.</p>
+<p data-start="604" data-end="661">You don’t need to show <em data-start="627" data-end="632">how</em>, just say <strong data-start="643" data-end="650">Yes</strong> or <strong data-start="654" data-end="660">No</strong>.</p>
+<hr data-start="663" data-end="666">
+<h2 data-start="668" data-end="706">🧠 Key observation (very important)</h2>
+<p data-start="708" data-end="722">Since you can:</p>
+<ul data-start="723" data-end="779">
+<li data-start="723" data-end="747">
+<p data-start="725" data-end="747">Swap characters freely</p>
+</li>
+<li data-start="748" data-end="779">
+<p data-start="750" data-end="779">Replace <code data-start="758" data-end="761">?</code> with <em data-start="767" data-end="772">any</em> letter</p>
+</li>
+</ul>
+<p data-start="781" data-end="842">👉 <strong data-start="784" data-end="842">The order of characters in <code data-start="813" data-end="816">s</code> does NOT matter at all.</strong></p>
+<p data-start="844" data-end="885">Only the <strong data-start="853" data-end="877">counts of characters</strong> matter.</p>
+<p data-start="887" data-end="948">This turns the problem into a <strong data-start="917" data-end="939">frequency matching</strong> problem.</p>
+<hr data-start="950" data-end="953">
+<h2 data-start="955" data-end="997">🔍 How to think about it (layman logic)</h2>
+<p data-start="999" data-end="1043">Think of string <code data-start="1015" data-end="1018">s</code> as a <strong data-start="1024" data-end="1042">bag of letters</strong>:</p>
+<ul data-start="1044" data-end="1146">
+<li data-start="1044" data-end="1087">
+<p data-start="1046" data-end="1087">Some letters are fixed (<code data-start="1070" data-end="1073">a</code>, <code data-start="1075" data-end="1078">b</code>, <code data-start="1080" data-end="1083">c</code>, …)</p>
+</li>
+<li data-start="1088" data-end="1146">
+<p data-start="1090" data-end="1146">Some are wildcards (<code data-start="1110" data-end="1113">?</code>) that you can turn into anything</p>
+</li>
+</ul>
+<p data-start="1148" data-end="1185">String <code data-start="1155" data-end="1158">t</code> is another bag of letters.</p>
+<p data-start="1187" data-end="1209">Your question becomes:</p>
+<blockquote data-start="1210" data-end="1305">
+<p data-start="1212" data-end="1305">“Can I use the fixed letters + the <code data-start="1247" data-end="1250">?</code> wildcards in <code data-start="1264" data-end="1267">s</code> to match exactly the letters in <code data-start="1300" data-end="1303">t</code>?”</p>
+</blockquote>
+<hr data-start="1307" data-end="1310">
+<h2 data-start="1312" data-end="1340">💡 Step-by-step reasoning</h2>
+<h3 data-start="1342" data-end="1377">Step 1: Count characters in <code data-start="1374" data-end="1377">t</code></h3>
+<p data-start="1378" data-end="1386">Example:</p>
+<pre class="overflow-visible! px-0!" data-start="1387" data-end="1430"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">ini</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attr">t</span></span><span> = </span><span><span class="hljs-string">"aman"</span></span><span>
+</span><span><span class="hljs-attr">counts</span></span><span> = {a:</span><span><span class="hljs-number">2</span></span><span>, m:</span><span><span class="hljs-number">1</span></span><span>, n:</span><span><span class="hljs-number">1</span></span><span>}
+</span></span></code></div></div></pre>
+<hr data-start="1432" data-end="1435">
+<h3 data-start="1437" data-end="1489">Step 2: Count fixed letters in <code data-start="1472" data-end="1475">s</code> and count <code data-start="1486" data-end="1489">?</code></h3>
+<p data-start="1490" data-end="1498">Example:</p>
+<pre class="overflow-visible! px-0!" data-start="1499" data-end="1545"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">ini</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attr">s</span></span><span> = </span><span><span class="hljs-string">"???n"</span></span><span>
+</span><span><span class="hljs-attr">fixed</span></span><span> = {n:</span><span><span class="hljs-number">1</span></span><span>}
+</span><span><span class="hljs-attr">wildcards</span></span><span> = </span><span><span class="hljs-number">3</span></span><span>
+</span></span></code></div></div></pre>
+<hr data-start="1547" data-end="1550">
+<h3 data-start="1552" data-end="1583">Step 3: Match fixed letters</h3>
+<p data-start="1584" data-end="1607">For each letter in <code data-start="1603" data-end="1606">t</code>:</p>
+<ul data-start="1608" data-end="1682">
+<li data-start="1608" data-end="1649">
+<p data-start="1610" data-end="1649">If <code data-start="1613" data-end="1616">s</code> already has that letter → use it</p>
+</li>
+<li data-start="1650" data-end="1682">
+<p data-start="1652" data-end="1682">Otherwise → you must use a <code data-start="1679" data-end="1682">?</code></p>
+</li>
+</ul>
+<p data-start="1684" data-end="1700">If at any point:</p>
+<ul data-start="1701" data-end="1743">
+<li data-start="1701" data-end="1743">
+<p data-start="1703" data-end="1743">Required letters &gt; available fixed + <code data-start="1740" data-end="1743">?</code></p>
+</li>
+</ul>
+<p data-start="1745" data-end="1763">❌ Answer is <strong data-start="1757" data-end="1763">No</strong></p>
+<hr data-start="1765" data-end="1768">
+<h3 data-start="1770" data-end="1808">Step 4: If all needs are satisfied</h3>
+<p data-start="1809" data-end="1829">✔️ Answer is <strong data-start="1822" data-end="1829">Yes</strong></p>
+<hr data-start="1831" data-end="1834">
+<h2 data-start="1836" data-end="1861">🧪 Example walkthrough</h2>
+<h3 data-start="1863" data-end="1876">Example 1</h3>
+<pre class="overflow-visible! px-0!" data-start="1877" data-end="1906"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">ini</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attr">s</span></span><span> = </span><span><span class="hljs-string">"???n"</span></span><span>
+</span><span><span class="hljs-attr">t</span></span><span> = </span><span><span class="hljs-string">"aman"</span></span><span>
+</span></span></code></div></div></pre>
+<ul data-start="1908" data-end="1976">
+<li data-start="1908" data-end="1925">
+<p data-start="1910" data-end="1925">Fixed in s: <code data-start="1922" data-end="1925">n</code></p>
+</li>
+<li data-start="1926" data-end="1942">
+<p data-start="1928" data-end="1942">Wildcards: <code data-start="1939" data-end="1942">3</code></p>
+</li>
+<li data-start="1943" data-end="1976">
+<p data-start="1945" data-end="1976">Needed in t: <code data-start="1958" data-end="1976">a(2), m(1), n(1)</code></p>
+</li>
+</ul>
+<p data-start="1978" data-end="2017">We already have <code data-start="1994" data-end="1997">n</code><br>
+Use <code data-start="2002" data-end="2005">?</code> → <code data-start="2008" data-end="2017">a, m, a</code></p>
+<p data-start="2019" data-end="2040">✔️ Possible → <strong data-start="2033" data-end="2040">Yes</strong></p>
+<hr data-start="2042" data-end="2045">
+<h3 data-start="2047" data-end="2060">Example 2</h3>
+<pre class="overflow-visible! px-0!" data-start="2061" data-end="2090"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">ini</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attr">s</span></span><span> = </span><span><span class="hljs-string">"aadb"</span></span><span>
+</span><span><span class="hljs-attr">t</span></span><span> = </span><span><span class="hljs-string">"aabc"</span></span><span>
+</span></span></code></div></div></pre>
+<ul data-start="2092" data-end="2147">
+<li data-start="2092" data-end="2119">
+<p data-start="2094" data-end="2119">s fixed: a(2), d(1), b(1)</p>
+</li>
+<li data-start="2120" data-end="2147">
+<p data-start="2122" data-end="2147">t needs: a(2), b(1), c(1)</p>
+</li>
+</ul>
+<p data-start="2149" data-end="2165">We need <code data-start="2157" data-end="2160">c</code> but:</p>
+<ul data-start="2166" data-end="2188">
+<li data-start="2166" data-end="2174">
+<p data-start="2168" data-end="2174">No <code data-start="2171" data-end="2174">?</code></p>
+</li>
+<li data-start="2175" data-end="2188">
+<p data-start="2177" data-end="2188">No <code data-start="2180" data-end="2183">c</code> in s</p>
+</li>
+</ul>
+<p data-start="2190" data-end="2211">❌ Impossible → <strong data-start="2205" data-end="2211">No</strong></p>
+<hr data-start="2213" data-end="2216">
+<h2 data-start="2218" data-end="2269">🎯 What this problem is trying to teach / assess</h2>
+<h3 data-start="2271" data-end="2290">1️⃣ Abstraction</h3>
+<ul data-start="2291" data-end="2336">
+<li data-start="2291" data-end="2336">
+<p data-start="2293" data-end="2336">Ignore swaps → reduce problem to <strong data-start="2326" data-end="2336">counts</strong></p>
+</li>
+</ul>
+<h3 data-start="2338" data-end="2364">2️⃣ Frequency counting</h3>
+<ul data-start="2365" data-end="2398">
+<li data-start="2365" data-end="2398">
+<p data-start="2367" data-end="2398">A core skill in string problems</p>
+</li>
+</ul>
+<h3 data-start="2400" data-end="2426">3️⃣ Handling wildcards</h3>
+<ul data-start="2427" data-end="2464">
+<li data-start="2427" data-end="2464">
+<p data-start="2429" data-end="2464"><code data-start="2429" data-end="2432">?</code> acts as a <strong data-start="2443" data-end="2464">flexible resource</strong></p>
+</li>
+</ul>
+<h3 data-start="2466" data-end="2499">4️⃣ Logical feasibility check</h3>
+<ul data-start="2500" data-end="2550">
+<li data-start="2500" data-end="2550">
+<p data-start="2502" data-end="2550">“Do I have enough resources to meet the demand?”</p>
+</li>
+</ul>
+<hr data-start="2552" data-end="2555">
+<h2 data-start="2557" data-end="2582">🧠 Design pattern used</h2>
+<h3 data-start="2584" data-end="2621">✅ <strong data-start="2590" data-end="2621">Greedy + Frequency Matching</strong></h3>
+<ul data-start="2623" data-end="2689">
+<li data-start="2623" data-end="2656">
+<p data-start="2625" data-end="2656">Greedy: use fixed letters first</p>
+</li>
+<li data-start="2657" data-end="2689">
+<p data-start="2659" data-end="2689">Use wildcards only when needed</p>
+</li>
+</ul>
+<p data-start="2691" data-end="2740">No backtracking. No brute force. No permutations.</p>
+<hr data-start="2742" data-end="2745">
+<h2 data-start="2747" data-end="2786">🧰 Problem-solving trick / technique</h2>
+<blockquote data-start="2788" data-end="2858">
+<p data-start="2790" data-end="2858"><strong data-start="2790" data-end="2858">When swaps are unlimited, order doesn’t matter — only counts do.</strong></p>
+</blockquote>
+<p data-start="2860" data-end="2882">This trick appears in:</p>
+<ul data-start="2883" data-end="2992">
+<li data-start="2883" data-end="2901">
+<p data-start="2885" data-end="2901">Anagram problems</p>
+</li>
+<li data-start="2902" data-end="2932">
+<p data-start="2904" data-end="2932">String transformation checks</p>
+</li>
+<li data-start="2933" data-end="2962">
+<p data-start="2935" data-end="2962">Inventory matching problems</p>
+</li>
+<li data-start="2963" data-end="2992">
+<p data-start="2965" data-end="2992">Resource allocation puzzles</p>
+</li>
+</ul>
+<hr data-start="2994" data-end="2997">
+<h2 data-start="2999" data-end="3023">🧠 One-line intuition</h2>
+<blockquote data-start="3025" data-end="3119">
+<p data-start="3027" data-end="3119">“After ignoring order, can the letters (and <code data-start="3071" data-end="3074">?</code>) in <code data-start="3079" data-end="3082">s</code> supply the letters required by <code data-start="3114" data-end="3117">t</code>?”</p>
+</blockquote>
+<hr data-start="3121" data-end="3124">
+<h2 data-start="3126" data-end="3146">🏁 Final takeaway</h2>
+<p data-start="3148" data-end="3203">This is a <strong data-start="3158" data-end="3178">thinking problem</strong>, not a coding-heavy one.</p>
+<p data-start="3205" data-end="3230">It tests whether you can:</p>
+<ul data-start="3231" data-end="3319">
+<li data-start="3231" data-end="3251">
+<p data-start="3233" data-end="3251">Simplify a problem</p>
+</li>
+<li data-start="3252" data-end="3280">
+<p data-start="3254" data-end="3280">Spot what actually matters</p>
+</li>
+<li data-start="3281" data-end="3319">
+<p data-start="3283" data-end="3319">Reduce it to a clean frequency check</p>
+</li>
+</ul>
+<p data-start="3321" data-end="3338">If you want next:</p>
+<ul data-start="3339" data-end="3450">
+<li data-start="3339" data-end="3357">
+<p data-start="3341" data-end="3357">Full Python code</p>
+</li>
+<li data-start="3358" data-end="3380">
+<p data-start="3360" data-end="3380">Edge cases explained</p>
+</li>
+<li data-start="3381" data-end="3404">
+<p data-start="3383" data-end="3404">Time/space complexity</p>
+</li>
+<li data-start="3405" data-end="3450">
+<p data-start="3407" data-end="3450">Why swapping makes order irrelevant (proof)</p>
+</li>
+</ul>
+<p data-start="3452" data-end="3467" data-is-last-node="" data-is-only-node="">Just tell me 😊</p></div>
+
+<hr><hr>
+
+<b>Me: Full Python code</b>
+
+<div class="markdown prose dark:prose-invert w-full wrap-break-word light markdown-new-styling"><p data-start="0" data-end="96">Here is the <strong data-start="12" data-end="62">complete, clean, and efficient Python solution</strong>, followed by a short explanation.</p>
+<hr data-start="98" data-end="101">
+<h2 data-start="103" data-end="124">✅ Full Python Code</h2>
+<pre class="overflow-visible! px-0!" data-start="126" data-end="825"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">python</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span><span class="hljs-keyword">def</span></span><span> </span><span><span class="hljs-title function_">can_convert</span></span><span>(</span><span><span class="hljs-params">s, t</span></span><span>):
+    </span><span><span class="hljs-keyword">from</span></span><span> collections </span><span><span class="hljs-keyword">import</span></span><span> Counter
+
+    count_s = Counter(s)
+    count_t = Counter(t)
+
+    wildcards = count_s.get(</span><span><span class="hljs-string">'?'</span></span><span>, </span><span><span class="hljs-number">0</span></span><span>)
+
+    </span><span><span class="hljs-comment"># Check each character needed in t</span></span><span>
+    </span><span><span class="hljs-keyword">for</span></span><span> ch </span><span><span class="hljs-keyword">in</span></span><span> count_t:
+        available = count_s.get(ch, </span><span><span class="hljs-number">0</span></span><span>)
+        needed = count_t[ch]
+
+        </span><span><span class="hljs-keyword">if</span></span><span> available &gt;= needed:
+            </span><span><span class="hljs-keyword">continue</span></span><span>
+        </span><span><span class="hljs-keyword">else</span></span><span>:
+            required_from_q = needed - available
+            </span><span><span class="hljs-keyword">if</span></span><span> required_from_q &gt; wildcards:
+                </span><span><span class="hljs-keyword">return</span></span><span> </span><span><span class="hljs-string">"No"</span></span><span>
+            wildcards -= required_from_q
+
+    </span><span><span class="hljs-keyword">return</span></span><span> </span><span><span class="hljs-string">"Yes"</span></span><span>
+
+
+</span><span><span class="hljs-comment"># ---- Driver code ----</span></span><span>
+T = </span><span><span class="hljs-built_in">int</span></span><span>(</span><span><span class="hljs-built_in">input</span></span><span>())
+</span><span><span class="hljs-keyword">for</span></span><span> _ </span><span><span class="hljs-keyword">in</span></span><span> </span><span><span class="hljs-built_in">range</span></span><span>(T):
+    N = </span><span><span class="hljs-built_in">int</span></span><span>(</span><span><span class="hljs-built_in">input</span></span><span>())
+    s = </span><span><span class="hljs-built_in">input</span></span><span>().strip()
+    t = </span><span><span class="hljs-built_in">input</span></span><span>().strip()
+    </span><span><span class="hljs-built_in">print</span></span><span>(can_convert(s, t))
+</span></span></code></div></div></pre>
+<hr data-start="827" data-end="830">
+<h2 data-start="832" data-end="866">🧠 Explanation (simple &amp; clear)</h2>
+<h3 data-start="868" data-end="890">What the code does</h3>
+<ol data-start="892" data-end="1309">
+<li data-start="892" data-end="993">
+<p data-start="895" data-end="928"><strong data-start="895" data-end="928">Counts letters in <code data-start="915" data-end="918">s</code> and <code data-start="923" data-end="926">t</code></strong></p>
+<ul data-start="932" data-end="993">
+<li data-start="932" data-end="993">
+<p data-start="934" data-end="993">Uses <code data-start="939" data-end="948">Counter</code> to track how many times each letter appears.</p>
+</li>
+</ul>
+</li>
+<li data-start="994" data-end="1095">
+<p data-start="997" data-end="1042"><strong data-start="997" data-end="1042">Counts how many <code data-start="1015" data-end="1018">?</code> characters are in <code data-start="1037" data-end="1040">s</code></strong></p>
+<ul data-start="1046" data-end="1095">
+<li data-start="1046" data-end="1095">
+<p data-start="1048" data-end="1095">These are wildcards that can become any letter.</p>
+</li>
+</ul>
+</li>
+<li data-start="1096" data-end="1261">
+<p data-start="1099" data-end="1125"><strong data-start="1099" data-end="1125">For each letter in <code data-start="1120" data-end="1123">t</code></strong></p>
+<ul data-start="1129" data-end="1261">
+<li data-start="1129" data-end="1172">
+<p data-start="1131" data-end="1172">First use matching letters already in <code data-start="1169" data-end="1172">s</code></p>
+</li>
+<li data-start="1176" data-end="1212">
+<p data-start="1178" data-end="1212">If more are needed, try to use <code data-start="1209" data-end="1212">?</code></p>
+</li>
+<li data-start="1216" data-end="1261">
+<p data-start="1218" data-end="1261">If not enough <code data-start="1232" data-end="1235">?</code>, conversion is impossible</p>
+</li>
+</ul>
+</li>
+<li data-start="1262" data-end="1309">
+<p data-start="1265" data-end="1309">If all letters are satisfied → print <strong data-start="1302" data-end="1309">Yes</strong></p>
+</li>
+</ol>
+<hr data-start="1311" data-end="1314">
+<h2 data-start="1316" data-end="1329">🧪 Example</h2>
+<pre class="overflow-visible! px-0!" data-start="1331" data-end="1360"><div class="contain-inline-size rounded-2xl corner-superellipse/1.1 relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl corner-t-superellipse/1.1">ini</div><div class="sticky top-[calc(var(--sticky-padding-top)+9*var(--spacing))]"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none py-1" aria-label="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon-sm"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg>Copy code</button></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-attr">s</span></span><span> = </span><span><span class="hljs-string">"???n"</span></span><span>
+</span><span><span class="hljs-attr">t</span></span><span> = </span><span><span class="hljs-string">"aman"</span></span><span>
+</span></span></code></div></div></pre>
+<ul data-start="1362" data-end="1423">
+<li data-start="1362" data-end="1386">
+<p data-start="1364" data-end="1386">Need: a(2), m(1), n(1)</p>
+</li>
+<li data-start="1387" data-end="1406">
+<p data-start="1389" data-end="1406">Have: n(1) + ?(3)</p>
+</li>
+<li data-start="1407" data-end="1423">
+<p data-start="1409" data-end="1423">Possible → Yes</p>
+</li>
+</ul>
+<hr data-start="1425" data-end="1428">
+<h2 data-start="1430" data-end="1459">⏱️ Time &amp; Space Complexity</h2>
+<div class="TyagGW_tableContainer"><div tabindex="-1" class="group TyagGW_tableWrapper flex flex-col-reverse w-fit"><table data-start="1461" data-end="1563" class="w-fit min-w-(--thread-content-width)"><thead data-start="1461" data-end="1484"><tr data-start="1461" data-end="1484"><th data-start="1461" data-end="1470" data-col-size="sm" class="">Metric</th><th data-start="1470" data-end="1484" data-col-size="sm" class="">Complexity</th></tr></thead><tbody data-start="1506" data-end="1563"><tr data-start="1506" data-end="1525"><td data-start="1506" data-end="1513" data-col-size="sm">Time</td><td data-start="1513" data-end="1525" data-col-size="sm"><strong data-start="1515" data-end="1523">O(N)</strong></td></tr><tr data-start="1526" data-end="1563"><td data-start="1526" data-end="1534" data-col-size="sm">Space</td><td data-start="1534" data-end="1563" data-col-size="sm"><strong data-start="1536" data-end="1544">O(1)</strong> (26 letters max)</td></tr></tbody></table><div class="sticky h-0 select-none end-(--thread-content-margin) self-end"><div class="absolute end-0 flex items-end" style="height: 33.2188px;"><span class="" data-state="closed"><button aria-label="Copy table" class="hover:bg-token-bg-tertiary text-token-text-secondary my-1 rounded-sm p-1 transition-opacity group-[:not(:hover):not(:focus-within)]:pointer-events-none group-[:not(:hover):not(:focus-within)]:opacity-0"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-hidden="true" class="icon"><use href="/cdn/assets/sprites-core-c9exbsc1.svg#ce3544" fill="currentColor"></use></svg></button></span></div></div></div></div>
+<hr data-start="1565" data-end="1568">
+<h2 data-start="1570" data-end="1607">🎯 What this solution demonstrates</h2>
+<ul data-start="1609" data-end="1724">
+<li data-start="1609" data-end="1629">
+<p data-start="1611" data-end="1629">Frequency counting</p>
+</li>
+<li data-start="1630" data-end="1672">
+<p data-start="1632" data-end="1672">Greedy resource usage (<code data-start="1655" data-end="1658">?</code> as wildcards)</p>
+</li>
+<li data-start="1673" data-end="1724">
+<p data-start="1675" data-end="1724">Reduction of problem complexity by ignoring order</p>
+</li>
+</ul>
+<hr data-start="1726" data-end="1729">
+<h2 data-start="1731" data-end="1751">🏁 Final takeaway</h2>
+<blockquote data-start="1753" data-end="1825">
+<p data-start="1755" data-end="1825">If swaps are unlimited, <strong data-start="1779" data-end="1803">order doesn’t matter</strong> — only <strong data-start="1811" data-end="1821">counts</strong> do.</p>
+</blockquote>
+<p data-start="1827" data-end="1839">If you want:</p>
+<ul data-start="1840" data-end="1945">
+<li data-start="1840" data-end="1862">
+<p data-start="1842" data-end="1862">Step-by-step dry run</p>
+</li>
+<li data-start="1863" data-end="1875">
+<p data-start="1865" data-end="1875">Edge cases</p>
+</li>
+<li data-start="1876" data-end="1898">
+<p data-start="1878" data-end="1898">Proof of correctness</p>
+</li>
+<li data-start="1899" data-end="1945">
+<p data-start="1901" data-end="1945">Alternative implementation without <code data-start="1936" data-end="1945">Counter</code></p>
+</li>
+</ul>
+<p data-start="1947" data-end="1958" data-is-last-node="" data-is-only-node="">Just ask 😊</p></div>
