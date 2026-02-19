@@ -1,0 +1,39 @@
+<pre>
+I have some test cases for this code.
+I don't want to run it as is. I want to modify it to run test cases from the input files and produces these three things:
+
+import sys
+import math
+
+input = sys.stdin.readline
+
+T = int(input())
+
+for _ in range(T):
+    X = int(input())
+    
+    k = (math.isqrt(1 + 4*X) - 1) // 2
+    print(X - k)
+
+~~~
+
+correct_count: <int>
+incorrect_count: <int>
+incorrect_instances:
+[{
+"in": ***
+"correct_output": ***
+"your_output": ***
+}...]
+
+Input Test Case file is: /home/jain/Downloads/tc1/in1.txt
+Correct Output: /home/jain/Downloads/tc1/out1.txt
+
+Input file format:
+The first line contains the integer T, the number of test cases.
+In next T lines, each line contains an integer X.
+
+Rewrite the code with the above said requirements.
+
+
+</pre>

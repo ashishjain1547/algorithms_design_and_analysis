@@ -1,0 +1,285 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    
+        .customLink:hover {
+            text-decoration: none;
+        }
+    
+        div.code-block-decoration.footer {
+            display: none;
+        }
+    
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+    
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+    
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+    
+        .custom_link_h2 a:active {
+            color: black;
+        }
+    
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+    
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+    
+        [aria-hidden='true'] {
+            display: none;
+        }
+    
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+    
+        i.ir { color: red; }
+        i.ig { color: green; }
+        i.ib { color: blue; }
+        i.im { color: magenta; }
+        i.ip { color: purple; }
+    
+        .customTable td {
+            padding: 2px;
+        }
+    
+        i.green {
+            color: green;
+        }
+    
+        i.red {
+            color: red;
+        }
+    
+        i.blue {
+            color: blue;
+        }
+    
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+    
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        button.bg-token-bg-primary {
+            display: none;
+        }
+    
+        .flex.items-center {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All Articles About Technology: <a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html" target="_blank">Index of Lessons in Technology</a>
+
+<br>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgC_CEb5W0VvrKct60Cp8DMKktJ7hiOdxR6YC8xz8uQss4SzjKlzlcVv7pvph7S-cdh7cyACb4v8ylzGQlc7Du23ObM-4O3KfV_XbLWICbx2QP2X6mLENYMpOa-7HiDnRyrE_bCptrVE0gcZK3GWMv2LF_R33j1EfYDbyOicjmFCjCMGBwzp8-O0EsFdjwe/s637/algorithms.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="346" data-original-width="637" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgC_CEb5W0VvrKct60Cp8DMKktJ7hiOdxR6YC8xz8uQss4SzjKlzlcVv7pvph7S-cdh7cyACb4v8ylzGQlc7Du23ObM-4O3KfV_XbLWICbx2QP2X6mLENYMpOa-7HiDnRyrE_bCptrVE0gcZK3GWMv2LF_R33j1EfYDbyOicjmFCjCMGBwzp8-O0EsFdjwe/s600/algorithms.png"/></a></div>
+<br>
+
+<a href="https://www.hackerearth.com/practice/basic-programming/input-output/basics-of-input-output/practice-problems/algorithm/count-divisors/" target="_blank">Try it out</a>
+
+<pre>
+<b>Problem</b>
+
+You have been given 3 integers: l, r and k. Find how many numbers between l and r (both inclusive) are divisible by k. You do not need to print these numbers, you just have to find their count.
+
+Input Format
+The first and only line of input contains 3 space separated integers l, r and k.
+
+Output Format
+Print the required answer on a single line.
+
+Constraints
+1 &lt;= l &lt;= r &lt;= 1000
+
+1 &lt;= k &lt;= 1000
+
+Sample Input
+1 10 1
+Sample Output
+10
+
+Time Limit: 1
+Memory Limit: 256
+Source Limit:
+
+<h2>Psuedocode</h2>
+
+if (r - l + 1) > k
+    return (r - l + 1) / k
+else:
+    if floor(l / k) == floor(r / k):
+        return 0
+    else:
+        return 1
+
+Critique this psuedocode.
+</pre>
+
+<h2>Solution</h2>
+
+<pre>
+
+Your pseudocode is heading in the right direction by trying to find how many numbers in the range [l, r] are divisible by k, but it still contains logical issues. Let’s break it down carefully and critique each part:
+
+Goal
+We want to count all numbers x such that l ≤ x ≤ r and x % k == 0.
+
+ Issues in Your Pseudocode
+Your pseudocode:
+
+if (r - l + 1) > k
+    return (r - l + 1) / k
+else:
+    if floor(l / k) == floor(r / k):
+        return 0
+    else:
+        return 1
+
+Problem 1: (r - l + 1) / k doesn't count multiples of k
+This gives the average number of elements between l and r per k steps, not how many elements are divisible by k.
+
+Consider l = 3, r = 10, k = 2
+
+r - l + 1 = 8
+
+8 / 2 = 4 ✅ correct here by luck
+
+But try l = 5, r = 15, k = 3:
+
+r - l + 1 = 11, 11 / 3 = 3 ❌ wrong (actual count: 4 → 6, 9, 12, 15)
+
+🔴 Problem 2: Your else block logic is oversimplified
+plaintext
+Copy
+Edit
+if floor(l / k) == floor(r / k):
+    return 0
+else:
+    return 1
+This assumes that at most one number divisible by k exists in [l, r], which is incorrect.
+
+For example, l = 3, r = 10, k = 2:
+
+floor(3/2) = 1, floor(10/2) = 5 → not equal → returns 1 ❌ but actual count is 4
+
+✅ Correct and Simple Pseudocode
+
+Input: l, r, k
+
+# Use integer division (i.e., floor)
+count = floor(r / k) - floor((l - 1) / k)
+
+Return count
+✅ Why this Works
+Let’s take l = 5, r = 15, k = 3
+
+Numbers ≤ 15 divisible by 3: 3, 6, 9, 12, 15 → total = floor(15/3) = 5
+
+Numbers ≤ 4 divisible by 3: 3 → total = floor(4/3) = 1
+
+So numbers divisible by 3 in [5, 15] = 5 - 1 = 4
+
+💡 Final Thoughts
+❌ Avoid using (r - l + 1) / k unless l = 1 and k = 1
+
+✅ Stick to the formula floor(r / k) - floor((l - 1) / k) for correct results in all ranges
+
+Would you like a Python function implementing this pseudocode too?
+    
+<h2>Explanation</h2>
+
+✅ Correct Way to Count Multiples of k in [l, r]
+The correct formula is:
+
+count = floor(r / k) - floor((l - 1) / k)
+It works because:
+
+floor(r / k) counts how many numbers from 1 to r are divisible by k
+
+floor((l - 1) / k) counts how many from 1 to l-1 are divisible by k
+
+Subtracting the two gives how many are in the range [l, r]
+</pre>

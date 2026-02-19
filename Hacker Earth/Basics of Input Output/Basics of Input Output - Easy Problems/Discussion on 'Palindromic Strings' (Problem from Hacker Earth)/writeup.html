@@ -1,0 +1,332 @@
+<head>
+    <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+    <!-- Google AdSense Using Machine Learning Code -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3071098372371409",
+            enable_page_level_ads: true
+        });
+    </script>
+    
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+                success: function (result) {
+                    let grouplink = JSON.parse(result)['Beta Tech Club'];
+                    $("#customWhatsAppGroupLinkWrapper").html(
+                        `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+                    );
+                }
+            });
+        });
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        pre {
+            white-space: pre-wrap;
+            white-space: -moz-pre-wrap;
+            white-space: -pre-wrap;
+            white-space: -o-pre-wrap;
+            word-wrap: break-word;
+        }
+    
+        .customLink {
+            background-color: #4CAF50;
+            border: none;
+            color: white !important;
+            padding: 8px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    
+        .customLink:hover {
+            text-decoration: none;
+        }
+    
+        div.code-block-decoration.footer {
+            display: none;
+        }
+    
+        button.export-sheets-button-wrapper {
+            display: none;
+        }
+    </style>
+    
+    <style>
+        .custom_link_h2 a {
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+    
+        .custom_link_h2 a:hover {
+            color: black;
+        }
+    
+        .custom_link_h2 a:active {
+            color: black;
+        }
+    
+        .custom_link_h2 span {
+            translate: 0px -5px;
+            display: inline-block;
+        }
+    
+        .custom_link_h2 img {
+            width: 100px;
+            padding: 0px;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .customul {
+            list-style: none;
+        }
+    
+        [aria-hidden='true'] {
+            display: none;
+        }
+    
+        .custom_iframe {
+            width: 100%;
+            height: 305px;
+        }
+    
+        i.ir { color: red; }
+        i.ig { color: green; }
+        i.ib { color: blue; }
+        i.im { color: magenta; }
+        i.ip { color: purple; }
+    
+        .customTable td {
+            padding: 2px;
+        }
+    
+        i.green {
+            color: green;
+        }
+    
+        i.red {
+            color: red;
+        }
+    
+        i.blue {
+            color: blue;
+        }
+    
+        button.flex.gap-1.items-center.select-none.px-4.py-1 {
+            display: none;
+        }
+    
+        button.flex.select-none.items-center.gap-1 {
+            display: none;
+        }
+
+        button.bg-token-bg-primary {
+            display: none;
+        }
+    
+        .flex.items-center {
+            display: none;
+        }
+    </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+To See All Articles About Technology: <a class="customLink" href="https://survival8.blogspot.com/p/index-of-lessons-in-technology.html" target="_blank">Index of Lessons in Technology</a>
+
+<br>
+
+<div class="separator" style="clear: both;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgC_CEb5W0VvrKct60Cp8DMKktJ7hiOdxR6YC8xz8uQss4SzjKlzlcVv7pvph7S-cdh7cyACb4v8ylzGQlc7Du23ObM-4O3KfV_XbLWICbx2QP2X6mLENYMpOa-7HiDnRyrE_bCptrVE0gcZK3GWMv2LF_R33j1EfYDbyOicjmFCjCMGBwzp8-O0EsFdjwe/s637/algorithms.png" style="display: block; padding: 1em 0; text-align: center; "><img alt="" border="0" width="600" data-original-height="346" data-original-width="637" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgC_CEb5W0VvrKct60Cp8DMKktJ7hiOdxR6YC8xz8uQss4SzjKlzlcVv7pvph7S-cdh7cyACb4v8ylzGQlc7Du23ObM-4O3KfV_XbLWICbx2QP2X6mLENYMpOa-7HiDnRyrE_bCptrVE0gcZK3GWMv2LF_R33j1EfYDbyOicjmFCjCMGBwzp8-O0EsFdjwe/s600/algorithms.png"/></a></div>
+<br>
+<a href="https://www.hackerearth.com/practice/basic-programming/input-output/basics-of-input-output/practice-problems/algorithm/palindrome-check-2/" target="_blank">Try it out</a>
+
+
+<pre>
+Problem
+You have been given a String S. You need to find and print whether this string is a palindrome or not. If yes, print "YES" (without quotes), else print "NO" (without quotes).
+
+Input Format
+The first and only line of input contains the String S. The String shall consist of lowercase English alphabets only.
+
+Output Format
+Print the required answer on a single line.
+
+Constraints 
+1 &lt;= len(S) &lt;= 100
+
+Note
+String S consists of lowercase English Alphabets only.
+
+Sample Input
+aba
+Sample Output
+YES
+Time Limit: 1
+Memory Limit: 256
+Source Limit:
+
+<h2>Psuedo Code</h2>
+
+I would propose two approaches to handling this:
+
+<h3>Approach 1</h3>
+
+Using indexing [::-1] to reverse the string and checking if matches the original string.
+
+<h3>Approach 2</h3>
+
+Using recursion. It is based on the fact that a string S of length N would be palindrome then all the substrings S[1:N-1], S[2:N-2],...,S[X, N-X] would also be palindrome. The idea for code would be (to take out first and last characters of the string and check if the resultant substring is a palindrome) and do these two thing recursively.
+
+Critique this psuedo code.
+</pre>
+
+<div class="markdown prose dark:prose-invert w-full break-words light"><p data-start="0" data-end="142">Your proposed pseudocode outlines two solid approaches to checking whether a string is a palindrome. Here's a critique and comparison of both:</p>
+<hr data-start="144" data-end="147">
+<h3 data-start="149" data-end="190">✅ <strong data-start="155" data-end="190">Approach 1: Reverse and Compare</strong></h3>
+<h4 data-start="192" data-end="216">Pseudocode Summary:</h4>
+<ul data-start="217" data-end="307">
+<li data-start="217" data-end="238">
+<p data-start="219" data-end="238">Reverse the string.</p>
+</li>
+<li data-start="239" data-end="270">
+<p data-start="241" data-end="270">Compare it with the original.</p>
+</li>
+<li data-start="271" data-end="307">
+<p data-start="273" data-end="307">If equal → <code data-start="284" data-end="291">"YES"</code>, else → <code data-start="300" data-end="306">"NO"</code>.</p>
+</li>
+</ul>
+<h4 data-start="309" data-end="321">✅ Pros:</h4>
+<ul data-start="322" data-end="617">
+<li data-start="322" data-end="420">
+<p data-start="324" data-end="420"><strong data-start="324" data-end="342">Simple &amp; clean</strong>: Very readable and requires only a single line in most programming languages.</p>
+</li>
+<li data-start="421" data-end="527">
+<p data-start="423" data-end="527"><strong data-start="423" data-end="436">Efficient</strong>: Time complexity is O(N) and no unnecessary recursion or iteration beyond what's required.</p>
+</li>
+<li data-start="528" data-end="617">
+<p data-start="530" data-end="617"><strong data-start="530" data-end="554">Best for constraints</strong>: Since <code data-start="562" data-end="576">len(S) ≤ 100</code>, this is highly optimal and safe to use.</p>
+</li>
+</ul>
+<h4 data-start="619" data-end="631">❌ Cons:</h4>
+<ul data-start="632" data-end="716">
+<li data-start="632" data-end="716">
+<p data-start="634" data-end="716"><strong data-start="634" data-end="650">Memory usage</strong>: Creates a reversed copy of the string, so uses O(N) extra space.</p>
+</li>
+</ul>
+<h4 data-start="718" data-end="733">Verdict:</h4>
+<p data-start="734" data-end="800"><strong data-start="734" data-end="749">Best option</strong> for this problem due to simplicity and efficiency.</p>
+<hr data-start="802" data-end="805">
+<h3 data-start="807" data-end="844">✅ <strong data-start="813" data-end="844">Approach 2: Recursive Check</strong></h3>
+<h4 data-start="846" data-end="870">Pseudocode Summary:</h4>
+<ul data-start="871" data-end="1018">
+<li data-start="871" data-end="956">
+<p data-start="873" data-end="956">If first and last characters are equal, recursively check the substring in between.</p>
+</li>
+<li data-start="957" data-end="1018">
+<p data-start="959" data-end="1018">Base case: If the string length is 0 or 1 → return <code data-start="1010" data-end="1017">"YES"</code>.</p>
+</li>
+</ul>
+<h4 data-start="1020" data-end="1032">✅ Pros:</h4>
+<ul data-start="1033" data-end="1205">
+<li data-start="1033" data-end="1127">
+<p data-start="1035" data-end="1127"><strong data-start="1035" data-end="1067">Demonstrates deeper thinking</strong>: Good for interviews or showing understanding of recursion.</p>
+</li>
+<li data-start="1128" data-end="1205">
+<p data-start="1130" data-end="1205"><strong data-start="1130" data-end="1141">Elegant</strong>: Reflects the recursive structure of the palindrome definition.</p>
+</li>
+</ul>
+<h4 data-start="1207" data-end="1219">❌ Cons:</h4>
+<ul data-start="1220" data-end="1425">
+<li data-start="1220" data-end="1285">
+<p data-start="1222" data-end="1285"><strong data-start="1222" data-end="1240">Less efficient</strong>: Recursive calls add function call overhead.</p>
+</li>
+<li data-start="1286" data-end="1365">
+<p data-start="1288" data-end="1365"><strong data-start="1288" data-end="1311">Stack overflow risk</strong>: For larger inputs (though <code data-start="1339" data-end="1350">len ≤ 100</code> is safe here).</p>
+</li>
+<li data-start="1366" data-end="1425">
+<p data-start="1368" data-end="1425"><strong data-start="1368" data-end="1380">Overkill</strong>: Too much machinery for a very simple check.</p>
+</li>
+</ul>
+<h4 data-start="1427" data-end="1442">Verdict:</h4>
+<p data-start="1443" data-end="1563">Nice to know for academic interest, but not preferred in real-world scenarios unless recursion is specifically required.</p>
+<hr data-start="1565" data-end="1568">
+<h3 data-start="1570" data-end="1592">✅ Final Suggestion</h3>
+<p data-start="1594" data-end="1689">If you’re writing production code or competitive programming solutions: <strong data-start="1666" data-end="1688">Go with Approach 1</strong>.</p>
+<p data-start="1691" data-end="1845">If you're preparing for interviews and want to impress with recursion skills: <strong data-start="1769" data-end="1803">Show Approach 2 as a follow-up</strong>, but note that it's not the most optimal.</p>
+<p data-start="1847" data-end="1916" data-is-last-node="" data-is-only-node="">Would you like both approaches written in actual code for comparison?</p></div>
+
+<h2>Yes, please share a more optimal solution.</h2>
+
+<div class="markdown prose dark:prose-invert w-full break-words light"><p data-start="0" data-end="168">Sure! Here's a more optimal (and standard) solution to check if a string is a palindrome — using the <strong data-start="101" data-end="124">reverse-and-compare</strong> method, which is both simple and efficient.</p>
+<hr data-start="170" data-end="173">
+<h3 data-start="175" data-end="223">✅ <strong data-start="181" data-end="223">Optimal Solution (Reverse and Compare)</strong></h3>
+<pre class="overflow-visible!" data-start="225" data-end="315"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button><span class="" data-state="closed"><button class="flex items-center gap-1 px-4 py-1 select-none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span>S = </span><span><span class="hljs-built_in">input</span></span><span>().strip()
+
+</span><span><span class="hljs-keyword">if</span></span><span> S == S[::-</span><span><span class="hljs-number">1</span></span><span>]:
+    </span><span><span class="hljs-built_in">print</span></span><span>(</span><span><span class="hljs-string">"YES"</span></span><span>)
+</span><span><span class="hljs-keyword">else</span></span><span>:
+    </span><span><span class="hljs-built_in">print</span></span><span>(</span><span><span class="hljs-string">"NO"</span></span><span>)
+</span></span></code></div></div></pre>
+<hr data-start="317" data-end="320">
+<h3 data-start="322" data-end="341">🔍 Explanation:</h3>
+<ul data-start="343" data-end="552">
+<li data-start="343" data-end="396">
+<p data-start="345" data-end="396"><code data-start="345" data-end="354">S[::-1]</code> creates a reversed version of the string.</p>
+</li>
+<li data-start="397" data-end="468">
+<p data-start="399" data-end="468">If the original and reversed strings are the same, it's a palindrome.</p>
+</li>
+<li data-start="469" data-end="496">
+<p data-start="471" data-end="496">Time complexity: <strong data-start="488" data-end="496">O(N)</strong></p>
+</li>
+<li data-start="497" data-end="552">
+<p data-start="499" data-end="552">Space complexity: <strong data-start="517" data-end="525">O(N)</strong> (due to the reversed copy)</p>
+</li>
+</ul>
+<hr data-start="554" data-end="557">
+<h3 data-start="559" data-end="613">✅ Alternative: Two-Pointer Approach (Saves Memory)</h3>
+<p data-start="615" data-end="678">If you want <strong data-start="627" data-end="641">O(1) space</strong>, you can avoid reversing the string:</p>
+<pre class="overflow-visible!" data-start="680" data-end="877"><div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary"><div class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary dark:bg-token-main-surface-secondary select-none rounded-t-[5px]">python</div><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-sidebar-surface-primary text-token-text-secondary dark:bg-token-main-surface-secondary flex items-center rounded-sm px-2 font-sans text-xs"><button class="flex gap-1 items-center select-none px-4 py-1" aria-label="Copy"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 5C7 3.34315 8.34315 2 10 2H19C20.6569 2 22 3.34315 22 5V14C22 15.6569 20.6569 17 19 17H17V19C17 20.6569 15.6569 22 14 22H5C3.34315 22 2 20.6569 2 19V10C2 8.34315 3.34315 7 5 7H7V5ZM9 7H14C15.6569 7 17 8.34315 17 10V15H19C19.5523 15 20 14.5523 20 14V5C20 4.44772 19.5523 4 19 4H10C9.44772 4 9 4.44772 9 5V7ZM5 9C4.44772 9 4 9.44772 4 10V19C4 19.5523 4.44772 20 5 20H14C14.5523 20 15 19.5523 15 19V10C15 9.44772 14.5523 9 14 9H5Z" fill="currentColor"></path></svg>Copy</button><span class="" data-state="closed"><button class="flex items-center gap-1 px-4 py-1 select-none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-xs"><path d="M2.5 5.5C4.3 5.2 5.2 4 5.5 2.5C5.8 4 6.7 5.2 8.5 5.5C6.7 5.8 5.8 7 5.5 8.5C5.2 7 4.3 5.8 2.5 5.5Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M5.66282 16.5231L5.18413 19.3952C5.12203 19.7678 5.09098 19.9541 5.14876 20.0888C5.19933 20.2067 5.29328 20.3007 5.41118 20.3512C5.54589 20.409 5.73218 20.378 6.10476 20.3159L8.97693 19.8372C9.72813 19.712 10.1037 19.6494 10.4542 19.521C10.7652 19.407 11.0608 19.2549 11.3343 19.068C11.6425 18.8575 11.9118 18.5882 12.4503 18.0497L20 10.5C21.3807 9.11929 21.3807 6.88071 20 5.5C18.6193 4.11929 16.3807 4.11929 15 5.5L7.45026 13.0497C6.91175 13.5882 6.6425 13.8575 6.43197 14.1657C6.24513 14.4392 6.09299 14.7348 5.97903 15.0458C5.85062 15.3963 5.78802 15.7719 5.66282 16.5231Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 7L18.5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>Edit</button></span></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre! language-python"><span><span>S = </span><span><span class="hljs-built_in">input</span></span><span>().strip()
+is_palindrome = </span><span><span class="hljs-literal">True</span></span><span>
+
+</span><span><span class="hljs-keyword">for</span></span><span> i </span><span><span class="hljs-keyword">in</span></span><span> </span><span><span class="hljs-built_in">range</span></span><span>(</span><span><span class="hljs-built_in">len</span></span><span>(S) // </span><span><span class="hljs-number">2</span></span><span>):
+    </span><span><span class="hljs-keyword">if</span></span><span> S[i] != S[-(i + </span><span><span class="hljs-number">1</span></span><span>)]:
+        is_palindrome = </span><span><span class="hljs-literal">False</span></span><span>
+        </span><span><span class="hljs-keyword">break</span></span><span>
+
+</span><span><span class="hljs-built_in">print</span></span><span>(</span><span><span class="hljs-string">"YES"</span></span><span> </span><span><span class="hljs-keyword">if</span></span><span> is_palindrome </span><span><span class="hljs-keyword">else</span></span><span> </span><span><span class="hljs-string">"NO"</span></span><span>)
+</span></span></code></div></div></pre>
+<hr data-start="879" data-end="882">
+<h3 data-start="884" data-end="916">🔍 Why This is More Optimal:</h3>
+<ul data-start="917" data-end="1037">
+<li data-start="917" data-end="947">
+<p data-start="919" data-end="947">Uses only a flag and a loop.</p>
+</li>
+<li data-start="948" data-end="981">
+<p data-start="950" data-end="981">No reversed copy of the string.</p>
+</li>
+<li data-start="982" data-end="1037">
+<p data-start="984" data-end="1037">Time complexity: <strong data-start="1001" data-end="1009">O(N)</strong>, Space complexity: <strong data-start="1029" data-end="1037">O(1)</strong></p>
+</li>
+</ul>
+<p data-start="1039" data-end="1141">This version is better if memory is a concern or you want to show detailed logic (e.g. in interviews).</p>
+<p data-start="1143" data-end="1202" data-is-last-node="" data-is-only-node="">Let me know if you'd like to see the recursive version too!</p></div>
