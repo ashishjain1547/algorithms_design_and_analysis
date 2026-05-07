@@ -1,0 +1,184 @@
+
+<style>
+div.customOuterWrapper {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #1e1e1e;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+div.customOuterWrapper h1 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid #4f46e5;
+    padding-bottom: 0.4rem;
+    margin-top: 0;
+}
+div.customOuterWrapper h2 {
+    font-size: 1.4rem;
+    color: #4f46e5;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+div.customOuterWrapper h3 {
+    font-size: 1.15rem;
+    margin-top: 1.8rem;
+}
+div.customOuterWrapper p {
+    margin: 0.8rem 0;
+}
+div.customOuterWrapper ul, div.customOuterWrapper ol {
+    margin: 0.5rem 0 1rem 1.5rem;
+}
+div.customOuterWrapper li {
+    margin: 0.4rem 0;
+}
+div.customOuterWrapper blockquote {
+    border-left: 4px solid #4f46e5;
+    background: #eef2ff;
+    padding: 0.6rem 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+}
+div.customOuterWrapper pre {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+div.customOuterWrapper code {
+    font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+}
+div.customOuterWrapper hr {
+    border: none;
+    border-top: 1px solid #d1d5db;
+    margin: 1.5rem 0;
+}
+div.customOuterWrapper strong {
+    color: #111827;
+}
+</style>
+<div class="customOuterWrapper">
+<h1>Problem Restatement</h1>
+<p>
+Pawan has friends labeled by unique non‑negative integers 0, 1, 2, … He buys <em>N</em> data plans. Each plan <em>i</em> has a cost <em>aᵢ</em> (a non‑negative integer). When Pawan uses a plan with cost <em>Y</em>, a friend <em>f</em> receives an invitation if and only if the <em>f</em>‑th bit (0‑indexed) in the binary representation of <em>Y</em> is 1. A friend attends the party if they receive <strong>at least one</strong> invitation from any plan.
+</p>
+
+<p>
+The set of all invited friends is exactly the bitwise <strong>OR</strong> of all plan costs. Pawan wants to <strong>remove at most one</strong> data plan and still invite exactly the same set of friends as before. The money saved is the cost of the removed plan. We must find the <strong>maximum possible cost</strong> he can save. If no plan can be removed without losing some friend, the answer is 0.
+</p>
+
+<hr>
+
+<h2>1. Problem Category &amp; Core Concepts</h2>
+<ul>
+  <li><strong>Category:</strong> Bit manipulation / Greedy.</li>
+  <li><strong>Core DSA:</strong> Bitwise operations (OR, AND, bit counting), frequency maps, set‑wise reasoning.</li>
+  <li><strong>Mathematical Observation:</strong> The set of invited friends is the union of the bits set in any plan. Removing a plan is safe <em>iff</em> every bit that plan provides is also provided by at least one other plan.</li>
+  <li><strong>Constraints:</strong> 
+    <ul>
+      <li>Test cases <em>t</em> ≤ 100, sum of <em>N</em> ≤ 10⁶.</li>
+      <li>Each <em>aᵢ</em> ≤ 10⁹ → fits in 30 bits (0…29).</li>
+      <li>Time limit implies we need O(bit‑length ⋅ total N) or better.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2>2. Naïve / Brute‑Force Approach</h2>
+<p>
+For each data plan, remove it, compute the bitwise OR of the remaining plans, and compare with the original total OR. If they match, the plan is “removable”. Take the maximum cost among all removable plans.
+</p>
+<p>
+<strong>Complexity:</strong> O(N²) per test case (computing OR for each removal), which is far too slow when N is large (total N ≤ 10⁶ would become ~10¹² operations).
+</p>
+
+<h2>3. Key Insight &amp; Optimisation</h2>
+<p>
+Instead of recomputing the whole OR every time, notice that a plan is <strong>only essential</strong> if it is the <strong>sole provider</strong> of at least one bit that is set in the total OR. In other words:
+</p>
+<blockquote>
+A plan can be removed <strong>if and only if it has NO bit for which it is the only plan with that bit set.</strong>
+</blockquote>
+
+<p><strong>Why does this work?</strong></p>
+<ul>
+  <li>Every friend (bit) that was invited originally must still receive an invitation.</li>
+  <li>If a bit is set in <em>at least two</em> plans, we can drop any one of them and the bit remains present.</li>
+  <li>If a bit is set in <em>exactly one</em> plan, dropping that plan makes that bit disappear → the set of invited friends shrinks.</li>
+</ul>
+
+<p><strong>Pattern to remember:</strong> <em>“Union preservation under removal of one element”</em> is equivalent to checking which elements own a “unique” property (a bit that appears exactly once). This pattern appears often in problems involving OR/AND/XOR and frequency counts over bits.</p>
+
+<h2>4. Step‑by‑Step Optimal Algorithm</h2>
+<ol>
+  <li>Count, for every bit position 0…30, how many plans have that bit set. Also record the overall OR.</li>
+  <li>Build a “unique mask” containing all bits whose frequency is exactly 1.</li>
+  <li>Any plan that shares no bit with this unique mask is removable (its bits are all covered by other plans).</li>
+  <li>Answer = maximum cost among all removable plans; 0 if none exist.</li>
+</ol>
+
+<p><strong>Complexity:</strong></p>
+<ul>
+  <li><strong>Time:</strong> O( (number of set bits in all numbers) + N + 31 ) ≈ O(31·N) worst‑case. With total N ≤ 10⁶ this is ~3×10⁷ operations, well within limits.</li>
+  <li><strong>Space:</strong> O(31) for the frequency array → O(1) extra space.</li>
+</ul>
+
+<h2>5. Python Implementation</h2>
+<pre><code class="language-python">import sys
+
+def solve() -> None:
+    data = sys.stdin.buffer.read().split()
+    it = iter(data)
+    t = int(next(it))
+    out_lines = []
+    
+    for _ in range(t):
+        n = int(next(it))
+        a = [int(next(it)) for _ in range(n)]
+        
+        # 10^9 < 2^30, so bits 0..29 are enough; using 31 for safety
+        freq = [0] * 31
+        
+        for x in a:
+            v = x
+            # iterate over set bits only
+            while v:
+                lsb = v & -v
+                b = lsb.bit_length() - 1
+                freq[b] += 1
+                v ^= lsb   # clear the lowest set bit
+        
+        # Build mask of bits that occur in exactly one plan
+        unique_mask = 0
+        for b in range(31):
+            if freq[b] == 1:
+                unique_mask |= (1 << b)
+        
+        best_saving = 0
+        for x in a:
+            # If x has no unique bit, it can be dropped
+            if (x & unique_mask) == 0:
+                if x > best_saving:
+                    best_saving = x
+        
+        out_lines.append(str(best_saving))
+    
+    sys.stdout.write("\n".join(out_lines))
+
+if __name__ == "__main__":
+    solve()
+</code></pre>
+
+<h2>6. Example Walkthrough</h2>
+<ul>
+  <li><strong>Case 1:</strong> plans = [10, 5] → bits: 10=1010₂, 5=0101₂. OR = 1111₂. Every bit appears exactly once → <code>unique_mask = 1111₂</code>. Both plans touch it → none removable → answer 0.</li>
+  <li><strong>Case 2:</strong> plans = [9, 9, 9, 9] (or four equal costs). Bits of 9=1001₂ appear 4 times each → <code>unique_mask = 0</code>. All plans are removable → answer 9 (the cost).</li>
+</ul>
+
+<p><strong>Key Takeaway:</strong> When dealing with “can I remove one element without changing a bitwise OR / union”, count how many elements supply each bit and identify the elements that are the sole supplier of at least one bit. The rest are safe to remove.</p>
+</div>
