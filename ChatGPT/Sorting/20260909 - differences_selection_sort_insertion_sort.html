@@ -1,0 +1,673 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Differences Between Selection Sort and Insertion Sort</title>
+
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <!-- Google AdSense Using Machine Learning Code -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-3071098372371409",
+      enable_page_level_ads: true
+    });
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: "https://raw.githubusercontent.com/ashishjain1547/pubLessonsInTechnology/main/links_to_tech_clubs.json",
+        success: function (result) {
+          let grouplink = JSON.parse(result)['Beta Tech Club'];
+          $("#customWhatsAppGroupLinkWrapper").html(
+            `
+                        <h2 class="custom_link_h2"><a href="${grouplink}" target="_blank"> 
+                            <span>Join us on:</span>
+                            <span class="customLink"><i class="fa fa-whatsapp"></i> Whatsapp </span>
+                            </a>
+                        </h2>
+                        `
+          );
+        }
+      });
+    });
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    pre {
+      white-space: pre-wrap;
+      white-space: -moz-pre-wrap;
+      white-space: -pre-wrap;
+      white-space: -o-pre-wrap;
+      word-wrap: break-word;
+    }
+
+    .customLink {
+      background-color: #4CAF50;
+      border: none;
+      color: white !important;
+      padding: 8px 13px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    .customLink:hover {
+      text-decoration: none;
+    }
+
+    div.code-block-decoration.footer {
+      display: none;
+    }
+
+    button.export-sheets-button-wrapper {
+      display: none;
+    }
+  </style>
+
+  <style>
+    .custom_link_h2 a {
+      color: black;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .custom_link_h2 a:hover {
+      color: black;
+    }
+
+    .custom_link_h2 a:active {
+      color: black;
+    }
+
+    .custom_link_h2 span {
+      translate: 0px -5px;
+      display: inline-block;
+    }
+
+    .custom_link_h2 img {
+      width: 100px;
+      padding: 0px;
+      border: none;
+      box-shadow: none;
+    }
+  </style>
+  <style>
+    .customul {
+      list-style: none;
+    }
+
+    [aria-hidden='true'] {
+      display: none;
+    }
+
+    .custom_iframe {
+      width: 100%;
+      height: 305px;
+    }
+
+    i.ir {
+      color: red;
+    }
+
+    i.ig {
+      color: green;
+    }
+
+    i.ib {
+      color: blue;
+    }
+
+    i.im {
+      color: magenta;
+    }
+
+    i.ip {
+      color: purple;
+    }
+
+    .customTable td {
+      padding: 2px;
+    }
+
+    i.green {
+      color: green;
+    }
+
+    i.red {
+      color: red;
+    }
+
+    i.blue {
+      color: blue;
+    }
+
+    button.flex.gap-1.items-center.select-none.px-4.py-1 {
+      display: none;
+    }
+
+    button.flex.select-none.items-center.gap-1 {
+      display: none;
+    }
+
+    button.bg-token-bg-primary {
+      display: none;
+    }
+
+    .flex.items-center {
+      display: none;
+    }
+
+    svg {
+      display: none;
+    }
+  </style>
+
+  <style>
+    div.customOuterWrapper1050 {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 32px 24px 56px;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      line-height: 1.7;
+      background: #fff;
+    }
+
+    div.customOuterWrapper1050 h1 {
+      margin: 0 0 12px;
+      font-size: 38px;
+      line-height: 1.2;
+    }
+
+    div.customOuterWrapper1050 h2 {
+      margin: 38px 0 14px;
+      font-size: 27px;
+      line-height: 1.3;
+    }
+
+    div.customOuterWrapper1050 h3 {
+      margin: 26px 0 10px;
+      font-size: 21px;
+    }
+
+    div.customOuterWrapper1050 p {
+      margin: 0 0 16px;
+      font-size: 16px;
+    }
+
+    div.customOuterWrapper1050 ul,
+    div.customOuterWrapper1050 ol {
+      margin: 0 0 20px;
+      padding-left: 26px;
+    }
+
+    div.customOuterWrapper1050 li {
+      margin-bottom: 8px;
+    }
+
+    div.customOuterWrapper1050 .intro {
+      margin-bottom: 28px;
+      font-size: 18px;
+    }
+
+    div.customOuterWrapper1050 .sort-card {
+      margin: 20px 0;
+      padding: 22px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f8f8f8;
+    }
+
+    div.customOuterWrapper1050 .sort-card h3 {
+      margin-top: 0;
+    }
+
+    div.customOuterWrapper1050 .example {
+      margin: 18px 0 24px;
+      padding: 18px 20px;
+      border-left: 4px solid #555;
+      background: #f5f5f5;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+
+    div.customOuterWrapper1050 .example-title {
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    div.customOuterWrapper1050 pre {
+      margin: 0;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 14px;
+      line-height: 1.55;
+      white-space: pre-wrap;
+    }
+
+    div.customOuterWrapper1050 code {
+      font-family: Consolas, "Courier New", monospace;
+    }
+
+    div.customOuterWrapper1050 .comparison-table-wrapper {
+      margin: 20px 0 28px;
+      overflow-x: auto;
+    }
+
+    div.customOuterWrapper1050 table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+
+    div.customOuterWrapper1050 th,
+    div.customOuterWrapper1050 td {
+      padding: 12px 14px;
+      border: 1px solid #ccc;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    div.customOuterWrapper1050 th {
+      font-weight: 700;
+      background: #eee;
+    }
+
+    div.customOuterWrapper1050 .takeaway {
+      margin-top: 28px;
+      padding: 20px 22px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+
+    div.customOuterWrapper1050 .takeaway strong {
+      font-weight: 700;
+    }
+
+    @media (max-width: 700px) {
+      div.customOuterWrapper1050 {
+        padding: 24px 16px 40px;
+      }
+
+      div.customOuterWrapper1050 h1 {
+        font-size: 30px;
+      }
+
+      div.customOuterWrapper1050 h2 {
+        font-size: 24px;
+      }
+
+      div.customOuterWrapper1050 .intro {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<div id="customWhatsAppGroupLinkWrapper"></div>
+
+<a class="customLink" href="https://survival8.blogspot.com/2025/06/index-of-algorithms-design-and-analysis.html"
+  target="_blank">
+  Index of "Algorithms: Design and Analysis"
+</a>
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/09/why-quicksort-wins-in-practice.html" target="_blank"
+  class="customLink">&laquo; Previous</a>
+&nbsp;&nbsp; 
+<a href="https://survival8.blogspot.com/2026/09/timsort-descriptive-and-explanatory.html" target="_blank" class="customLink">Next &raquo;</a>
+
+
+<div class="customOuterWrapper1050">
+  <article>
+    <h1>Differences Between Selection Sort and Insertion Sort</h1>
+
+    <p class="intro">
+      Selection Sort and Insertion Sort are two simple comparison-based sorting algorithms.
+      Both are easy to understand, easy to implement, and useful for learning how sorting
+      works. At first glance, they may seem almost identical because both repeatedly build
+      a sorted portion of the array. The important difference is <strong>how they build that
+        sorted portion</strong>.
+    </p>
+
+    <p>
+      Selection Sort repeatedly searches for the smallest remaining element and puts it in
+      its correct position. Insertion Sort, on the other hand, takes the next element and
+      inserts it into the correct position within the portion that is already sorted.
+    </p>
+
+    <h2>1. The Core Idea</h2>
+
+    <div class="sort-card">
+      <h3>Selection Sort: Find the minimum, then swap</h3>
+      <p>
+        Selection Sort divides the array into two conceptual parts: a sorted portion on the
+        left and an unsorted portion on the right. During each pass, it searches the unsorted
+        portion for the smallest element. Once the smallest element is found, it swaps that
+        element with the first element of the unsorted portion.
+      </p>
+      <p>
+        In other words: <strong>select the smallest remaining value and place it where it belongs.</strong>
+      </p>
+    </div>
+
+    <div class="sort-card">
+      <h3>Insertion Sort: Take the next element and insert it</h3>
+      <p>
+        Insertion Sort also grows a sorted portion from left to right. However, instead of
+        searching the entire unsorted portion for a minimum, it takes the next element and
+        moves larger elements to the right until the correct position for that element is found.
+      </p>
+      <p>
+        In other words: <strong>take the next value and insert it into the sorted portion.</strong>
+      </p>
+    </div>
+
+    <h2>2. A Simple Example</h2>
+
+    <p>
+      Consider the array:
+    </p>
+
+    <div class="example">
+      <pre><code>[5, 2, 4, 1, 3]</code></pre>
+    </div>
+
+    <h3>How Selection Sort approaches it</h3>
+
+    <p>
+      Selection Sort looks through the unsorted portion to find the smallest value.
+      On the first pass, it finds <strong>1</strong> and swaps it with <strong>5</strong>.
+      The array becomes:
+    </p>
+
+    <div class="example">
+      <pre><code>[1, 2, 4, 5, 3]</code></pre>
+    </div>
+
+    <p>
+      It then searches the remaining unsorted portion for the next smallest value.
+      The process continues until every element is in its correct position.
+    </p>
+
+    <h3>How Insertion Sort approaches it</h3>
+
+    <p>
+      Insertion Sort starts by treating <strong>5</strong> as a sorted portion. It then takes
+      <strong>2</strong> and inserts it before 5:
+    </p>
+
+    <div class="example">
+      <pre><code>[2, 5, 4, 1, 3]</code></pre>
+    </div>
+
+    <p>
+      Next, it takes <strong>4</strong>. Since 5 is larger than 4, it shifts 5 to the right
+      and places 4 before it:
+    </p>
+
+    <div class="example">
+      <pre><code>[2, 4, 5, 1, 3]</code></pre>
+    </div>
+
+    <p>
+      It keeps repeating this process, inserting each new element into the correct location
+      in the sorted portion.
+    </p>
+
+    <h2>3. The Main Difference in Their Algorithms</h2>
+
+    <p>
+      The easiest way to remember the difference is to focus on what each algorithm does
+      during a pass:
+    </p>
+
+    <ul>
+      <li><strong>Selection Sort searches</strong> for the smallest element.</li>
+      <li><strong>Insertion Sort shifts and inserts</strong> the current element into its proper position.</li>
+    </ul>
+
+    <p>
+      Selection Sort asks: <em>"What is the smallest element remaining?"</em>
+    </p>
+
+    <p>
+      Insertion Sort asks: <em>"Where should this element go among the elements I have already sorted?"</em>
+    </p>
+
+    <h2>4. Comparison of Selection Sort and Insertion Sort</h2>
+
+    <div class="comparison-table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Selection Sort</th>
+            <th>Insertion Sort</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Basic strategy</td>
+            <td>Find the minimum element and swap it into position.</td>
+            <td>Take the next element and insert it into the sorted portion.</td>
+          </tr>
+          <tr>
+            <td>Sorted portion</td>
+            <td>Grows by selecting the minimum from the unsorted portion.</td>
+            <td>Grows by inserting one element at a time.</td>
+          </tr>
+          <tr>
+            <td>Best-case time</td>
+            <td>O(n²)</td>
+            <td>O(n)</td>
+          </tr>
+          <tr>
+            <td>Average-case time</td>
+            <td>O(n²)</td>
+            <td>O(n²)</td>
+          </tr>
+          <tr>
+            <td>Worst-case time</td>
+            <td>O(n²)</td>
+            <td>O(n²)</td>
+          </tr>
+          <tr>
+            <td>Space complexity</td>
+            <td>O(1) extra space</td>
+            <td>O(1) extra space</td>
+          </tr>
+          <tr>
+            <td>Stable?</td>
+            <td>Generally no, with the standard swap-based implementation.</td>
+            <td>Yes, with the standard implementation.</td>
+          </tr>
+          <tr>
+            <td>Adaptive?</td>
+            <td>No. It performs essentially the same comparisons even when the array is nearly sorted.</td>
+            <td>Yes. It can become very fast when the array is already or nearly sorted.</td>
+          </tr>
+          <tr>
+            <td>Movement of elements</td>
+            <td>Usually fewer writes because it primarily swaps elements.</td>
+            <td>May perform many shifts when elements are far from their final positions.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>5. Time Complexity: Why the Difference Matters</h2>
+
+    <h3>Selection Sort</h3>
+
+    <p>
+      Selection Sort searches the remaining unsorted elements on every pass. Even if the
+      array is already sorted, it still needs to scan the unsorted portion to determine
+      which element is the minimum.
+    </p>
+
+    <p>
+      Therefore, its best, average, and worst-case time complexity is generally:
+    </p>
+
+    <div class="example">
+      <pre><code>Best:     O(n²)
+Average:  O(n²)
+Worst:    O(n²)</code></pre>
+    </div>
+
+    <h3>Insertion Sort</h3>
+
+    <p>
+      Insertion Sort behaves differently. If the array is already sorted, each new element
+      only needs a quick comparison with the preceding element, so very little work is required.
+    </p>
+
+    <p>
+      Its typical time complexities are:
+    </p>
+
+    <div class="example">
+      <pre><code>Best:     O(n)
+Average:  O(n²)
+Worst:    O(n²)</code></pre>
+    </div>
+
+    <p>
+      This makes Insertion Sort particularly useful when the input is already sorted or
+      nearly sorted.
+    </p>
+
+    <h2>6. Swapping vs. Shifting</h2>
+
+    <p>
+      Another useful distinction is what happens to elements that are already in the array.
+    </p>
+
+    <p>
+      <strong>Selection Sort primarily uses swaps.</strong> Once it finds the minimum element,
+      it swaps that element with the first element of the unsorted section. This means it
+      generally performs relatively few writes.
+    </p>
+
+    <p>
+      <strong>Insertion Sort primarily uses shifts.</strong> When an element needs to move
+      left, larger elements are shifted one position to the right until the correct location
+      is available.
+    </p>
+
+    <p>
+      This distinction can matter when writing to memory is considerably more expensive than
+      comparing values.
+    </p>
+
+    <h2>7. Stability</h2>
+
+    <p>
+      A sorting algorithm is called <strong>stable</strong> when equal elements retain their
+      original relative order after sorting.
+    </p>
+
+    <p>
+      Insertion Sort is naturally stable when implemented by shifting elements only when they
+      are strictly greater than the current value.
+    </p>
+
+    <p>
+      Standard Selection Sort is generally not stable because swapping the minimum element
+      with the first unsorted element can change the relative order of equal elements.
+    </p>
+
+    <h2>8. When Should You Use Each One?</h2>
+
+    <h3>Use Insertion Sort when:</h3>
+
+    <ul>
+      <li>The data is already sorted or nearly sorted.</li>
+      <li>You need a stable sorting algorithm.</li>
+      <li>You want a simple algorithm that performs well on small inputs.</li>
+      <li>New elements are being added incrementally to an already sorted collection.</li>
+    </ul>
+
+    <h3>Use Selection Sort when:</h3>
+
+    <ul>
+      <li>You want an extremely simple sorting algorithm.</li>
+      <li>Minimizing the number of writes or swaps is important.</li>
+      <li>The input is small and performance is not a major concern.</li>
+      <li>You specifically want to demonstrate the concept of repeatedly selecting the minimum.</li>
+    </ul>
+
+    <h2>9. The Key Insight</h2>
+
+    <p>
+      Both algorithms are quadratic in their average and worst cases, but that does not mean
+      they behave identically.
+    </p>
+
+    <p>
+      Selection Sort is more rigid: it keeps searching for the minimum regardless of how
+      organized the input already is.
+    </p>
+
+    <p>
+      Insertion Sort is more responsive to the input: the more sorted the data is, the less
+      work it generally needs to do.
+    </p>
+
+    <div class="takeaway">
+      <p>
+        <strong>The simplest way to remember the difference:</strong>
+      </p>
+      <p>
+        Selection Sort says: <strong>"Find the smallest and select it."</strong>
+      </p>
+      <p>
+        Insertion Sort says: <strong>"Take the next element and insert it where it belongs."</strong>
+      </p>
+    </div>
+
+    <h2>10. Final Comparison</h2>
+
+    <p>
+      Selection Sort and Insertion Sort are both excellent algorithms for understanding the
+      fundamentals of sorting. Neither is normally the first choice for sorting large,
+      unsorted datasets, where more advanced algorithms such as Merge Sort, Heap Sort, or
+      Quicksort are generally more appropriate.
+    </p>
+
+    <p>
+      For small or nearly sorted data, however, Insertion Sort can be surprisingly effective.
+      Selection Sort has a different strength: it keeps the implementation simple and limits
+      the number of swaps.
+    </p>
+
+    <p>
+      Ultimately, the most important difference is not just their Big-O notation. It is the
+      way they construct the sorted portion of the array: <strong>Selection Sort selects the
+        next element by searching for a minimum, while Insertion Sort builds the sorted portion
+        by inserting each new element into its proper place.</strong>
+    </p>
+  </article>
+</div>
+
+<a class="customLink" href="https://survival8.blogspot.com/2025/06/index-of-algorithms-design-and-analysis.html"
+  target="_blank">
+  Index of "Algorithms: Design and Analysis"
+</a>
+&nbsp;&nbsp;
+
+<a href="https://survival8.blogspot.com/2026/09/why-quicksort-wins-in-practice.html" target="_blank"
+  class="customLink">&laquo; Previous</a>
+&nbsp;&nbsp; 
+
+<a href="https://survival8.blogspot.com/2026/09/timsort-descriptive-and-explanatory.html" target="_blank" class="customLink">Next &raquo;</a>
