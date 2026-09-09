@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Are Sorting Algorithms Compared and Contrasted?</title>
+  <style>
+    div.customOuterWrapper1130 {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: #222;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px;
+      box-sizing: border-box;
+      background: #fff;
+    }
+
+    div.customOuterWrapper1130 h1,
+    div.customOuterWrapper1130 h2,
+    div.customOuterWrapper1130 h3 {
+      line-height: 1.25;
+      color: #111;
+    }
+
+    div.customOuterWrapper1130 h1 {
+      font-size: 2.5rem;
+      margin: 0 0 18px;
+    }
+
+    div.customOuterWrapper1130 h2 {
+      font-size: 1.8rem;
+      margin: 42px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    div.customOuterWrapper1130 h3 {
+      font-size: 1.3rem;
+      margin: 28px 0 10px;
+    }
+
+    div.customOuterWrapper1130 p {
+      margin: 0 0 18px;
+    }
+
+    div.customOuterWrapper1130 .intro {
+      font-size: 1.15rem;
+      color: #444;
+      margin-bottom: 28px;
+    }
+
+    div.customOuterWrapper1130 .highlight {
+      padding: 18px 20px;
+      margin: 24px 0;
+      border-left: 4px solid #555;
+      background: #f5f5f5;
+    }
+
+    div.customOuterWrapper1130 .tableWrapper {
+      width: 100%;
+      overflow-x: auto;
+      margin: 24px 0;
+    }
+
+    div.customOuterWrapper1130 table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 760px;
+    }
+
+    div.customOuterWrapper1130 th,
+    div.customOuterWrapper1130 td {
+      padding: 12px 14px;
+      border: 1px solid #d8d8d8;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    div.customOuterWrapper1130 th {
+      background: #eeeeee;
+      font-weight: 700;
+    }
+
+    div.customOuterWrapper1130 code {
+      font-family: Consolas, "Courier New", monospace;
+      background: #f2f2f2;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+
+    div.customOuterWrapper1130 pre {
+      margin: 20px 0;
+      padding: 18px;
+      overflow-x: auto;
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+
+    div.customOuterWrapper1130 pre code {
+      background: transparent;
+      padding: 0;
+    }
+
+    div.customOuterWrapper1130 ul,
+    div.customOuterWrapper1130 ol {
+      margin: 0 0 20px 24px;
+    }
+
+    div.customOuterWrapper1130 li {
+      margin-bottom: 8px;
+    }
+
+    div.customOuterWrapper1130 .formula {
+      margin: 18px 0;
+      padding: 14px 18px;
+      text-align: center;
+      background: #f7f7f7;
+      border: 1px solid #ddd;
+      font-family: Consolas, "Courier New", monospace;
+    }
+
+    div.customOuterWrapper1130 .takeaway {
+      margin-top: 36px;
+      padding: 22px;
+      background: #eeeeee;
+      border-radius: 6px;
+    }
+
+    div.customOuterWrapper1130 .small {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    @media (max-width: 700px) {
+      div.customOuterWrapper1130 {
+        padding: 20px;
+      }
+
+      div.customOuterWrapper1130 h1 {
+        font-size: 2rem;
+      }
+
+      div.customOuterWrapper1130 h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="customOuterWrapper1130">
+
+    <h1>How Are Sorting Algorithms Compared and Contrasted?</h1>
+
+    <p class="intro">
+      Sorting is one of the most fundamental problems in computer science. Given a collection of
+      values, a sorting algorithm rearranges them into a desired order—usually ascending or
+      descending. But with many sorting algorithms available, how do we decide which one is
+      better?
+    </p>
+
+    <p>
+      The answer is not as simple as saying, "Algorithm A is faster than Algorithm B."
+      Sorting algorithms are compared and contrasted using several dimensions, including
+      <strong>time complexity, space complexity, stability, adaptability, implementation
+      complexity, and behavior on different types of input</strong>.
+    </p>
+
+    <p>
+      Understanding these dimensions helps us see why an algorithm that is excellent in one
+      situation may be a poor choice in another.
+    </p>
+
+    <h2>1. The First Question: How Fast Is It?</h2>
+
+    <p>
+      The most common way to compare sorting algorithms is by looking at how their running time
+      grows as the input becomes larger. This is expressed using <strong>Big-O notation</strong>.
+    </p>
+
+    <p>
+      If an algorithm takes roughly twice as long when the input doubles, its growth is very
+      different from an algorithm whose running time becomes four times as large.
+    </p>
+
+    <p>
+      For example, an algorithm with <code>O(n²)</code> time complexity generally becomes much
+      more expensive as the input grows than an algorithm with <code>O(n log n)</code> complexity.
+    </p>
+
+    <div class="formula">
+      O(n²) &nbsp; grows faster than &nbsp; O(n log n) &nbsp; as n becomes large
+    </div>
+
+    <p>
+      This is why asymptotic time complexity is one of the most important tools for comparing
+      sorting algorithms.
+    </p>
+
+    <h2>2. Best Case, Average Case, and Worst Case</h2>
+
+    <p>
+      A sorting algorithm does not necessarily behave the same way for every input. Therefore,
+      we often compare three different cases:
+    </p>
+
+    <ul>
+      <li>
+        <strong>Best case:</strong> the most favorable arrangement of the input.
+      </li>
+      <li>
+        <strong>Average case:</strong> the expected behavior over typical inputs.
+      </li>
+      <li>
+        <strong>Worst case:</strong> the least favorable arrangement of the input.
+      </li>
+    </ul>
+
+    <p>
+      Consider <strong>Insertion Sort</strong>. If the input is already sorted, it can run in
+      <code>O(n)</code> time. But if the input is arranged in reverse order, it can require
+      <code>O(n²)</code> time.
+    </p>
+
+    <p>
+      This distinction matters because two algorithms can have the same average-case complexity
+      while behaving very differently in their best or worst cases.
+    </p>
+
+    <h2>3. Comparing Common Sorting Algorithms</h2>
+
+    <p>
+      A useful way to understand the differences is to place several well-known algorithms side
+      by side.
+    </p>
+
+    <div class="tableWrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Algorithm</th>
+            <th>Best Case</th>
+            <th>Average Case</th>
+            <th>Worst Case</th>
+            <th>Extra Space</th>
+            <th>Stable?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bubble Sort</td>
+            <td>O(n)*</td>
+            <td>O(n²)</td>
+            <td>O(n²)</td>
+            <td>O(1)</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Selection Sort</td>
+            <td>O(n²)</td>
+            <td>O(n²)</td>
+            <td>O(n²)</td>
+            <td>O(1)</td>
+            <td>Usually no</td>
+          </tr>
+          <tr>
+            <td>Insertion Sort</td>
+            <td>O(n)</td>
+            <td>O(n²)</td>
+            <td>O(n²)</td>
+            <td>O(1)</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Merge Sort</td>
+            <td>O(n log n)</td>
+            <td>O(n log n)</td>
+            <td>O(n log n)</td>
+            <td>O(n)</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Quick Sort</td>
+            <td>O(n log n)</td>
+            <td>O(n log n)</td>
+            <td>O(n²)</td>
+            <td>O(log n)**</td>
+            <td>Usually no</td>
+          </tr>
+          <tr>
+            <td>Heap Sort</td>
+            <td>O(n log n)</td>
+            <td>O(n log n)</td>
+            <td>O(n log n)</td>
+            <td>O(1)</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Timsort</td>
+            <td>O(n)</td>
+            <td>O(n log n)</td>
+            <td>O(n log n)</td>
+            <td>O(n)</td>
+            <td>Yes</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="small">
+      * Bubble Sort achieves O(n) best-case behavior when implemented with an early-exit check.
+      ** Quick Sort's auxiliary space depends on the partition strategy and recursion depth;
+      O(log n) is typical with balanced recursion, while poor pivots can lead to O(n).
+    </p>
+
+    <h2>4. Time Complexity Is Not the Whole Story</h2>
+
+    <p>
+      It is tempting to look at the table and choose the algorithm with the smallest Big-O
+      complexity. However, real-world performance is more complicated.
+    </p>
+
+    <p>
+      Big-O describes how an algorithm's resource requirements grow. It does not tell us
+      everything about the actual time required for a particular input.
+    </p>
+
+    <p>
+      For example, an <code>O(n²)</code> algorithm can sometimes outperform an
+      <code>O(n log n)</code> algorithm when <code>n</code> is very small, because the simpler
+      algorithm may have lower constant overhead.
+    </p>
+
+    <div class="highlight">
+      <strong>Key idea:</strong> Big-O is excellent for understanding scalability, but practical
+      performance also depends on constants, hardware, implementation details, memory access
+      patterns, and the characteristics of the input.
+    </div>
+
+    <h2>5. How Much Extra Memory Does It Need?</h2>
+
+    <p>
+      Another important comparison is <strong>space complexity</strong>: how much additional
+      memory does the algorithm require while sorting?
+    </p>
+
+    <p>
+      Some algorithms can rearrange the elements directly inside the original array. These are
+      often described as <strong>in-place</strong> algorithms.
+    </p>
+
+    <p>
+      Selection Sort, Insertion Sort, and Heap Sort can operate with <code>O(1)</code> auxiliary
+      space in their common array implementations. Merge Sort, on the other hand, typically
+      requires additional memory proportional to the input size.
+    </p>
+
+    <p>
+      This creates an important trade-off:
+    </p>
+
+    <ul>
+      <li><strong>Less memory:</strong> may be valuable when memory is constrained.</li>
+      <li><strong>More memory:</strong> may enable simpler or faster processing.</li>
+    </ul>
+
+    <h2>6. Stability: Does Equal Mean Equal?</h2>
+
+    <p>
+      <strong>Stability</strong> is another major property used to compare sorting algorithms.
+    </p>
+
+    <p>
+      Suppose we have employees sorted by department, and then we want to sort them by salary.
+      If two employees have the same salary, a stable sorting algorithm preserves their original
+      relative order.
+    </p>
+
+    <p>
+      Imagine this sequence:
+    </p>
+
+    <pre><code>Alice: 80
+Bob:   70
+Carol: 80
+David: 60</code></pre>
+
+    <p>
+      After sorting by score, a stable algorithm keeps Alice before Carol because Alice originally
+      appeared first among the two employees with a score of 80.
+    </p>
+
+    <p>
+      Stability is especially useful when sorting records by multiple fields. It is therefore
+      possible for two algorithms with similar time complexity to have very different practical
+      usefulness because only one is stable.
+    </p>
+
+    <h2>7. Adaptability: Does It Take Advantage of Existing Order?</h2>
+
+    <p>
+      Some sorting algorithms perform particularly well when the input is already partially
+      sorted. This property is often described as <strong>adaptability</strong>.
+    </p>
+
+    <p>
+      Insertion Sort is a classic example. If an array is almost sorted, most elements are
+      already close to their final positions, so relatively little work is needed.
+    </p>
+
+    <p>
+      Timsort takes this idea much further. It detects naturally ordered portions, called
+      <strong>runs</strong>, and uses them to reduce the amount of work required.
+    </p>
+
+    <p>
+      This illustrates an important lesson: an algorithm should be compared not only according to
+      its theoretical worst case, but also according to how well it matches the structure of the
+      data.
+    </p>
+
+    <h2>8. Comparison-Based vs. Non-Comparison-Based Sorting</h2>
+
+    <p>
+      Sorting algorithms can also be contrasted according to how they determine the order of
+      elements.
+    </p>
+
+    <h3>Comparison-Based Sorting</h3>
+
+    <p>
+      Algorithms such as Selection Sort, Insertion Sort, Merge Sort, Heap Sort, and Quick Sort
+      determine order by comparing elements with one another.
+    </p>
+
+    <p>
+      For example:
+    </p>
+
+    <pre><code>if a[i] &gt; a[j]:
+    swap(a[i], a[j])</code></pre>
+
+    <p>
+      For general comparison-based sorting, there is a fundamental lower bound of
+      <code>Ω(n log n)</code> comparisons in the general case.
+    </p>
+
+    <h3>Non-Comparison-Based Sorting</h3>
+
+    <p>
+      Algorithms such as <strong>Counting Sort, Radix Sort, and Bucket Sort</strong> can exploit
+      additional information about the values being sorted.
+    </p>
+
+    <p>
+      Because they do not rely solely on pairwise comparisons, they can sometimes achieve
+      performance that appears better than the usual <code>O(n log n)</code> comparison-sorting
+      bound.
+    </p>
+
+    <p>
+      However, that performance comes with assumptions. For example, Counting Sort is practical
+      when the range of possible values is reasonably manageable. It would be a poor choice for
+      arbitrary values spread across a huge range.
+    </p>
+
+    <h2>9. How Does the Algorithm Behave on Different Inputs?</h2>
+
+    <p>
+      Two algorithms may have identical complexity on paper but behave very differently depending
+      on the input.
+    </p>
+
+    <p>Important input characteristics include:</p>
+
+    <ul>
+      <li>Number of elements.</li>
+      <li>Whether the data is already sorted.</li>
+      <li>Whether the data is almost sorted.</li>
+      <li>Whether the data is in reverse order.</li>
+      <li>Number of duplicate values.</li>
+      <li>Range of values.</li>
+      <li>Whether the data arrives incrementally.</li>
+      <li>Whether the data can fit entirely in memory.</li>
+    </ul>
+
+    <p>
+      This is why saying that one sorting algorithm is simply "better" than another is often
+      misleading. The better question is:
+    </p>
+
+    <div class="highlight">
+      <strong>Better for what input, under what constraints, and for what purpose?</strong>
+    </div>
+
+    <h2>10. Comparing Swaps, Comparisons, and Other Operations</h2>
+
+    <p>
+      Runtime can sometimes be better understood by looking at the actual operations an algorithm
+      performs.
+    </p>
+
+    <p>
+      Depending on the environment, we may care about:
+    </p>
+
+    <ul>
+      <li>Number of comparisons.</li>
+      <li>Number of swaps.</li>
+      <li>Number of writes to memory.</li>
+      <li>Number of reads from memory.</li>
+      <li>Recursive calls.</li>
+      <li>Memory allocations.</li>
+    </ul>
+
+    <p>
+      This matters because not every operation costs the same. For example, writing to memory may
+      be significantly more expensive than performing a simple comparison in some workloads.
+    </p>
+
+    <p>
+      Consequently, two algorithms with similar Big-O notation can have noticeably different
+      performance in practice.
+    </p>
+
+    <h2>11. Implementation Complexity Matters Too</h2>
+
+    <p>
+      An algorithm can be theoretically excellent but difficult to implement correctly.
+    </p>
+
+    <p>
+      Selection Sort is extremely simple to understand and implement. Merge Sort is also
+      conceptually straightforward, but requires careful handling of the merging process and
+      additional memory.
+    </p>
+
+    <p>
+      Quick Sort introduces additional considerations such as pivot selection, partitioning, and
+      recursion depth. Timsort is considerably more sophisticated because it combines ideas from
+      insertion sort and merge sort while managing runs and merge invariants.
+    </p>
+
+    <p>
+      Therefore, algorithm comparison can include a human factor:
+      <strong>How easy is the algorithm to understand, maintain, test, and debug?</strong>
+    </p>
+
+    <h2>12. Recursive vs. Iterative Approaches</h2>
+
+    <p>
+      Another contrast is whether the algorithm relies heavily on recursion.
+    </p>
+
+    <p>
+      Merge Sort and typical implementations of Quick Sort use recursion. Insertion Sort and
+      Selection Sort are naturally iterative.
+    </p>
+
+    <p>
+      Recursion can make an algorithm elegant and easier to express, but it also introduces
+      function-call overhead and uses stack space. Poorly controlled recursion can become a
+      practical problem, especially when an algorithm repeatedly creates highly unbalanced
+      recursive calls.
+    </p>
+
+    <h2>13. A Practical Comparison Framework</h2>
+
+    <p>
+      When comparing two sorting algorithms, it helps to ask the same set of questions every time.
+    </p>
+
+    <ol>
+      <li><strong>What is the best-case time complexity?</strong></li>
+      <li><strong>What is the average-case time complexity?</strong></li>
+      <li><strong>What is the worst-case time complexity?</strong></li>
+      <li><strong>How much additional memory does it require?</strong></li>
+      <li><strong>Is it in-place?</strong></li>
+      <li><strong>Is it stable?</strong></li>
+      <li><strong>Does it benefit from partially sorted data?</strong></li>
+      <li><strong>Does it require special assumptions about the input?</strong></li>
+      <li><strong>How many comparisons, swaps, or writes does it perform?</strong></li>
+      <li><strong>How complicated is it to implement correctly?</strong></li>
+    </ol>
+
+    <p>
+      Once these questions are answered, the differences between algorithms become much clearer.
+    </p>
+
+    <h2>14. Example: Selection Sort vs. Insertion Sort</h2>
+
+    <p>
+      Selection Sort and Insertion Sort are a good example of why multiple dimensions are needed
+      for comparison.
+    </p>
+
+    <p>
+      Both have <code>O(n²)</code> average and worst-case time complexity, and both can use
+      <code>O(1)</code> extra space.
+    </p>
+
+    <p>
+      But they behave differently.
+    </p>
+
+    <ul>
+      <li>
+        <strong>Insertion Sort</strong> can reach <code>O(n)</code> when the input is already
+        sorted or nearly sorted.
+      </li>
+      <li>
+        <strong>Selection Sort</strong> generally performs <code>O(n²)</code> comparisons even
+        when the input is already sorted.
+      </li>
+      <li>
+        <strong>Insertion Sort</strong> is naturally stable.
+      </li>
+      <li>
+        <strong>Selection Sort</strong> is not stable in its usual implementation.
+      </li>
+      <li>
+        Selection Sort performs relatively few swaps, which can matter when writes are expensive.
+      </li>
+    </ul>
+
+    <p>
+      So even though both belong to the same broad complexity class, they are not interchangeable
+      in every situation.
+    </p>
+
+    <h2>15. Example: Merge Sort vs. Quick Sort</h2>
+
+    <p>
+      Merge Sort and Quick Sort provide another interesting contrast.
+    </p>
+
+    <p>
+      Merge Sort guarantees <code>O(n log n)</code> time in the best, average, and worst cases.
+      Quick Sort has <code>O(n log n)</code> average-case performance but can degrade to
+      <code>O(n²)</code> with unfavorable partitions.
+    </p>
+
+    <p>
+      On the other hand, Quick Sort can be very efficient in practice because of good locality
+      and relatively low overhead in many implementations. Its in-place variants can also use
+      less additional memory than a straightforward Merge Sort implementation.
+    </p>
+
+    <p>
+      Merge Sort therefore offers a stronger worst-case guarantee, while Quick Sort can offer
+      excellent practical performance when its partitioning strategy works well.
+    </p>
+
+    <h2>16. There Is No Universal "Best" Sorting Algorithm</h2>
+
+    <p>
+      One of the most important lessons in algorithm analysis is that there is rarely a single
+      algorithm that dominates every other algorithm across every dimension.
+    </p>
+
+    <p>
+      An algorithm might be:
+    </p>
+
+    <ul>
+      <li>Faster but use more memory.</li>
+      <li>Slower in general but excellent on nearly sorted data.</li>
+      <li>More memory-efficient but less stable.</li>
+      <li>More predictable in the worst case but slower in typical workloads.</li>
+      <li>More specialized but extremely efficient when its assumptions are satisfied.</li>
+    </ul>
+
+    <p>
+      Algorithm selection is therefore an exercise in understanding <strong>trade-offs</strong>.
+    </p>
+
+    <h2>17. The Bigger Picture: Compare Trade-Offs, Not Just Numbers</h2>
+
+    <p>
+      Sorting algorithms are usually compared using a combination of theoretical analysis and
+      practical behavior.
+    </p>
+
+    <p>
+      Time complexity tells us how the algorithm scales. Space complexity tells us what memory
+      it needs. Stability tells us whether equal elements retain their relative order.
+      Adaptability tells us whether existing structure in the data can be exploited.
+      Input assumptions tell us when specialized algorithms can be advantageous.
+    </p>
+
+    <p>
+      Together, these properties provide a much more complete picture than any single Big-O
+      number.
+    </p>
+
+    <div class="takeaway">
+      <h3>Final Takeaway</h3>
+
+      <p>
+        To compare and contrast sorting algorithms, do not ask only,
+        <strong>"Which one is faster?"</strong>
+      </p>
+
+      <p>
+        Instead, ask:
+        <strong>"How does each algorithm behave as the input grows, how much memory does it use,
+        what assumptions does it make, how does it handle different input patterns, and what
+        guarantees does it provide?"</strong>
+      </p>
+
+      <p>
+        Once you look at sorting algorithms through these dimensions, the subject becomes less
+        about memorizing a table of complexities and more about understanding why different
+        algorithms exist—and when each one makes sense.
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
