@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Clock Hands Overlap - DSA Explanation</title>
+<style>
+div.customOuterWrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    color: #1f2937;
+    background: #ffffff;
+}
+
+div.customOuterWrapper h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0 0 12px;
+    color: #111827;
+}
+
+div.customOuterWrapper h2 {
+    margin-top: 32px;
+    font-size: 23px;
+    color: #111827;
+}
+
+div.customOuterWrapper h3 {
+    margin-top: 24px;
+    font-size: 19px;
+    color: #374151;
+}
+
+div.customOuterWrapper p {
+    margin: 12px 0;
+}
+
+div.customOuterWrapper ul,
+div.customOuterWrapper ol {
+    padding-left: 28px;
+}
+
+div.customOuterWrapper li {
+    margin: 8px 0;
+}
+
+div.customOuterWrapper .note {
+    padding: 14px 18px;
+    margin: 20px 0;
+    background: #f3f4f6;
+    border-left: 4px solid #6b7280;
+}
+
+div.customOuterWrapper .key {
+    padding: 16px 20px;
+    margin: 20px 0;
+    background: #eff6ff;
+    border-left: 4px solid #2563eb;
+}
+
+div.customOuterWrapper .formula {
+    padding: 16px 20px;
+    margin: 18px 0;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 19px;
+}
+
+div.customOuterWrapper code {
+    font-family: Consolas, monospace;
+    background: #f3f4f6;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+div.customOuterWrapper pre {
+    margin: 18px 0;
+    padding: 18px;
+    overflow-x: auto;
+    background: #111827;
+    color: #f9fafb;
+    border-radius: 6px;
+    line-height: 1.5;
+}
+
+div.customOuterWrapper pre code {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+}
+
+div.customOuterWrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+}
+
+div.customOuterWrapper th,
+div.customOuterWrapper td {
+    border: 1px solid #d1d5db;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+div.customOuterWrapper th {
+    background: #f3f4f6;
+}
+
+div.customOuterWrapper .complexity {
+    font-weight: 600;
+}
+
+div.customOuterWrapper .takeaway {
+    padding: 18px 20px;
+    margin-top: 28px;
+    background: #ecfdf5;
+    border-left: 4px solid #059669;
+}
+</style>
+</head>
+
+<body>
+<div class="customOuterWrapper">
+
+<h1>Clock Hands Overlap — DSA Explanation</h1>
+
+<p>
+We are given a time such as <code>01:05</code>, <code>03:16</code>, or
+<code>08:36</code>. Starting from <strong>12:00 midnight</strong>, we need to
+find how many times the hour hand and minute hand overlap, including an overlap
+that happens exactly at the starting time or exactly at the given ending time.
+</p>
+
+<div class="note">
+<strong>Important:</strong> The examples make the intended interpretation clear:
+the count starts at 12:00 and ends at the supplied time, and both endpoints are
+included.
+</div>
+
+<h2>1. Restating the Problem</h2>
+
+<p>
+Imagine a normal analog clock. At exactly 12:00, the hour hand and minute hand
+are on top of each other.
+</p>
+
+<p>
+As time moves forward, the minute hand moves faster than the hour hand. Because
+of this, the minute hand repeatedly catches up with the hour hand. Every time
+it catches up, the two hands overlap.
+</p>
+
+<p>
+If the input is <code>01:05</code>, we are asking:
+</p>
+
+<ul>
+<li>Start at 12:00.</li>
+<li>Move the clock forward until 01:05.</li>
+<li>Count every instant at which the two hands are exactly on top of each other.</li>
+<li>Include both 12:00 and 01:05 if an overlap occurs at either endpoint.</li>
+</ul>
+
+<p>
+For <code>01:05</code>, there is only one overlap in the interval: the initial
+overlap at 12:00. The next overlap occurs at approximately 01:05:27, which is
+slightly after the endpoint 01:05, so it is not counted.
+</p>
+
+<h2>2. What Type of DSA Problem Is This?</h2>
+
+<p>
+This is primarily a <strong>mathematical / simulation-avoidance problem</strong>.
+It can be solved with a direct mathematical formula rather than simulating every
+minute or every second.
+</p>
+
+<p>The main concepts are:</p>
+
+<ul>
+<li>Relative speed</li>
+<li>Clock-angle mathematics</li>
+<li>Integer division / floor</li>
+<li>Careful handling of inclusive boundaries</li>
+</ul>
+
+<p>
+This is a useful pattern in DSA: sometimes a problem looks like simulation,
+but the constraints and the underlying mathematics allow us to jump directly
+to the answer.
+</p>
+
+<h2>3. First Think About the Brute-Force Approach</h2>
+
+<p>
+A straightforward idea would be to examine the clock continuously and somehow
+check whether the two hands overlap.
+</p>
+
+<p>
+But there is a problem: clock hands move continuously. Checking only once per
+minute is not enough because an overlap can happen between two whole minutes.
+</p>
+
+<p>
+For example, after 12:00, the first new overlap does not happen at exactly
+01:00. It happens much earlier, after the minute hand has gained enough angular
+distance to catch the hour hand.
+</p>
+
+<p>
+So we could simulate second by second, but even that is conceptually clumsy:
+we would need to deal with fractional positions, and we are still doing work
+that mathematics can eliminate completely.
+</p>
+
+<div class="key">
+<strong>Optimization insight:</strong> Instead of asking “Where are the hands
+right now?”, ask “How frequently do the hands overlap?”
+</div>
+
+<h2>4. The Key Idea: Think in Terms of Relative Speed</h2>
+
+<p>
+This is the most important part of the problem.
+</p>
+
+<p>
+The minute hand makes one complete revolution every 60 minutes.
+Therefore its speed is:
+</p>
+
+<div class="formula">
+Minute hand = 360° / 60 = <strong>6° per minute</strong>
+</div>
+
+<p>
+The hour hand makes one complete revolution every 12 hours, which is 720
+minutes.
+Therefore its speed is:
+</p>
+
+<div class="formula">
+Hour hand = 360° / 720 = <strong>0.5° per minute</strong>
+</div>
+
+<p>
+The minute hand is therefore gaining on the hour hand at:
+</p>
+
+<div class="formula">
+6 - 0.5 = <strong>5.5° per minute</strong>
+</div>
+
+<p>
+So the important number is not the speed of either hand individually.
+It is the <strong>relative speed</strong> between them.
+</p>
+
+<h2>5. How Long Between Two Overlaps?</h2>
+
+<p>
+Immediately after 12:00, the hands are together.
+</p>
+
+<p>
+To meet again, the minute hand must gain a complete 360° on the hour hand.
+At a relative speed of 5.5° per minute, the required time is:
+</p>
+
+<div class="formula">
+360 / 5.5 = 720 / 11 ≈ <strong>65.4545 minutes</strong>
+</div>
+
+<p>
+So the hands overlap approximately every 65.45 minutes.
+</p>
+
+<p>
+That means the overlap times are roughly:
+</p>
+
+<ul>
+<li>12:00</li>
+<li>01:05:27</li>
+<li>02:10:54</li>
+<li>03:16:21</li>
+<li>04:21:49</li>
+<li>05:27:16</li>
+<li>06:32:43</li>
+<li>07:38:10</li>
+<li>08:43:38</li>
+</ul>
+
+<p>
+Notice something very useful:
+<code>03:16</code> is before the overlap at approximately 03:16:21, so
+only the first three overlaps are included: 12:00, about 01:05:27, and about
+02:10:54.
+</p>
+
+<p>
+Therefore the answer for <code>03:16</code> is 3.
+</p>
+
+<h2>6. Turning This Into a Formula</h2>
+
+<p>
+Suppose the input time is <code>H:MM</code>.
+We first convert it into the total number of minutes after midnight.
+</p>
+
+<div class="formula">
+t = H × 60 + MM
+</div>
+
+<p>
+For example:
+</p>
+
+<ul>
+<li><code>01:05</code> → 1 × 60 + 5 = 65 minutes</li>
+<li><code>03:16</code> → 3 × 60 + 16 = 196 minutes</li>
+<li><code>08:36</code> → 8 × 60 + 36 = 516 minutes</li>
+</ul>
+
+<p>
+Each new overlap after 12:00 takes exactly:
+</p>
+
+<div class="formula">
+720 / 11 minutes
+</div>
+
+<p>
+Therefore, the number of <strong>new</strong> overlaps after 12:00 that have
+already happened by time <code>t</code> is:
+</p>
+
+<div class="formula">
+floor(t / (720 / 11))
+</div>
+
+<p>
+We can rewrite this as:
+</p>
+
+<div class="formula">
+floor(11 × t / 720)
+</div>
+
+<p>
+But remember: 12:00 itself is already an overlap.
+So we add 1.
+</p>
+
+<div class="formula">
+<strong>answer = floor(11 × t / 720) + 1</strong>
+</div>
+
+<h2>7. Let's Verify the Samples</h2>
+
+<h3>Sample 1: 01:05</h3>
+
+<p>
+Convert the time:
+</p>
+
+<div class="formula">
+t = 1 × 60 + 5 = 65
+</div>
+
+<p>
+Now:
+</p>
+
+<div class="formula">
+floor(11 × 65 / 720) + 1
+= floor(715 / 720) + 1
+= 0 + 1
+= <strong>1</strong>
+</div>
+
+<p>
+Correct.
+</p>
+
+<h3>Sample 2: 08:36</h3>
+
+<div class="formula">
+t = 8 × 60 + 36 = 516
+</div>
+
+<div class="formula">
+floor(11 × 516 / 720) + 1
+= floor(5676 / 720) + 1
+= 7 + 1
+= <strong>8</strong>
+</div>
+
+<p>
+Correct.
+</p>
+
+<h3>Sample 3: 03:16</h3>
+
+<div class="formula">
+t = 3 × 60 + 16 = 196
+</div>
+
+<div class="formula">
+floor(11 × 196 / 720) + 1
+= floor(2156 / 720) + 1
+= 2 + 1
+= <strong>3</strong>
+</div>
+
+<p>
+Correct.
+</p>
+
+<h2>8. Why the Formula Handles the Boundary Correctly</h2>
+
+<p>
+The phrase <strong>“including”</strong> in the problem is important.
+</p>
+
+<p>
+Suppose the input time were exactly an overlap time. We should count that
+overlap too.
+</p>
+
+<p>
+Using integer division naturally handles this because if:
+</p>
+
+<div class="formula">
+11 × t = 720 × k
+</div>
+
+<p>
+then:
+</p>
+
+<div class="formula">
+(11 × t) // 720 = k
+</div>
+
+<p>
+So the overlap exactly at the endpoint is included.
+</p>
+
+<p>
+This is one reason integer arithmetic is preferable here. We do not need
+floating-point calculations or comparisons involving decimal values.
+</p>
+
+<h2>9. A Very Important DSA Pattern</h2>
+
+<p>
+There is a broader lesson here that is more important than this particular
+clock problem.
+</p>
+
+<p>
+When you see a problem involving something moving, repeating, catching up,
+or meeting, ask:
+</p>
+
+<ol>
+<li>What is the speed of each object?</li>
+<li>What is their relative speed?</li>
+<li>How much distance must one gain to meet the other?</li>
+<li>How frequently does the event repeat?</li>
+<li>Can I count the number of events directly instead of simulating them?</li>
+</ol>
+
+<p>
+This is a very common mathematical optimization pattern.
+</p>
+
+<div class="key">
+<strong>Remember:</strong> When two moving things repeatedly meet, often the
+simplest way to count the meetings is to look at their <em>relative speed</em>
+rather than simulate their individual positions.
+</div>
+
+<h2>10. Could We Solve It by Simulation?</h2>
+
+<p>
+Yes, but it would be unnecessarily complicated.
+</p>
+
+<p>
+We could simulate time in small units, calculate the angle of both hands, and
+check whether they coincide. However, because the hands move continuously,
+choosing the simulation step becomes important. A one-minute step can miss an
+overlap entirely.
+</p>
+
+<p>
+We could instead work with exact rational times, but then we would essentially
+be rediscovering the mathematical formula.
+</p>
+
+<p>
+So for this problem, the mathematical approach is clearly preferable.
+</p>
+
+<table>
+<tr>
+<th>Approach</th>
+<th>Idea</th>
+<th>Time</th>
+<th>Space</th>
+</tr>
+<tr>
+<td>Minute/second simulation</td>
+<td>Move the clock forward and check hand positions</td>
+<td>More work, precision issues</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>Relative-speed formula</td>
+<td>Calculate how many 720/11-minute cycles fit in the interval</td>
+<td><strong>O(1)</strong></td>
+<td><strong>O(1)</strong></td>
+</tr>
+</table>
+
+<h2>11. Complexity</h2>
+
+<p>
+The optimal solution performs only a fixed number of arithmetic operations.
+It does not matter whether the input is close to 1 minute, 8 hours, or the
+maximum possible time.
+</p>
+
+<p class="complexity">
+Time Complexity: O(1)
+</p>
+
+<p class="complexity">
+Space Complexity: O(1)
+</p>
+
+<p>
+This is as efficient as we can reasonably get: constant time and constant
+extra space.
+</p>
+
+<h2>12. Python Solution for HackerEarth</h2>
+
+<p>
+The implementation is intentionally simple. We read the time as a string,
+split the hour and minute, convert everything to minutes, and apply the
+formula.
+</p>
+
+<pre><code>time = input().strip()
+
+hour, minute = map(int, time.split(':'))
+
+total_minutes = hour * 60 + minute
+
+answer = (11 * total_minutes) // 720 + 1
+
+print(answer)</code></pre>
+
+<h2>13. Walking Through the Code</h2>
+
+<p>
+First:
+</p>
+
+<pre><code>time = input().strip()</code></pre>
+
+<p>
+This reads something such as <code>03:16</code>.
+</p>
+
+<p>
+Then:
+</p>
+
+<pre><code>hour, minute = map(int, time.split(':'))</code></pre>
+
+<p>
+The string <code>"03:16"</code> is split into <code>"03"</code> and
+<code>"16"</code>, which are converted into integers 3 and 16.
+</p>
+
+<p>
+Next:
+</p>
+
+<pre><code>total_minutes = hour * 60 + minute</code></pre>
+
+<p>
+This converts the entire time into minutes after midnight.
+For <code>03:16</code>, that is:
+</p>
+
+<div class="formula">
+3 × 60 + 16 = 196
+</div>
+
+<p>
+Finally:
+</p>
+
+<pre><code>answer = (11 * total_minutes) // 720 + 1</code></pre>
+
+<p>
+The <code>//</code> operator performs integer division, which gives us the
+number of complete overlap intervals that have occurred.
+The <code>+ 1</code> accounts for the overlap already present at 12:00.
+</p>
+
+<div class="takeaway">
+<strong>Final mental model:</strong>
+<br><br>
+The hands start together at 12:00.
+<br>
+The minute hand gains on the hour hand at 5.5° per minute.
+<br>
+It needs to gain 360° to meet it again.
+<br>
+Therefore, two consecutive overlaps are 720/11 minutes apart.
+<br>
+Convert the target time to minutes, count how many such intervals fit, and
+add 1 for the starting overlap at 12:00.
+</div>
+
+</div>
+</body>
+</html>

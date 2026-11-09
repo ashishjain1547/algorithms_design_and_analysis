@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Programming, Explained with the Simplest Example: Climbing Stairs</title>
+  <style>
+    div.customOuterWrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.75;
+      color: #243047;
+      background: #ffffff;
+      box-sizing: border-box;
+    }
+
+    div.customOuterWrapper * {
+      box-sizing: border-box;
+    }
+
+    div.customOuterWrapper h1 {
+      margin: 0 0 18px;
+      font-size: 2.35rem;
+      line-height: 1.2;
+      color: #18243a;
+    }
+
+    div.customOuterWrapper h2 {
+      margin: 42px 0 14px;
+      font-size: 1.65rem;
+      line-height: 1.3;
+      color: #18243a;
+    }
+
+    div.customOuterWrapper h3 {
+      margin: 30px 0 10px;
+      font-size: 1.2rem;
+      color: #243b5a;
+    }
+
+    div.customOuterWrapper p {
+      margin: 0 0 18px;
+    }
+
+    div.customOuterWrapper ul,
+    div.customOuterWrapper ol {
+      margin: 0 0 22px 24px;
+      padding-left: 20px;
+    }
+
+    div.customOuterWrapper li {
+      margin-bottom: 8px;
+    }
+
+    div.customOuterWrapper blockquote {
+      margin: 18px 0 22px;
+      padding: 10px 18px;
+      border-left: 4px solid #6b7a99;
+      background: #f5f7fb;
+      color: #33415c;
+      font-style: italic;
+    }
+
+    div.customOuterWrapper .intro {
+      margin: 0 0 30px;
+      padding: 20px 22px;
+      border-left: 4px solid #6b7a99;
+      background: #f5f7fb;
+      color: #33415c;
+    }
+
+    div.customOuterWrapper .takeaway {
+      margin: 24px 0;
+      padding: 20px 22px;
+      border-radius: 8px;
+      background: #f4f7f2;
+      border: 1px solid #dce6d8;
+    }
+
+    div.customOuterWrapper .formula {
+      margin: 22px 0;
+      padding: 18px 20px;
+      border-radius: 8px;
+      background: #f6f7fa;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1f304b;
+    }
+
+    div.customOuterWrapper .code {
+      margin: 20px 0 24px;
+      padding: 18px 20px;
+      overflow-x: auto;
+      border-radius: 8px;
+      background: #202938;
+      color: #f3f5f7;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      white-space: pre;
+    }
+
+    div.customOuterWrapper .step {
+      margin: 18px 0;
+      padding: 16px 18px;
+      border: 1px solid #e1e6ee;
+      border-radius: 8px;
+      background: #fbfcfe;
+    }
+
+    div.customOuterWrapper .step strong {
+      color: #1f3658;
+    }
+
+    div.customOuterWrapper table {
+      width: 100%;
+      margin: 22px 0 28px;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    div.customOuterWrapper th,
+    div.customOuterWrapper td {
+      padding: 11px 12px;
+      border: 1px solid #dfe4ec;
+      text-align: left;
+    }
+
+    div.customOuterWrapper th {
+      background: #f1f4f8;
+      color: #243650;
+    }
+
+    div.customOuterWrapper .small {
+      font-size: 0.92rem;
+      color: #657089;
+    }
+
+    div.customOuterWrapper .conclusion {
+      margin-top: 42px;
+      padding: 24px;
+      border-radius: 10px;
+      background: #eef3f8;
+    }
+
+    div.customOuterWrapper code.inline {
+      padding: 2px 5px;
+      border-radius: 4px;
+      background: #f0f2f5;
+      font-family: Consolas, Monaco, monospace;
+      color: #27364e;
+    }
+
+    div.customOuterWrapper pre {
+      background: #f6f8fa;
+      border: 1px solid #e1e4e8;
+      border-radius: 8px;
+      padding: 15px;
+      overflow-x: auto;
+      margin: 20px 0 24px;
+    }
+
+    div.customOuterWrapper pre code {
+      background: transparent;
+      padding: 0;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: #1f304b;
+    }
+
+    div.customOuterWrapper .highlight {
+      background: #fff8d8;
+      border-left: 4px solid #e0b100;
+      padding: 13px 16px;
+      margin: 18px 0;
+    }
+
+    div.customOuterWrapper .tip {
+      background: #eef7ff;
+      border-left: 4px solid #2684ff;
+      padding: 13px 16px;
+      margin: 18px 0;
+    }
+
+    div.customOuterWrapper .success {
+      background: #eef9f0;
+      border-left: 4px solid #35a853;
+      padding: 13px 16px;
+      margin: 18px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="customOuterWrapper">
+    <h1>Dynamic Programming, Explained with the Simplest Example: Climbing Stairs</h1>
+
+    <div class="intro">
+      <p><strong>Dynamic Programming (DP)</strong> is one of those topics in programming that can initially sound much more complicated than it actually is.</p>
+      <p>The name itself can make it feel mathematical or advanced. You may hear words such as <em>state</em>, <em>transition</em>, <em>recurrence</em>, <em>memoization</em>, and <em>tabulation</em> and wonder whether you need to understand all of that before solving your first DP problem.</p>
+      <p>You do not.</p>
+      <p>A much better way to learn DP is to start with a problem so simple that the underlying idea becomes almost impossible to miss. The classic <strong>Climbing Stairs</strong> problem is perfect for that.</p>
+    </div>
+
+    <p>In this post, we start with the problem itself, solve it in the most natural way, notice the repeated work, and then gradually turn that observation into a dynamic programming solution. We also look at an implementation that uses only two variables instead of a DP array.</p>
+
+    <p>The goal is not merely to memorize a solution. The goal is to understand <strong>why this is DP</strong> and how to recognize the same pattern when a different problem appears in an interview or coding exercise.</p>
+
+    <h2>1. The Problem: Climbing Stairs</h2>
+
+    <p>Imagine that you are standing at the bottom of a staircase.</p>
+
+    <p>The staircase has <strong>n steps</strong>.</p>
+
+    <p>You are allowed to climb either:</p>
+
+    <ul>
+      <li>1 step at a time, or</li>
+      <li>2 steps at a time.</li>
+    </ul>
+
+    <p>The question is:</p>
+
+    <div class="formula">How many different ways can you reach the top?</div>
+
+    <p>Let's start with a very small staircase so that we can solve it by hand.</p>
+
+    <h3>If there is only 1 step</h3>
+
+    <p>There is only one possible way:</p>
+
+    <div class="code">1</div>
+
+    <p>So there is <strong>1 way</strong> to reach the top.</p>
+
+    <h3>If there are 2 steps</h3>
+
+    <p>There are two possibilities:</p>
+
+    <div class="code">1 + 1
+2</div>
+
+    <p>So there are <strong>2 ways</strong>.</p>
+
+    <h3>If there are 3 steps</h3>
+
+    <p>Now things become slightly more interesting:</p>
+
+    <div class="code">1 + 1 + 1
+1 + 2
+2 + 1</div>
+
+    <p>There are <strong>3 ways</strong>.</p>
+
+    <h3>If there are 4 steps</h3>
+
+    <p>We can list all possibilities:</p>
+
+    <div class="code">1 + 1 + 1 + 1
+1 + 1 + 2
+1 + 2 + 1
+2 + 1 + 1
+2 + 2</div>
+
+    <p>There are <strong>5 ways</strong>.</p>
+
+    <p>So we already have a small sequence:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Number of steps</th>
+          <th>Number of ways</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>1</td></tr>
+        <tr><td>2</td><td>2</td></tr>
+        <tr><td>3</td><td>3</td></tr>
+        <tr><td>4</td><td>5</td></tr>
+        <tr><td>5</td><td>8</td></tr>
+        <tr><td>6</td><td>13</td></tr>
+      </tbody>
+    </table>
+
+    <p>Something familiar may already be visible here. This is the Fibonacci-like pattern where each value is obtained by adding the previous two values.</p>
+
+    <p>But rather than jumping straight to a formula, let's understand <em>why</em> that happens.</p>
+
+    <h2>2. The Key Question: What Could the Last Step Have Been?</h2>
+
+    <p>Suppose we want to reach step <strong>n</strong>.</p>
+
+    <p>We are allowed to move either 1 or 2 steps at a time. Therefore, the final move must have been one of only two possibilities.</p>
+
+    <div class="step">
+      <strong>Possibility 1:</strong> We came from step <strong>n - 1</strong> by taking one step.
+    </div>
+
+    <div class="step">
+      <strong>Possibility 2:</strong> We came from step <strong>n - 2</strong> by taking two steps.
+    </div>
+
+    <p>There is no third possibility.</p>
+
+    <p>So, if we know how many ways there are to reach step <strong>n - 1</strong> and how many ways there are to reach step <strong>n - 2</strong>, we can calculate the number of ways to reach step <strong>n</strong>.</p>
+
+    <div class="formula">ways(n) = ways(n - 1) + ways(n - 2)</div>
+
+    <p>This tiny equation is the heart of the problem.</p>
+
+    <p>Notice what we have done. Instead of trying to list every possible sequence of jumps to reach step <strong>n</strong>, we reduce the problem to two smaller versions of the same problem.</p>
+
+    <p>That is the first major idea behind dynamic programming.</p>
+
+    <div class="takeaway">
+      <p><strong>Big problem:</strong> How many ways can I reach step n?</p>
+      <p><strong>Smaller problems:</strong> How many ways can I reach step n - 1 and step n - 2?</p>
+      <p><strong>Combine them:</strong> Add those two answers.</p>
+    </div>
+
+    <h2>3. Why the Formula Works, Without Guessing It</h2>
+
+    <p>Now let's address the deepest confusion directly.</p>
+
+    <div class="highlight">
+      <strong>Why do we not need to count the final 1-step and 2-step moves separately?</strong>
+    </div>
+
+    <p>Because the recurrence already includes them in the structure of the problem.</p>
+
+    <p>If the last move was 1 step, then the path must end with:</p>
+
+    <div class="code">... → n - 1 → n</div>
+
+    <p>There are <code class="inline">ways(n - 1)</code> ways to reach <code class="inline">n - 1</code>, and from each such path there is exactly one valid final move: take 1 step to reach <code class="inline">n</code>.</p>
+
+    <p>Similarly, if the last move was 2 steps, then the path must end with:</p>
+
+    <div class="code">... → n - 2 → n</div>
+
+    <p>There are <code class="inline">ways(n - 2)</code> ways to reach <code class="inline">n - 2</code>, and from each such path there is exactly one valid final move: take 2 steps to reach <code class="inline">n</code>.</p>
+
+    <p>So the contributions are simply:</p>
+
+    <div class="formula">ways(n - 1) + ways(n - 2)</div>
+
+    <p>No extra multiplication is necessary because every complete path to the smaller state has exactly one way to finish the final move.</p>
+
+    <div class="tip">
+      <strong>The final move is already accounted for by the fact that every path reaching <code class="inline">n - 1</code> or <code class="inline">n - 2</code> can be extended by exactly one corresponding move.</strong>
+    </div>
+
+    <h2>4. Let's See It Clearly with n = 4</h2>
+
+    <p>All ways to reach step 4 are:</p>
+
+    <div class="code">1 + 1 + 1 + 1
+1 + 1 + 2
+1 + 2 + 1
+2 + 1 + 1
+2 + 2</div>
+
+    <p>Now look only at their last move.</p>
+
+    <h3>Ways ending in 1</h3>
+
+    <div class="code">1 + 1 + 1 + 1
+1 + 2 + 1
+2 + 1 + 1</div>
+
+    <p>If we remove the last 1 from each, we get:</p>
+
+    <div class="code">1 + 1 + 1
+1 + 2
+2 + 1</div>
+
+    <p>These are exactly the 3 ways to reach step 3.</p>
+
+    <p>So the number of ways ending in 1 is <code class="inline">ways(3)</code>.</p>
+
+    <h3>Ways ending in 2</h3>
+
+    <div class="code">1 + 1 + 2
+2 + 2</div>
+
+    <p>If we remove the final 2, we get:</p>
+
+    <div class="code">1 + 1
+2</div>
+
+    <p>These are exactly the 2 ways to reach step 2.</p>
+
+    <p>So the number of ways ending in 2 is <code class="inline">ways(2)</code>.</p>
+
+    <p>Combine them:</p>
+
+    <div class="formula">ways(4) = ways(3) + ways(2) = 3 + 2 = 5</div>
+
+    <h2>5. Why Are We Allowed to Add Them?</h2>
+
+    <p>Every path to step <code class="inline">n</code> must end with exactly one last move.</p>
+
+    <p>That final move must be either:</p>
+
+    <ul>
+      <li>+1, or</li>
+      <li>+2.</li>
+    </ul>
+
+    <p>A path cannot end with both. So the two groups are completely separate.</p>
+
+    <div class="highlight">
+      <strong>This is the real reason behind the recurrence: we divide all possible solutions into two mutually exclusive groups depending on their last move.</strong>
+    </div>
+
+    <h2>6. The Recurrence Emerges Naturally</h2>
+
+    <p>All ways to reach <code class="inline">n</code> can be divided into:</p>
+
+    <ol>
+      <li>Ways whose last move is 1 step.</li>
+      <li>Ways whose last move is 2 steps.</li>
+    </ol>
+
+    <p>The first group has <code class="inline">ways(n - 1)</code> possibilities.</p>
+
+    <p>The second group has <code class="inline">ways(n - 2)</code> possibilities.</p>
+
+    <p>Therefore:</p>
+
+    <div class="formula">ways(n) = ways(n - 1) + ways(n - 2)</div>
+
+    <p>Notice that we did not memorize this formula. We <strong>derived</strong> it from the structure of the problem.</p>
+
+    <h2>7. Base Cases</h2>
+
+    <p>To use the recurrence, we need to know where it starts.</p>
+
+    <h3>One step</h3>
+
+    <p>There is only one way:</p>
+
+    <div class="code">1</div>
+
+    <p>So:</p>
+
+    <div class="formula">ways(1) = 1</div>
+
+    <h3>Two steps</h3>
+
+    <p>There are two possibilities:</p>
+
+    <div class="code">1 + 1
+2</div>
+
+    <p>Therefore:</p>
+
+    <div class="formula">ways(2) = 2</div>
+
+    <p>Now the sequence expands naturally:</p>
+
+    <div class="code">ways(3) = ways(2) + ways(1) = 2 + 1 = 3
+ways(4) = ways(3) + ways(2) = 3 + 2 = 5
+ways(5) = ways(4) + ways(3) = 5 + 3 = 8</div>
+
+    <h2>8. Why This Looks Like Fibonacci</h2>
+
+    <p>The Fibonacci sequence is:</p>
+
+    <div class="code">1, 1, 2, 3, 5, 8, 13, ...</div>
+
+    <p>where each number is the sum of the previous two.</p>
+
+    <p>Climbing Stairs produces:</p>
+
+    <div class="code">1, 2, 3, 5, 8, 13, ...</div>
+
+    <p>The recurrence is the same:</p>
+
+    <div class="formula">ways(n) = ways(n - 1) + ways(n - 2)</div>
+
+    <p>The difference is simply where we choose to start the sequence. The important lesson is not "Climbing Stairs is Fibonacci." The important lesson is:</p>
+
+    <div class="success">
+      <strong>Many DP problems have a recurrence that looks familiar because the underlying structure is similar. The real skill is learning how to derive that recurrence from the problem.</strong>
+    </div>
+
+    <h2>9. Where Does Dynamic Programming Come In?</h2>
+
+    <p>At this point, someone might reasonably ask:</p>
+
+    <blockquote>Isn't this just recursion or the Fibonacci sequence? Why are we calling it dynamic programming?</blockquote>
+
+    <p>That is a very good question.</p>
+
+    <p>The key point is not the equation itself. The key point is that the solution to a larger problem depends on solutions to smaller problems, and those smaller results can be reused instead of recalculated.</p>
+
+    <p>Imagine calculating <code class="inline">ways(5)</code> recursively without remembering anything. To calculate it, you need <code class="inline">ways(4)</code> and <code class="inline">ways(3)</code>. But while calculating <code class="inline">ways(4)</code>, you again need <code class="inline">ways(3)</code> and <code class="inline">ways(2)</code>.</p>
+
+    <p>So <code class="inline">ways(3)</code> gets calculated multiple times.</p>
+
+    <p>Dynamic programming says:</p>
+
+    <div class="takeaway">
+      <p><strong>"If I have already solved a smaller problem, don't solve it again. Remember the answer and reuse it."</strong></p>
+    </div>
+
+    <h2>10. The DP Perspective</h2>
+
+    <p>We can define a very simple state:</p>
+
+    <div class="formula">dp[i] = number of ways to reach step i</div>
+
+    <p>Then the transition is:</p>
+
+    <div class="formula">dp[i] = dp[i - 1] + dp[i - 2]</div>
+
+    <p>In plain English:</p>
+
+    <p><em>"The number of ways to reach step i comes from either the previous step or the one before that."</em></p>
+
+    <p>That is a typical DP pattern: break the larger problem into smaller versions of the same problem, and store the answers as you go.</p>
+
+    <h2>11. Brute Force vs. DP</h2>
+
+    <p>Without DP, a recursive solution would try both choices at every step:</p>
+
+    <div class="code">Take 1 step
+OR
+Take 2 steps</div>
+
+    <p>This creates a decision tree. As <code class="inline">n</code> grows, the number of branches grows exponentially.</p>
+
+    <p>Because many branches recompute the same small states, the naive solution wastes time.</p>
+
+    <div class="highlight">
+      <strong>The big idea in DP is: if we have already solved a smaller problem, we should not solve it again.</strong>
+    </div>
+
+    <h2>12. The First DP Version: Store the Answers</h2>
+
+    <p>A straightforward way is to create an array <code class="inline">dp</code>:</p>
+
+    <div class="code">int[] dp = new int[n + 1];
+dp[1] = 1;
+if (n >= 2)
+    dp[2] = 2;
+
+for (int i = 3; i <= n; i++)
+{
+    dp[i] = dp[i - 1] + dp[i - 2];
+}
+
+return dp[n];</div>
+
+    <p>Now the array acts like a notebook: each time we solve a smaller problem, we write the answer down and reuse it later.</p>
+
+    <h2>13. But Do We Really Need the Whole Array?</h2>
+
+    <p>To calculate <code class="inline">dp[i]</code>, do we need all earlier values?</p>
+
+    <p>No. We only need the previous two answers.</p>
+
+    <p>Look again:</p>
+
+    <div class="formula">dp[i] = dp[i - 1] + dp[i - 2]</div>
+
+    <p>That means we only need the answer from the most recent step and the one before it. The older values can be discarded.</p>
+
+    <p>That gives us a space optimization.</p>
+
+    <div class="takeaway">
+      <p><strong>We can store only the last two states instead of the entire history.</strong></p>
+    </div>
+
+    <h2>14. The Two-Variable Implementation</h2>
+
+    <p>Here is the optimized C# solution:</p>
+
+    <div class="code">using System;
+
+class Program
+{
+    static int ClimbStairs(int n)
+    {
+        if (n &lt;= 2)
+            return n;
+
+        int prev2 = 1;
+        int prev1 = 2;
+
+        for (int i = 3; i &lt;= n; i++)
+        {
+            int current = prev1 + prev2;
+            prev2 = prev1;
+            prev1 = current;
+        }
+
+        return prev1;
+    }
+
+    static void Main()
+    {
+        int n = 4;
+        Console.WriteLine(ClimbStairs(n));
+    }
+}</div>
+
+    <p>For <code class="inline">n = 4</code>, this prints:</p>
+
+    <div class="code">5</div>
+
+    <p>Let's slow it down and understand exactly what happens inside the loop.</p>
+
+    <h3>Before the loop</h3>
+
+    <div class="code">prev2 = 1
+prev1 = 2</div>
+
+    <p>These represent:</p>
+
+    <div class="code">ways(1) = 1
+ways(2) = 2</div>
+
+    <h3>When i = 3</h3>
+
+    <div class="code">current = prev1 + prev2
+        = 2 + 1
+        = 3</div>
+
+    <p>So:</p>
+
+    <div class="code">ways(3) = 3</div>
+
+    <p>Then we shift the variables:</p>
+
+    <div class="code">prev2 = prev1 = 2
+prev1 = current = 3</div>
+
+    <h3>When i = 4</h3>
+
+    <div class="code">current = prev1 + prev2
+        = 3 + 2
+        = 5</div>
+
+    <p>So:</p>
+
+    <div class="code">ways(4) = 5</div>
+
+    <p>Then the variables shift again and we are ready for the next step.</p>
+
+    <h2>15. A Trace Table</h2>
+
+    <p>Sometimes the easiest way to understand an iterative DP solution is to write down the variables after each loop.</p>
+
+    <p>For <code class="inline">n = 6</code>:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>i</th>
+          <th>prev2</th>
+          <th>prev1</th>
+          <th>current</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Start</td><td>1</td><td>2</td><td>-</td></tr>
+        <tr><td>3</td><td>1</td><td>2</td><td>3</td></tr>
+        <tr><td>4</td><td>2</td><td>3</td><td>5</td></tr>
+        <tr><td>5</td><td>3</td><td>5</td><td>8</td></tr>
+        <tr><td>6</td><td>5</td><td>8</td><td>13</td></tr>
+      </tbody>
+    </table>
+
+    <p>At each stage, the two stored values are enough to calculate the next one. That is why the whole history does not need to remain in memory.</p>
+
+    <h2>16. Complexity</h2>
+
+    <p>The loop runs from 3 through <code class="inline">n</code>, so it performs roughly <code class="inline">n</code> iterations.</p>
+
+    <div class="formula">Time: O(n)</div>
+
+    <p>Memory is constant because we only store a few integers.</p>
+
+    <div class="formula">Extra Space: O(1)</div>
+
+    <h2>17. The Mental Model for DP</h2>
+
+    <p>If you are learning DP for the first time, do not try to memorize a collection of formulas immediately. Start with this mental model:</p>
+
+    <div class="takeaway">
+      <p><strong>1. I have a big problem.</strong></p>
+      <p><strong>2. Can I describe it using smaller versions of the same problem?</strong></p>
+      <p><strong>3. If I solve those smaller problems, can I combine their answers?</strong></p>
+      <p><strong>4. Will I need the same smaller answers again?</strong></p>
+      <p><strong>5. If yes, remember them instead of recalculating them.</strong></p>
+    </div>
+
+    <p>Climbing Stairs is almost the smallest possible example of this thought process.</p>
+
+    <h2>18. What Is the “State” Here?</h2>
+
+    <p>DP terminology can sound intimidating, but the word <em>state</em> is often much simpler than it sounds.</p>
+
+    <p>In this problem, we can define:</p>
+
+    <div class="formula">dp[i] = number of ways to reach step i</div>
+
+    <p>That is the state.</p>
+
+    <p>We are simply saying:</p>
+
+    <p><em>“For each step, I want to know how many ways there are to get there.”</em></p>
+
+    <p>Then the transition is:</p>
+
+    <div class="formula">dp[i] = dp[i - 1] + dp[i - 2]</div>
+
+    <p>If you hear someone say “define the DP state,” they often mean:</p>
+
+    <div class="takeaway">
+      <p><strong>"What information do I want to remember for each smaller version of the problem?"</strong></p>
+    </div>
+
+    <h2>19. The Most Important Pattern to Remember</h2>
+
+    <p>When you see a new problem, do not immediately ask:</p>
+
+    <blockquote>"What is the DP formula?"</blockquote>
+
+    <p>Instead ask:</p>
+
+    <ol>
+      <li>What does my state represent?</li>
+      <li>What is the last decision or move?</li>
+      <li>Where could I have come from immediately before that?</li>
+      <li>Can I divide all possible solutions into distinct cases?</li>
+      <li>Can each case be expressed using a smaller problem?</li>
+    </ol>
+
+    <p>For Climbing Stairs:</p>
+
+    <div class="code">State:
+    ways(n) = number of ways to reach n
+
+Last move:
+    +1 or +2
+
+Previous step:
+    n - 1 or n - 2
+
+Therefore:
+    ways(n) = ways(n - 1) + ways(n - 2)</div>
+
+    <p>This is the pattern that appears again and again in DP problems.</p>
+
+    <h2>20. Final Takeaway</h2>
+
+    <p>The Climbing Stairs problem is such a good introduction to DP because it shows the core idea in a language that is easy to understand:</p>
+
+    <ul>
+      <li>Break a problem into smaller versions of the same problem.</li>
+      <li>Ask what the last choice could have been.</li>
+      <li>Build the answer from smaller states.</li>
+      <li>Remember those smaller answers instead of recomputing them.</li>
+    </ul>
+
+    <p>And once you see that pattern, the recurrence no longer looks like a magical formula. It becomes something you can derive from the structure of the problem itself.</p>
+
+    <div class="conclusion">
+      <p><strong>In short:</strong> dynamic programming is not about complexity for its own sake. It is about recognizing that many problems can be solved by reusing smaller subproblems. Climbing Stairs is the cleanest possible example of that idea.</p>
+    </div>
+  </div>
+</body>
+</html>

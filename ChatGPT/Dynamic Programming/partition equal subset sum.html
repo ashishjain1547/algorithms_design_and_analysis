@@ -1,0 +1,679 @@
+<div class="customOuterWrapper">
+  <style>
+    div.customOuterWrapper {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+      background: #fff;
+    }
+
+    div.customOuterWrapper h1 {
+      font-size: 28px;
+      margin: 0 0 20px;
+    }
+
+    div.customOuterWrapper h2 {
+      font-size: 21px;
+      margin-top: 30px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 6px;
+    }
+
+    div.customOuterWrapper h3 {
+      font-size: 18px;
+      margin-top: 22px;
+    }
+
+    div.customOuterWrapper p {
+      margin: 10px 0;
+    }
+
+    div.customOuterWrapper ul,
+    div.customOuterWrapper ol {
+      padding-left: 26px;
+    }
+
+    div.customOuterWrapper li {
+      margin: 7px 0;
+    }
+
+    div.customOuterWrapper code {
+      background: #f3f3f3;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+    }
+
+    div.customOuterWrapper pre {
+      background: #f6f8fa;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      border: 1px solid #e1e4e8;
+    }
+
+    div.customOuterWrapper pre code {
+      background: transparent;
+      padding: 0;
+    }
+
+    div.customOuterWrapper .highlight {
+      background: #fff8d8;
+      border-left: 4px solid #e0b100;
+      padding: 12px 16px;
+      margin: 16px 0;
+    }
+
+    div.customOuterWrapper .tip {
+      background: #eef7ff;
+      border-left: 4px solid #2684ff;
+      padding: 12px 16px;
+      margin: 16px 0;
+    }
+
+    div.customOuterWrapper .success {
+      background: #eef9f0;
+      border-left: 4px solid #35a853;
+      padding: 12px 16px;
+      margin: 16px 0;
+    }
+
+    div.customOuterWrapper table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+    }
+
+    div.customOuterWrapper th,
+    div.customOuterWrapper td {
+      border: 1px solid #ddd;
+      padding: 9px 12px;
+      text-align: left;
+    }
+
+    div.customOuterWrapper th {
+      background: #f5f5f5;
+    }
+
+    div.customOuterWrapper .complexity {
+      display: inline-block;
+      background: #f5f5f5;
+      padding: 8px 12px;
+      margin: 4px 8px 4px 0;
+      border-radius: 6px;
+      font-family: Consolas, monospace;
+    }
+  </style>
+
+  <h1>Partition Equal Subset Sum</h1>
+
+  <h2>1. Restating the Problem</h2>
+
+  <p>
+    We are given an array of positive integers. Our goal is to determine whether
+    we can divide all the elements into <strong>two groups</strong> such that
+    the sum of the elements in both groups is exactly the same.
+  </p>
+
+  <p>For example:</p>
+
+  <pre><code>nums = [1, 5, 11, 5]</code></pre>
+
+  <p>
+    We can divide it as:
+  </p>
+
+  <pre><code>[1, 5, 5]  → 11
+[11]        → 11</code></pre>
+
+  <p>
+    Both subsets have a sum of <code>11</code>, so the answer is
+    <strong>True</strong>.
+  </p>
+
+  <p>
+    Another example:
+  </p>
+
+  <pre><code>nums = [1, 2, 3, 5]</code></pre>
+
+  <p>
+    The total is <code>11</code>. Since <code>11</code> is odd, it is impossible
+    to divide it into two equal integer sums. Therefore the answer is
+    <strong>False</strong>.
+  </p>
+
+  <div class="highlight">
+    <strong>Important:</strong> The question is not asking us to actually
+    construct the two subsets. We only need to determine whether such a
+    partition is possible.
+  </div>
+
+  <h2>2. What Category of Problem Is This?</h2>
+
+  <p>
+    This is primarily a <strong>Dynamic Programming (DP)</strong> problem.
+    More specifically, it is a variation of the:
+  </p>
+
+  <ul>
+    <li><strong>0/1 Knapsack</strong> problem</li>
+    <li><strong>Subset Sum</strong> problem</li>
+  </ul>
+
+  <p>
+    The core question eventually becomes:
+  </p>
+
+  <div class="tip">
+    <strong>Can we select some elements whose sum is exactly half of the
+    total sum?</strong>
+  </div>
+
+  <h3>Core DSA concepts being tested</h3>
+
+  <ul>
+    <li>Dynamic Programming</li>
+    <li>Subset Sum</li>
+    <li>0/1 Knapsack thinking</li>
+    <li>Boolean DP</li>
+    <li>Space optimization from a 2D DP table to a 1D array</li>
+  </ul>
+
+  <h2>3. The Mathematical Observation</h2>
+
+  <p>
+    Let the total sum of all elements be <code>S</code>.
+  </p>
+
+  <p>
+    If we want two subsets with equal sums, each subset must have:
+  </p>
+
+  <pre><code>S / 2</code></pre>
+
+  <p>
+    Therefore, the first thing we should check is whether the total sum is
+    even.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Total Sum</th>
+        <th>Possible?</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Odd</td>
+        <td>No</td>
+        <td>Cannot divide an odd integer into two equal integer sums</td>
+      </tr>
+      <tr>
+        <td>Even</td>
+        <td>Maybe</td>
+        <td>We need to determine whether a subset with sum S / 2 exists</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    So the original problem:
+  </p>
+
+  <pre><code>Can the array be divided into two equal-sum subsets?</code></pre>
+
+  <p>becomes:</p>
+
+  <pre><code>Does there exist a subset whose sum is total_sum / 2?</code></pre>
+
+  <div class="success">
+    <strong>This transformation is the key insight.</strong>
+    Once you recognize it, the problem becomes a standard Subset Sum problem.
+  </div>
+
+  <h2>4. What Would the Naive Solution Look Like?</h2>
+
+  <p>
+    Imagine that for every element we have two choices:
+  </p>
+
+  <ol>
+    <li>Put it into subset A.</li>
+    <li>Put it into subset B.</li>
+  </ol>
+
+  <p>
+    For <code>n</code> elements, this creates approximately:
+  </p>
+
+  <pre><code>2 × 2 × 2 × ... × 2 = 2ⁿ</code></pre>
+
+  <p>
+    possible assignments.
+  </p>
+
+  <p>
+    We could theoretically try every possibility and check whether the two
+    resulting sums are equal.
+  </p>
+
+  <p>
+    The problem is that <code>2ⁿ</code> grows extremely quickly.
+  </p>
+
+  <p>
+    For example:
+  </p>
+
+  <pre><code>n = 10   →       1,024 possibilities
+n = 20   →   1,048,576 possibilities
+n = 30   →   about 1 billion possibilities</code></pre>
+
+  <p>
+    Therefore, brute force is generally not practical for sufficiently large
+    <code>n</code>.
+  </p>
+
+  <h2>5. The Optimization Insight</h2>
+
+  <p>
+    Instead of explicitly trying every possible subset, we can keep track of
+    which sums are <strong>possible so far</strong>.
+  </p>
+
+  <p>
+    Suppose our target is:
+  </p>
+
+  <pre><code>target = total_sum / 2</code></pre>
+
+  <p>
+    We maintain information such as:
+  </p>
+
+  <pre><code>Can we make sum 0?
+Can we make sum 1?
+Can we make sum 2?
+Can we make sum 3?
+...
+Can we make sum target?</code></pre>
+
+  <p>
+    This is exactly what the Subset Sum DP does.
+  </p>
+
+  <h2>6. The Key Trick — In Layman Terms</h2>
+
+  <p>
+    Think of the DP array as a list of <strong>achievable scores</strong>.
+  </p>
+
+  <p>
+    Initially, we know that we can make a sum of zero:
+  </p>
+
+  <pre><code>dp[0] = True</code></pre>
+
+  <p>
+    because choosing nothing gives us a sum of zero.
+  </p>
+
+  <p>
+    Now suppose the next number is <code>5</code>.
+  </p>
+
+  <p>
+    If we could previously make sum <code>3</code>, then by taking this
+    <code>5</code>, we can now make:
+  </p>
+
+  <pre><code>3 + 5 = 8</code></pre>
+
+  <p>
+    So whenever a sum <code>s</code> was already possible, adding the current
+    number <code>num</code> makes:
+  </p>
+
+  <pre><code>s + num</code></pre>
+
+  <p>
+    possible as well.
+  </p>
+
+  <div class="highlight">
+    <strong>In simple terms:</strong> We are gradually building a list of all
+    sums that can be created using the numbers seen so far.
+  </div>
+
+  <h3>The crucial 0/1 Knapsack detail</h3>
+
+  <p>
+    There is one subtle but extremely important detail.
+  </p>
+
+  <p>
+    Each array element can be used <strong>only once</strong>.
+  </p>
+
+  <p>
+    Therefore, when updating the DP array, we process sums from
+    <strong>right to left</strong>.
+  </p>
+
+  <pre><code>target → ... → num → 0</code></pre>
+
+  <p>
+    Why?
+  </p>
+
+  <p>
+    Suppose the current number is <code>3</code>. If we process from left to
+    right, we might create <code>dp[3]</code> and then immediately use that
+    newly-created state to create <code>dp[6]</code>.
+  </p>
+
+  <p>
+    That would effectively use the same <code>3</code> twice.
+  </p>
+
+  <p>
+    Going backwards prevents this from happening.
+  </p>
+
+  <div class="tip">
+    <strong>Pattern to remember:</strong><br>
+    For 0/1 Knapsack or Subset Sum where every item can be used only once,
+    a 1D DP array is usually updated from <strong>right to left</strong>.
+  </div>
+
+  <h2>7. Walking Through an Example</h2>
+
+  <p>Consider:</p>
+
+  <pre><code>nums = [1, 5, 11, 5]</code></pre>
+
+  <p>The total is:</p>
+
+  <pre><code>1 + 5 + 11 + 5 = 22</code></pre>
+
+  <p>Therefore:</p>
+
+  <pre><code>target = 22 / 2 = 11</code></pre>
+
+  <p>
+    We now only need to answer:
+  </p>
+
+  <pre><code>Can we create a subset whose sum is 11?</code></pre>
+
+  <p>
+    Start with:
+  </p>
+
+  <pre><code>dp[0] = True</code></pre>
+
+  <p>
+    After considering <code>1</code>, we can make:
+  </p>
+
+  <pre><code>0, 1</code></pre>
+
+  <p>
+    After considering <code>5</code>, we can make:
+  </p>
+
+  <pre><code>0, 1, 5, 6</code></pre>
+
+  <p>
+    After considering <code>11</code>, we can make <code>11</code> directly.
+  </p>
+
+  <p>
+    Therefore:
+  </p>
+
+  <pre><code>dp[11] = True</code></pre>
+
+  <p>
+    We have found a subset whose sum is half of the total.
+  </p>
+
+  <p>
+    Consequently, the remaining elements automatically have the other half
+    of the total.
+  </p>
+
+  <h2>8. Why Does Finding One Half Guarantee the Other Half?</h2>
+
+  <p>
+    This is another useful observation.
+  </p>
+
+  <p>
+    Suppose:
+  </p>
+
+  <pre><code>Total = 22
+Subset A = 11</code></pre>
+
+  <p>
+    Everything that isn't in subset A must add up to:
+  </p>
+
+  <pre><code>22 - 11 = 11</code></pre>
+
+  <p>
+    So we don't need to separately search for the second subset.
+  </p>
+
+  <div class="success">
+    <strong>Find one subset with sum = total / 2, and the remaining elements
+    automatically form the other subset.</strong>
+  </div>
+
+  <h2>9. Complexity</h2>
+
+  <p>
+    Let:
+  </p>
+
+  <ul>
+    <li><code>n</code> = number of elements</li>
+    <li><code>S</code> = total sum of all elements</li>
+  </ul>
+
+  <p>
+    The target is <code>S / 2</code>, and for every element we potentially
+    examine every sum up to that target.
+  </p>
+
+  <div class="complexity">Time: O(n × S)</div>
+  <div class="complexity">Space: O(S)</div>
+
+  <p>
+    More precisely, because the DP only needs to go up to <code>S / 2</code>,
+    the space requirement can be described as <code>O(S / 2)</code>, which is
+    simply <code>O(S)</code> in Big-O notation.
+  </p>
+
+  <h2>10. Why This Satisfies the Constraints</h2>
+
+  <p>
+    The important point is that we have replaced the exponential
+    <code>O(2ⁿ)</code> brute-force search with a pseudo-polynomial DP approach.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Approach</th>
+        <th>Time</th>
+        <th>Space</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Brute Force</td>
+        <td>O(2ⁿ)</td>
+        <td>O(n) recursion stack</td>
+      </tr>
+      <tr>
+        <td>2D Subset Sum DP</td>
+        <td>O(n × S)</td>
+        <td>O(n × S)</td>
+      </tr>
+      <tr>
+        <td>1D Optimized DP</td>
+        <td>O(n × S)</td>
+        <td>O(S)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    The 1D DP is therefore usually the preferred implementation when the
+    constraints make the total sum manageable.
+  </p>
+
+  <h2>11. Multiple Valid Approaches</h2>
+
+  <h3>Approach 1 — Brute Force / Backtracking</h3>
+
+  <p>
+    Try every possible assignment of elements to the two subsets.
+  </p>
+
+  <p>
+    <strong>Advantage:</strong> Very intuitive and easy to derive.
+  </p>
+
+  <p>
+    <strong>Disadvantage:</strong> Exponential time, approximately
+    <code>O(2ⁿ)</code>.
+  </p>
+
+  <p>
+    Useful mainly for understanding the problem or when constraints are tiny.
+  </p>
+
+  <h3>Approach 2 — 2D Dynamic Programming</h3>
+
+  <p>
+    Define something conceptually like:
+  </p>
+
+  <pre><code>dp[i][s]</code></pre>
+
+  <p>
+    meaning:
+  </p>
+
+  <pre><code>Can we make sum s using the first i elements?</code></pre>
+
+  <p>
+    This is straightforward and closely mirrors the classic Subset Sum
+    formulation.
+  </p>
+
+  <p>
+    Its time complexity is <code>O(n × S)</code> and space complexity is
+    <code>O(n × S)</code>.
+  </p>
+
+  <h3>Approach 3 — 1D Dynamic Programming</h3>
+
+  <p>
+    We realize that to process the next element, we don't need the entire
+    history of previous rows. A single array of achievable sums is enough.
+  </p>
+
+  <p>
+    This reduces space from:
+  </p>
+
+  <pre><code>O(n × S)</code></pre>
+
+  <p>to:</p>
+
+  <pre><code>O(S)</code></pre>
+
+  <p>
+    This is the preferred approach for the standard problem.
+  </p>
+
+  <h2>12. The Pattern to Remember for Future Problems</h2>
+
+  <p>
+    When you see a problem asking whether an array can be divided into groups
+    with equal sums, immediately think:
+  </p>
+
+  <pre><code>Equal partition
+      ↓
+Calculate total
+      ↓
+Total must be even
+      ↓
+Target = total / 2
+      ↓
+Can I make this target using some elements?
+      ↓
+Subset Sum / 0-1 Knapsack
+      ↓
+1D Boolean DP
+      ↓
+Iterate sums backwards</code></pre>
+
+  <div class="highlight">
+    <strong>General DP recognition rule:</strong><br>
+    If a problem asks whether you can choose some elements to reach an exact
+    target, especially when each element can be used only once, think
+    <strong>Subset Sum / 0-1 Knapsack</strong>.
+  </div>
+
+  <h2>13. Clean Python Implementation</h2>
+
+  <p>
+    Now that the underlying idea is clear, the implementation becomes quite
+    short:
+  </p>
+
+  <pre><code>def canPartition(nums):
+    total = sum(nums)
+
+    # The total must be even.
+    if total % 2 != 0:
+        return False
+
+    target = total // 2
+
+    # dp[s] tells us whether sum s is achievable.
+    dp = [False] * (target + 1)
+    dp[0] = True
+
+    for num in nums:
+        # Go backwards so each number is used only once.
+        for s in range(target, num - 1, -1):
+            dp[s] = dp[s] or dp[s - num]
+
+    return dp[target]</code></pre>
+
+  <h3>One-line mental model</h3>
+
+  <div class="success">
+    <strong>
+      Don't try to build two subsets. Just try to build one subset whose sum
+      is half of the total.
+    </strong>
+  </div>
+
+  <p>
+    That single transformation is the heart of the entire problem.
+  </p>
+</div>
